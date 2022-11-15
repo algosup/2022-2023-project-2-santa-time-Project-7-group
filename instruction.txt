@@ -1,1 +1,8 @@
-docker container run -it --name lib_py -v /Users/maxbernard/Documents/GitHub/2022-2023-project-2-santa-time-Project-7-group:/app selenium/standalone-chrome:107.0 bash
+docker container run -it --name lib_py -v /Users/maxbernard/Documents/GitHub/2022-2023-project-2-santa-time-Project-7-group:/app python:3.9 bash
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb
+
+google-chrome --version
+
+pip install webdriver-manager
