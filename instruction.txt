@@ -1,8 +1,25 @@
-docker container run -it --name lib_py -v /Users/maxbernard/Documents/GitHub/2022-2023-project-2-santa-time-Project-7-group:/app python:3.9 bash
+docker container run -it --name santaTimeTest -v C:/Users/MaxBE/Documents/GitHub/2022-2023-project-2-santa-time-Project-7-group/app:/app -p 4444:4444 --shm-size=2g selenium/standalone-chrome:107.0 bash
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-apt install ./google-chrome-stable_current_amd64.deb
+sudo apt update
 
-google-chrome --version
+sudo apt-get install xz-utils
 
-pip install webdriver-manager
+tar -xf Python-3.9.0.tar.xz
+
+sudo mv Python-3.9.0 /opt/
+
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev pkg-config make -y
+
+cd /opt/Python-3.9.0/
+
+./configure --enable-optimizations --enable-shared
+
+make -j 4
+
+sudo make altinstall
+
+sudo ldconfig /opt/Python-3.9.0
+
+sudo apt install python3-pip -y
+
+pip install selenium
