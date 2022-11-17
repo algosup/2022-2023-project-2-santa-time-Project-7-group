@@ -89,7 +89,7 @@ used to calculate solar time are minutes.
 ### <u>Calculating Santa's arrival time</u>
 
 Santa's exact arrival time will always be exactly 00:00 25th December, <u>solar time</u>.
-Therefore, the following equation can be used to calculate the local solar midnight time:
+Therefore, the following equation can be used to calculate the local solar midnight time in hours:
 
 ```
 LT = DST + ((15 + Z - Lloc) / 15) - (E/60)
@@ -133,32 +133,32 @@ Let's take Vierzon, France as an example.
 
 ```
 Vierzon's longitude = 2.0698
-Vierzon GMT timezon = +1
+Vierzon GMT timezone = +1
 ```
 
 Therefore:
 
 ```
-LT = DST + ((15 + Z - Lloc) / 15) - (E/60)
-LT = 0 + (15 + 1 - 2.0698) / 15 - 0.3829280015475218 / 60
-LT = 0.92229786664
+LT = DST + ((15 * Z - Lloc) / 15) - (E/60)
+LT = 0 + (15 * 1 - 2.0698) / 15 - 0.3829280015475218 / 60
+LT = 0.85563119997
 ```
 
-This means, that Santa will arrive at precisely 0.92229786664 hours.
+This means, that Santa will arrive at precisely 0.85563119997 hours.
 This means:
 
 ```
-hours = floor(0.92229786664)
+hours = floor(0.85563119997)
 hours = 0
 
-minutes = floor(0.92229786664 * 60)
-minutes = 55
+minutes = floor(0.85563119997 * 60)
+minutes = 51
 
-seconds = floor((0.92229786664 * 60) % 1 * 60)
+seconds = floor((0.85563119997 * 60) % 1 * 60)
 seconds = 20
 ```
 
-In this example, Santa will arrive at 00:55:20 on the 25th of December.
+In this example, Santa will arrive at 00:51:20 on the 25th of December.
 
 ## Use cases
 
