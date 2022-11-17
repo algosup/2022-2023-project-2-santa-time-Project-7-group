@@ -23,3 +23,11 @@ sudo ldconfig /opt/Python-3.9.0
 sudo apt install python3-pip -y
 
 pip install selenium
+
+----- CURL
+
+docker container run -it --name santaTimeTest -v /Users/maxbernard/Documents/GitHub/2022-2023-project-2-santa-time-Project-7-group/curl:/app python:3.9 bash
+
+pip install pycURL
+
+pip install certifi
