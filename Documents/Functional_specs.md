@@ -160,12 +160,14 @@ seconds = 20
 
 In this example, Santa will arrive at 00:51:20 on the 25th of December.
 
-## Use cases
+## Personas
 
+Personas of potencial customers can be found [here](https://docs.google.com/presentation/d/1luQGbXf-8R1pEh4sa8H7ViEgxD-Bjj4fWfB4a5iV280/edit?usp=sharing).
 
 
 ## Sources
 
+- [Solar time calculator](https://koch-tcm.ch/wp-content/uploads/the-calculator.html)
 - [How to calculate solar time](https://www.powerfromthesun.net/book.html)
 - [How to calculate solar time (simplified)](https://faculty.eng.ufl.edu/jonathan-scheffe/wp-content/uploads/sites/100/2020/08/Solar-Time1419.pdf)
 
