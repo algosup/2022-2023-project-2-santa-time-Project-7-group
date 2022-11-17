@@ -4,9 +4,12 @@ from io import BytesIO
 
 mainURL = 'https://bestiaever.ml/auth'
 
-c = pycurl.Curl()
+i = 0
 
 while True:
-    c.setopt(c.URL, 'https://python.org/')
+    i += 1
+    c = pycurl.Curl()
+    c.setopt(c.URL, mainURL)
     c.setopt(c.CAINFO, certifi.where())
     c.close()
+    print(i)
