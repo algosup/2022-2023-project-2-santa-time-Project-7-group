@@ -45,6 +45,8 @@ The user must be able to use the website without any additional effort necessary
 
 ## Calculating Santa's arrival time
 
+### <u>Calculating solar time</u>
+
 The equation to calculate solar time is as follows:
 
 ```
@@ -68,27 +70,95 @@ Lst = 15*(standard time - Greenwich time)
 Lloc is the locations longitude.
 ```
 
+<span id="Ecalc"></span>
+
 ```
 E is the equation of time in minutes. It calculates as follows:
 
-E = 229.2(0.000075 + 0.001868 cos B − 0.032077 sin B − 0.014615 cos 2B − 0.04089 sin 2B)
+E = 0.258 * cos(B) - 7.416 * sin(B) - 3.648 * cos(2*B) - 9.228 * sin(2*B);
 
-B = (n-1) * 360/365
+B = 360 * (n - 1) * (pi/180) / 365.242
 
-1 ≤ n ≤ 365
 
-Here, n is the day in the year and B has units degrees. The units for the right hand side of the equation
+Here, n is the day in the year and B has units radians. The units for the right hand side of the equation
 used to calculate solar time are minutes.
 ```
 
 ---
 
-Santa's exact arrival time will always be exactly 00:00 25th December, solar time.
-Therefore this equation will need to be flipped around:
+### <u>Calculating Santa's arrival time</u>
+
+Santa's exact arrival time will always be exactly 00:00 25th December, <u>solar time</u>.
+Therefore, the following equation can be used to calculate the local solar midnight time:
 
 ```
-standard time = solar time - 4(Lst − Lloc) - E
+LT = DST + ((15 + Z - Lloc) / 15) - (E/60)
 ```
+
+Where:
+
+```
+LT is the local time adjusted to day saving time.
+```
+
+```
+DST is an offset to count for Day Saving Time.
+(DST=1 if time needs to be adjusted and DST=0 otherwise)
+In December, daylight saving should always be 0.
+```
+
+```
+Z is the GMT timezone of the location in question.
+For example, Paris is in GMT+1, therefore for Paris Z=1.
+```
+
+```
+Lloc is the Longitude coordinate of the location.
+```
+
+```
+E is the equation of time in minutes.
+As we will always be looking for the 24th of December, E is going to be constant in our case.
+
+E = 0.3829280015475218
+```
+
+For the exact calculation to find E please see the explanation [above](#Ecalc).
+
+---
+
+### <u>Example</u>
+
+Let's take Vierzon, France as an example.
+
+```
+Vierzon's longitude = 2.0698
+Vierzon GMT timezon = +1
+```
+
+Therefore:
+
+```
+LT = DST + ((15 + Z - Lloc) / 15) - (E/60)
+LT = 0 + (15 + 1 - 2.0698) / 15 - 0.3829280015475218 / 60
+LT = 0.92229786664
+```
+
+This means, that Santa will arrive at precisely 0.92229786664 hours.
+This means:
+
+```
+hours = floor(0.92229786664)
+hours = 0
+
+minutes = floor(0.92229786664 * 60)
+minutes = 55
+
+seconds = floor((0.92229786664 * 60) % 1 * 60)
+seconds = 20
+```
+
+In this example, Santa will arrive at 00:55:20 on the 25th of December.
 
 ## Use cases
 
@@ -96,6 +166,7 @@ standard time = solar time - 4(Lst − Lloc) - E
 
 ## Sources
 
-- [How to calculate solar time](https://faculty.eng.ufl.edu/jonathan-scheffe/wp-content/uploads/sites/100/2020/08/Solar-Time1419.pdf)
+- [How to calculate solar time](https://www.powerfromthesun.net/book.html)
+- [How to calculate solar time (simplified)](https://faculty.eng.ufl.edu/jonathan-scheffe/wp-content/uploads/sites/100/2020/08/Solar-Time1419.pdf)
 
 ## Glossary
