@@ -3,11 +3,11 @@
 ## Table of contents
 
 * [Project scope](#Projectscope)
-* [Risks and Assumptions](#risks-and-assumptions)
 * [Requirements](#requirements)
-* [Configuration](#configuration)
 * [Timetables](#timetables)
-* [Calculating Santa's arrival time](#santa-arrival-time)
+* [Risks and Assumptions](#risks-and-assumptions)
+* [Configuration](#configuration)
+* [Calculating solar time](#santa-arrival-time)
 	* [Calculating solar time](#ucalculating-solar-timeu)
 	* [Calculating Santa's arrival time](#santa-arrival-time-2)
 	* [Example](#uexampleu)
@@ -32,6 +32,29 @@ The end goal of this project is to create a website where users could look up wh
 
 - Finding users for the working product is part of the development team's duties. For this end, the product must move into its production phase before the 25th of November 2022.
 
+## Requirements
+
+- The product must be realised in Docker.
+- The product must be available online.
+- The product must be able to function under heavy user traffic as well adapt to sudden changes in user traffic.
+- It must be possible to search for locations using a search bar.
+    - The search bar must draw its information from a database attached to the project, NOT an external API.
+    - (optional) Geolocalisation button.
+- The product must be able to calculate Santa's arrival time using the longitude obtained from the input address and the current time.
+- In addition to the remaining time, the website must also show Santa's exact arrival time while taking into account the user's timezone. 
+
+## Timetables
+
+| Deliverables | Responsability of | Deadline |
+|:------------|:-----------------|:--------|
+| Website frontend | Software engineer | 18/11/22 |
+| Web hosting service | Tech Lead | 22/11/22 |
+| website backend | Software engineer | 24/11/22 |
+| Address database | Tech Lead, Software engineer | 24/11/22 |
+| Project testing solution(s) | Q&A | 25/11/22 (+) |
+| Publicity solution(s)| Program manager | 28/11/22 |
+| Final presentation | Full team | 16/12/22 |
+
 ## Risks and Assumptions
 
 - The maximum number of users at peak traffic is unknown.
@@ -45,35 +68,13 @@ The end goal of this project is to create a website where users could look up wh
 
 - It is assumed that a functional version of the project can be placed into production before the 25th of November 2022.
 
-## Requirements
-
-- The product must be realised in Docker.
-- The product must be available online.
-- It must be possible to search for locations using a search bar.
-    - The search bar must draw its information from a database attached to the project, NOT an external API.
-    - (optional) Geolocalisation button.
-- The product must be able to calculate Santa's arrival time using the longitude obtained from the input address and the current time.
-- In addition to the remaining time, the website must also show Santa's exact arrival time while taking into account the user's timezone. 
-
 ## Configuration
 
 The user must be able to use the website without any additional effort necessary on their behalf (there is no need for logging in, etc..).
 
-## Timetables
+## Calculating Solar time <span id="santa-arrival-time"></span>
 
-| Deliverables | Responsability of | Deadline |
-|:------------|:-----------------|:--------|
-| Website frontend | Software engineer | 18/11/22 |
-| website backend | Software engineer | 25/11/22 |
-| Address database | Tech Lead, Software engineer | 25/11/22 |
-| Web hosting service | Tech Lead | 25/11/22 |
-| Project testing solution(s) | Q&A | 02/12/22 |
-| Publicity solution(s)| Program manager | 16/12/22 |
-| Final presentation | Full team | 16/12/22 |
-
-## Calculating Santa's arrival time <span id="santa-arrival-time"></span>
-
-### <u>Calculating solar time</u>
+### <u>Local time to solar time</u>
 
 The equation to calculate solar time is as follows:
 
