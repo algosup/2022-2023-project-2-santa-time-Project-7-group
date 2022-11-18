@@ -17,43 +17,43 @@
 
 ## Project scope
 
-The endgoal of this project is to create a website where users could look up when will Santa arrive with their presents.
+The end goal of this project is to create a website where users could look up when will Santa arrive with their presents.
 
-- The endproduct must contain a search tool to look up addresses and subsequently Santa's arrival time to said addresses. 
-    - To avoid unnecessary performance bottlenecks, the searchtool must look up the addresses from a database linked with the project instead of using already existing APIs[^1].
+- The end product must contain a search tool to look up addresses and, subsequently, Santa's arrival time to said addresses. 
+    - To avoid unnecessary performance bottlenecks, the search tool must look up the addresses from a database linked with the project instead of using already existing APIs[^1].
 
-- For the sake of this project, Santa always arrives exactly at solar midnight[^2] (midnight depending on the position of the sun instead of the local time). Latitude coordinates[^3] can be ignored during the calculation of Santas position.
+- For the sake of this project, Santa always arrives exactly at solar midnight[^2] (midnight depending on the sun's position instead of the local time). Latitude coordinates[^3] can be ignored during the calculation of Santa's position.
 
-- The website is expected to recieve high levels of user traffic, therefore good performace is going to be essential for this project. The backend of the server must be able to function under peak load, without overusing server resources otherwise.
+- The website is expected to receive high levels of user traffic, therefore good performance is going to be essential for this project. The backend of the server must be able to function under peak load without overusing server resources otherwise.
 
-- The frontend of the website is to be kept simplistic and easy to follow. Heavy assets, such as 3d models or large images must be avoided at all cost.
+- The frontend of the website is to be kept simplistic and easy to follow. Heavy assets, such as 3d models or large images must be avoided at all costs.
 
-- The usage of Docker[^4] as a base technology has been inposed as an obligation by the client.
+- The usage of Docker[^4] as a base technology has been imposed as an obligation by the client.
 
-- Finding users for the working product is part of the developpement teams duties. For this end, the product must move into its production phase before the 25th of November 2022.
+- Finding users for the working product is part of the development team's duties. For this end, the product must move into its production phase before the 25th of November 2022.
 
 ## Risks and Assumptions
 
 - The maximum number of users at peak traffic is unknown.
 
-- Most docker and database hosting services are blocked behind a paywall. It is assumed that every service necessary for the completion for the project has either a lax enought free tier or a free trial period large enought for the completion of the project.
-    - If such services are not available, it is assumed that ALGOSUP[^5] will provide the developpement team with an account to a service that conforms to our needs.
+- Most docker and database hosting services are blocked behind a paywall. It is assumed that every service necessary for the completion for the project has either a lax enough free tier or a free trial period large enough for the completion of the project.
+    - If such services are not available, it is assumed that ALGOSUP[^5] will provide the development team with an account for a service that conforms to our needs.
 
-- It is assumed that Docker is a viable technology for hosting the final website in an efficient and ellastic manner.
+- It is assumed that Docker is a viable technology for hosting the final website in an efficient and elastic manner.
 
-- It is assumed that sending requests en masse to test the final products performance is possible.
+- It is assumed that sending requests en masse to test the final product's performance is possible.
 
-- It is assumed that a functionnal version of the project can be placed into production before the 25th of November 2022.
+- It is assumed that a functional version of the project can be placed into production before the 25th of November 2022.
 
 ## Requirements
 
 - The product must be realised in Docker.
 - The product must be available online.
-- It must be possible to search for locations using a searchbar.
-    - The searchbar must draw its information from a database attached to the project, NOT an external API.
+- It must be possible to search for locations using a search bar.
+    - The search bar must draw its information from a database attached to the project, NOT an external API.
     - (optional) Geolocalisation button.
-- The product must be able to calculate Santa's arrival time using the longitude obtained from the inputed address and the current time.
-- In addition to the remaining time, the website must also show Santa's exact arrival time while taking into account the users timezone. 
+- The product must be able to calculate Santa's arrival time using the longitude obtained from the input address and the current time.
+- In addition to the remaining time, the website must also show Santa's exact arrival time while taking into account the user's timezone. 
 
 ## Configuration
 
@@ -61,7 +61,7 @@ The user must be able to use the website without any additional effort necessary
 
 ## Timetables
 
-| Deliverables | Responasbility of | Deadline |
+| Deliverables | Responsability of | Deadline |
 |:------------|:-----------------|:--------|
 | Website frontend | Software engineer | 18/11/22 |
 | website backend | Software engineer | 25/11/22 |
@@ -95,7 +95,7 @@ Lst = 15*(standard time - Greenwich time)
 ```
 
 ```
-Lloc is the locations longitude.
+Lloc is the location's longitude.
 ```
 
 <span id="Ecalc"></span>
@@ -108,7 +108,7 @@ E = 0.258 * cos(B) - 7.416 * sin(B) - 3.648 * cos(2*B) - 9.228 * sin(2*B);
 B = 360 * (n - 1) * (pi/180) / 365.242
 
 
-Here, n is the day in the year and B has units radians. The units for the right hand side of the equation
+Here, n is the day in the year, and B has its units in radians. The units for the right-hand side of the equation
 used to calculate solar time are minutes.
 ```
 
@@ -126,7 +126,7 @@ LT = DST + ((15 + Z - Lloc) / 15) - (E/60)
 Where:
 
 ```
-LT is the local time adjusted to day saving time.
+LT is the local time adjusted to day-saving time.
 ```
 
 ```
@@ -151,7 +151,7 @@ As we will always be looking for the 24th of December, E is going to be constant
 E = 0.3829280015475218
 ```
 
-For the exact calculation to find E please see the explanation [above](#Ecalc).
+For the exact calculation to find E, please see the explanation [above](#Ecalc).
 
 ---
 
@@ -172,7 +172,7 @@ LT = 0 + (15 * 1 - 2.0698) / 15 - 0.3829280015475218 / 60
 LT = 0.85563119997
 ```
 
-This means, that Santa will arrive at precisely 0.85563119997 hours.
+This means that Santa will arrive at precisely 0.85563119997 hours.
 This means:
 
 ```
@@ -190,7 +190,7 @@ In this example, Santa will arrive at 00:51:20 on the 25th of December.
 
 ## Personas
 
-Personas for potencial customers can be found [here](https://docs.google.com/presentation/d/1luQGbXf-8R1pEh4sa8H7ViEgxD-Bjj4fWfB4a5iV280/edit?usp=sharing).
+Personas for potential customers can be found [here](https://docs.google.com/presentation/d/1luQGbXf-8R1pEh4sa8H7ViEgxD-Bjj4fWfB4a5iV280/edit?usp=sharing).
 
 
 ## Sources
