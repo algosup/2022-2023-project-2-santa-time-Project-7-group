@@ -22,13 +22,13 @@ The endgoal of this project is to create a website where users could look up whe
 - The endproduct must contain a search tool to look up addresses and subsequently Santa's arrival time to said addresses. 
     - To avoid unnecessary performance bottlenecks, the searchtool must look up the addresses from a database linked with the project instead of using already existing APIs[^1].
 
-- For the sake of this project, Santa always arrives exactly at solar midnight (midnight depending on the position of the sun instead of the local time). Latitude coordinates can be ignored during the calculation of Santas position.
+- For the sake of this project, Santa always arrives exactly at solar midnight[^2] (midnight depending on the position of the sun instead of the local time). Latitude coordinates[^3] can be ignored during the calculation of Santas position.
 
 - The website is expected to recieve high levels of user traffic, therefore good performace is going to be essential for this project. The backend of the server must be able to function under peak load, without overusing server resources otherwise.
 
 - The frontend of the website is to be kept simplistic and easy to follow. Heavy assets, such as 3d models or large images must be avoided at all cost.
 
-- The usage of Docker as a base technology has been inposed as an obligation by the client.
+- The usage of Docker[^4] as a base technology has been inposed as an obligation by the client.
 
 - Finding users for the working product is part of the developpement teams duties. For this end, the product must move into its production phase before the 25th of November 2022.
 
@@ -37,7 +37,7 @@ The endgoal of this project is to create a website where users could look up whe
 - The maximum number of users at peak traffic is unknown.
 
 - Most docker and database hosting services are blocked behind a paywall. It is assumed that every service necessary for the completion for the project has either a lax enought free tier or a free trial period large enought for the completion of the project.
-    - If such services are not available, it is assumed that ALGOSUP will provide the developpement team with an account to a service that conforms to our needs.
+    - If such services are not available, it is assumed that ALGOSUP[^5] will provide the developpement team with an account to a service that conforms to our needs.
 
 - It is assumed that Docker is a viable technology for hosting the final website in an efficient and ellastic manner.
 
@@ -201,4 +201,12 @@ Personas for potencial customers can be found [here](https://docs.google.com/pre
 
 ## Glossary
 
-[^1]: Musical durations : API
+[^1]: API : An <u>Application Programming Interface (API)</u> is a way for two or more computer programs to communicate with each other.
+
+[^2]: Solar time: Solar time is a calculation of the passage of time based on the position of the Sun.
+
+[^3]: Coordinates: [click here for details.](https://en.wikipedia.org/wiki/Geographic_coordinate_system#Latitude_and_longitude)
+
+[^4]: Docker: [Docker](https://www.docker.com/) is a set of platform as a service product that use OS-level virtualization to deliver software in packages called containers.
+
+[^5]: ALGOSUP: [ALGOSUP](https://algosup.com/) is a software development school in Vierzon, France.
