@@ -2,12 +2,25 @@
 
 ## Table of contents
 
+* [Project scope](#Projectscope)
+* [Risks and Assumptions](#risks-and-assumptions)
+* [Requirements](#requirements)
+* [Configuration](#configuration)
+* [Timetables](#timetables)
+* [Calculating Santa's arrival time](#santa-arrival-time)
+	* [Calculating solar time](#ucalculating-solar-timeu)
+	* [Calculating Santa's arrival time](#santa-arrival-time-2)
+	* [Example](#uexampleu)
+* [Personas](#personas)
+* [Sources](#sources)
+* [Glossary](#glossary)
+
 ## Project scope
 
 The endgoal of this project is to create a website where users could look up when will Santa arrive with their presents.
 
-- The endproduct must contain a search tool to look up addresses and subseauently Santa's arrival time to said addresses. 
-    - To avoid unnecessary performance bottlenecks, the searchtool must look up the addresses from a database linked with the project instead of using already existing APIs.
+- The endproduct must contain a search tool to look up addresses and subsequently Santa's arrival time to said addresses. 
+    - To avoid unnecessary performance bottlenecks, the searchtool must look up the addresses from a database linked with the project instead of using already existing APIs[^1].
 
 - For the sake of this project, Santa always arrives exactly at solar midnight (midnight depending on the position of the sun instead of the local time). Latitude coordinates can be ignored during the calculation of Santas position.
 
@@ -17,17 +30,20 @@ The endgoal of this project is to create a website where users could look up whe
 
 - The usage of Docker as a base technology has been inposed as an obligation by the client.
 
-- Finding users for the working product is part of the developpement teams duties.
+- Finding users for the working product is part of the developpement teams duties. For this end, the product must move into its production phase before the 25th of November 2022.
 
 ## Risks and Assumptions
 
 - The maximum number of users at peak traffic is unknown.
 
-- Most docker and database hosting services are bloced behind a paywall. It is assumed that every service necessary for the completion for the project has either a lax enought free tier or free trial periods large enought for the completion of the project.
+- Most docker and database hosting services are blocked behind a paywall. It is assumed that every service necessary for the completion for the project has either a lax enought free tier or a free trial period large enought for the completion of the project.
+    - If such services are not available, it is assumed that ALGOSUP will provide the developpement team with an account to a service that conforms to our needs.
 
 - It is assumed that Docker is a viable technology for hosting the final website in an efficient and ellastic manner.
 
 - It is assumed that sending requests en masse to test the final products performance is possible.
+
+- It is assumed that a functionnal version of the project can be placed into production before the 25th of November 2022.
 
 ## Requirements
 
@@ -43,7 +59,19 @@ The endgoal of this project is to create a website where users could look up whe
 
 The user must be able to use the website without any additional effort necessary on their behalf (there is no need for logging in, etc..).
 
-## Calculating Santa's arrival time
+## Timetables
+
+| Deliverables | Responasbility of | Deadline |
+|:------------|:-----------------|:--------|
+| Website frontend | Software engineer | 18/11/22 |
+| website backend | Software engineer | 25/11/22 |
+| Address database | Tech Lead, Software engineer | 25/11/22 |
+| Web hosting service | Tech Lead | 25/11/22 |
+| Project testing solution(s) | Q&A | 02/12/22 |
+| Publicity solution(s)| Program manager | 16/12/22 |
+| Final presentation | Full team | 16/12/22 |
+
+## Calculating Santa's arrival time <span id="santa-arrival-time"></span>
 
 ### <u>Calculating solar time</u>
 
@@ -86,7 +114,7 @@ used to calculate solar time are minutes.
 
 ---
 
-### <u>Calculating Santa's arrival time</u>
+### <u>Calculating Santa's arrival time</u> <span id="santa-arrival-time-2"></span>
 
 Santa's exact arrival time will always be exactly 00:00 25th December, <u>solar time</u>.
 Therefore, the following equation can be used to calculate the local solar midnight time in hours:
@@ -162,7 +190,7 @@ In this example, Santa will arrive at 00:51:20 on the 25th of December.
 
 ## Personas
 
-Personas of potencial customers can be found [here](https://docs.google.com/presentation/d/1luQGbXf-8R1pEh4sa8H7ViEgxD-Bjj4fWfB4a5iV280/edit?usp=sharing).
+Personas for potencial customers can be found [here](https://docs.google.com/presentation/d/1luQGbXf-8R1pEh4sa8H7ViEgxD-Bjj4fWfB4a5iV280/edit?usp=sharing).
 
 
 ## Sources
@@ -172,3 +200,5 @@ Personas of potencial customers can be found [here](https://docs.google.com/pres
 - [How to calculate solar time (simplified)](https://faculty.eng.ufl.edu/jonathan-scheffe/wp-content/uploads/sites/100/2020/08/Solar-Time1419.pdf)
 
 ## Glossary
+
+[^1]: Musical durations : API
