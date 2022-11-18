@@ -1,6 +1,7 @@
 import multiprocessing
 from multiprocessing import Pool
 import random
+import string
 
 def remove_unecesary_lines():
     r = open("../adress.txt", 'r')
@@ -24,9 +25,28 @@ def uplow_case_randomizer(address):
     return("".join(s))       
 
 def remove_info(address):
-    s = address.split(", ")
+    s = address.split(",")
     for i in range(random.randint(0, (len(s) - 1))):
+        n = random.randint(0, (len(s) - 1))
+        del s[1]
+    return("".join(s))
+
+def wrong_char_randomizer(address):
+    s = list(address)
+    for i in range(random.randint(0, (len(address) - 1))):
         n = random.randint(0, (len(address) - 1))
+        s[n] = random.choice(string.ascii_letters)
+    return("".join(s))
+
+def randomize_string(address):
+    s = [""]
+    for i in range(random.randint(20, 200)):
+        n = random.randint(0, 35)
+        if n > 9 :
+            n = random.choice(string.ascii_letters)
+        s.append(str(n))
+    return("".join(s))
+
 def process(line):
     print("i")
 
@@ -49,5 +69,5 @@ def multi_process():
                 del f_list[:]
 
 if __name__ == "__main__":
-    a = uplow_case_randomizer("0956 Rath Loaf, Apt. 811, 13224, Janiceborough, Arizona, United States")
+    a = randomize_string("0956 Rath Loaf, Apt. 811, 13224, Janiceborough, Arizona, United States")
     print(a)
