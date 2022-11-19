@@ -174,7 +174,8 @@ LT = 0.85563119997
 ```
 
 This means that Santa will arrive at precisely 0.85563119997 hours.
-This means:
+
+Consequently:
 
 ```
 hours = floor(0.85563119997)
