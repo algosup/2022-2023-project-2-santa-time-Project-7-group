@@ -1,22 +1,26 @@
 package main
 
 import (
-	"fmt"
-	"html/template"
-	"log"
+	"embed"
+	"io/fs"
 	"net/http"
 )
 
-func main() {
-	http.HandleFunc("/", index)
-	http.ListenAndServe(":8080", nil)
-	fmt.Println("Server is running on port 8080")
+//go:embed templates
+var content embed.FS
+
+func handler() http.Handler {
+
+	fsys := fs.FS(content)
+	html, _ := fs.Sub(fsys, "templates")
+
+	return http.FileServer(http.FS(html))
 }
 
-func index(w http.ResponseWriter, r *http.Request) {
-	tpl, err := template.ParseFiles("/templates/index.html")
-	if err != nil {
-		log.Fatalln(err)
-	}
-	tpl.Execute(w, nil)
+func main() {
+
+	mux := http.NewServeMux()
+	mux.Handle("/", handler())
+
+	http.ListenAndServe(":8080", mux)
 }
