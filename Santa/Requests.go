@@ -6,13 +6,13 @@ import (
 	"net/http"
 )
 
-//go:embed templates
+//go:embed static
 var content embed.FS
 
 func handler() http.Handler {
 
 	fsys := fs.FS(content)
-	html, _ := fs.Sub(fsys, "templates")
+	html, _ := fs.Sub(fsys, "static")
 
 	return http.FileServer(http.FS(html))
 }
