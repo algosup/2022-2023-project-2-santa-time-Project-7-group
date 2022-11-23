@@ -4,12 +4,10 @@
 
 * [Project scope](#Projectscope)
 * [Requirements](#requirements)
-* [Timetables](#timetables)
 * [Risks and Assumptions](#risks-and-assumptions)
 * [Configuration](#configuration)
-* [Calculating solar time](#santa-arrival-time)
-	* [Calculating solar time](#ucalculating-solar-timeu)
-	* [Calculating Santa's arrival time](#santa-arrival-time-2)
+* [Calculating Santa's arrival time](#santa-arrival-time)
+	* [The math](#santa-math)
 	* [Example](#uexampleu)
 * [Personas](#personas)
 * [Sources](#sources)
@@ -43,18 +41,6 @@ The end goal of this project is to create a website where users could look up wh
 - The product must be able to calculate Santa's arrival time using the longitude obtained from the input address and the current time.
 - In addition to the remaining time, the website must also show Santa's exact arrival time while taking into account the user's timezone. 
 
-## Timetables
-
-| Deliverables | Responsability of | Deadline |
-|:------------|:-----------------|:--------|
-| Website frontend | Software engineer | 18/11/22 |
-| Web hosting service | Tech Lead | 22/11/22 |
-| website backend | Software engineer | 24/11/22 |
-| Address database | Tech Lead, Software engineer | 24/11/22 |
-| Project testing solution(s) | Q&A | 25/11/22 (+) |
-| Publicity solution(s)| Program manager | 28/11/22 |
-| Final presentation | Full team | 16/12/22 |
-
 ## Risks and Assumptions
 
 - The maximum number of users at peak traffic is unknown.
@@ -72,50 +58,9 @@ The end goal of this project is to create a website where users could look up wh
 
 The user must be able to use the website without any additional effort necessary on their behalf (there is no need for logging in, etc..).
 
-## Calculating Solar time <span id="santa-arrival-time"></span>
+## Calculating Santa's arrival time <span id="santa-arrival-time"></span>
 
-### <u>Local time to solar time</u>
-
-The equation to calculate solar time is as follows:
-
-```
-solar time = standard time + 4(Lst − Lloc) + E
-```
-
-Where:
-
-```
-Standard time is the Local Standard Time (LST). Not to be confused with either Daylight Savings Time (DST) or Greenwich Mean Time (GMT).
-```
-
-```
-Lst is the Local Standard Meridian.
-To determine Lst, multiply the difference in time between local standard clock time (LST) and Greenwich Mean Time (GMT) in hours by 15°.
-
-Lst = 15*(standard time - Greenwich time)
-```
-
-```
-Lloc is the location's longitude.
-```
-
-<span id="Ecalc"></span>
-
-```
-E is the equation of time in minutes. It calculates as follows:
-
-E = 0.258 * cos(B) - 7.416 * sin(B) - 3.648 * cos(2*B) - 9.228 * sin(2*B);
-
-B = 360 * (n - 1) * (pi/180) / 365.242
-
-
-Here, n is the day in the year, and B has its units in radians. The units for the right-hand side of the equation
-used to calculate solar time are minutes.
-```
-
----
-
-### <u>Calculating Santa's arrival time</u> <span id="santa-arrival-time-2"></span>
+### <u>The math</u> <span id="santa-math"></span>
 
 Santa's exact arrival time will always be exactly 00:00 25th December, <u>solar time</u>.
 Therefore, the following equation can be used to calculate the local solar midnight time in hours:
@@ -152,7 +97,15 @@ As we will always be looking for the 24th of December, E is going to be constant
 E = 0.3829280015475218
 ```
 
-For the exact calculation to find E, please see the explanation [above](#Ecalc).
+<details>
+    <summary>How do we get this value?</summary>
+
+    E = 0.258 * cos(B) - 7.416 * sin(B) - 3.648 * cos(2*B) - 9.228 * sin(2*B);
+
+    B = 360 * (n - 1) * (pi/180) / 365.242
+
+    Here, n is the day in the year, and B has its units in radians.
+</details>
 
 ---
 
@@ -192,8 +145,13 @@ In this example, Santa will arrive at 00:51:20 on the 25th of December.
 
 ## Personas
 
-Personas for potential customers can be found [here](https://docs.google.com/presentation/d/1luQGbXf-8R1pEh4sa8H7ViEgxD-Bjj4fWfB4a5iV280/edit?usp=sharing).
+These are personas that represent potential customers can be found.
 
+![Dennis](./images/persona_1.png)
+![Lois](./images/persona_2.png)
+![Geremy](./images/persona_3.png)
+![Mark](./images/persona_4.png)
+![Anon](./images/persona_5.png)
 
 ## Sources
 
