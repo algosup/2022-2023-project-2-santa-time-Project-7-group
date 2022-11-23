@@ -6,6 +6,7 @@
 * [Requirements](#requirements)
 * [Risks and Assumptions](#risks-and-assumptions)
 * [Configuration](#configuration)
+* [UI/UX](#uiux)
 * [Calculating Santa's arrival time](#santa-arrival-time)
 	* [The math](#santa-math)
 	* [Example](#uexampleu)
@@ -38,8 +39,11 @@ The end goal of this project is to create a website where users could look up wh
 - It must be possible to search for locations using a search bar.
     - The search bar must draw its information from a database attached to the project, NOT an external API.
     - (optional) Geolocalisation button.
+    - (optional) Search suggestions.
 - The product must be able to calculate Santa's arrival time using the longitude obtained from the input address and the current time.
 - In addition to the remaining time, the website must also show Santa's exact arrival time while taking into account the user's timezone. 
+- (optional) The website must exist in multiple languages and allow the user to change the language the website is displayed in.
+    - (optional) The website must detect the browsers language and display itself accordingly.
 
 ## Risks and Assumptions
 
@@ -57,6 +61,11 @@ The end goal of this project is to create a website where users could look up wh
 ## Configuration
 
 The user must be able to use the website without any additional effort necessary on their behalf (there is no need for logging in, etc..).
+
+## UI/UX <span id="uiux"></span>
+
+The website must keep its style simple but Christmassy.
+The input field for the location must also include a placeholder that specifies that it is supposed to recieve a location.
 
 ## Calculating Santa's arrival time <span id="santa-arrival-time"></span>
 
