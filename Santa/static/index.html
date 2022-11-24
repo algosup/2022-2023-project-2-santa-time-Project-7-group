@@ -26,9 +26,15 @@
         <div class="inputs">
 
             <select class="selectpicker countrypicker countries" id="country" data-flag="true" style="border: radius 2px; "></select>
-            <div>
+            <div style="flex-direction: column;">
+                <div style="display: flex;">
                 <input type="text" id="location">
                 <button class="search" onclick="getAnswer()"><i class="fa fa-search search"></i></button>
+            </div>
+            <ul class="suggestions" id="autocomplete_list" style="font-size: large;
+            list-style-type: none;">
+
+            </ul>
             </div>
             <button class="location">Location</button>
         </div>

@@ -165,3 +165,14 @@ p {
     user-select: none;
     /* Standard */
 }
+
+.suggestions{
+    font-size: large;
+    list-style-type: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.suggestions li{
+    cursor: pointer;
+}
