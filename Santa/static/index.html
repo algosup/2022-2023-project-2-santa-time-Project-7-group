@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Santa is watching! This is a warning.</title>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" type="text/css" />
@@ -23,16 +24,17 @@
 
         <div class="inputs">
 
-            <select class="selectpicker countrypicker countries" id="country" data-flag="true" style="border: radius 2px; "></select>
+            <select class="selectpicker countrypicker countries" id="country" data-flag="true"
+                style="border: radius 2px; "></select>
             <div style="flex-direction: column;">
                 <div style="display: flex;">
-                <input type="text" id="location">
-                <button class="search" onclick="getAnswer()"><i class="fa fa-search search"></i></button>
-            </div>
-            <ul class="suggestions" id="autocomplete_list" style="font-size: large;
+                    <input type="text" id="location">
+                    <button class="search" onclick="getAnswer()"><i class="fa fa-search search"></i></button>
+                </div>
+                <ul class="suggestions" id="autocomplete_list" style="font-size: large;
             list-style-type: none;">
 
-            </ul>
+                </ul>
             </div>
             <button class="location">Location</button>
         </div>
@@ -41,11 +43,9 @@
     <div class="footer">
         <p>Donate to the children's fund and help them have a better Christmas.</p>
         <a href="https://support.savethechildren.org/site/Donation2?df_id=1620&1620.donation=form1" target="_blank">
-            <button class="donate">Donate</button>        
-        <p>© 2022 Santa is watching. All rights reserved.</p>
-        <img src="img/tree.png" width="150" height="70">
+            <button class="donate">Donate</button>
+            <p>© 2022 Santa is watching. All rights reserved.</p>
 
-        
     </div>
     <script src="//unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
     <script src="//unpkg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
