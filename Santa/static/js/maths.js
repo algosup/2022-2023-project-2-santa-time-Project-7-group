@@ -34,7 +34,7 @@ function calcSantaTime(loc, Z){
 
 function getAnswer(){
     //use nominatim api to get lat and long
-    var url = "https://nominatim.openstreetmap.org/search?q=" + document.getElementById("location").value +"+"+document.getElementById("country").title + "&format=json&polygon=1&addressdetails=1";
+    var url = "https://13.73.147.115:2322/api?q=" + document.getElementById("location").value +"+"+document.getElementById("country").title + "&format=json&polygon=1&addressdetails=1";
     console.log(url);
     //fetch the data
     fetch(url)
