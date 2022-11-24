@@ -1,7 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Molle:400italic&subset=latin,latin-ext);
+
 body {
-    padding: 0;
-    margin: 0;
-}
+    background-color: #f9f7f2 !important;
+    margin: 0px;
+    overflow: hidden;
+    font-family: 'Molle', cursive !important;
+  }
 
 .header {
     z-index: 5;
@@ -10,7 +14,7 @@ body {
     left: 0;
     right: 0;
     height: 70px;
-    background: radial-gradient(circle, rgba(73, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 70%);
+    background: radial-gradient(circle,#6A994E 40%, #6A994E 70%);
     color: snow;
     text-align: center;
 
@@ -37,7 +41,7 @@ img {
     width: 100%;
     display: flex;
     flex-direction: column;
-    color: red;
+    color:rgba(110, 145, 7, 1);
     align-items: center;
 
 }
@@ -45,6 +49,15 @@ img {
 .container h1 {
     text-align: center;
 }
+
+h2 {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    color: hsla(255, 255%, 255%, .1);
+  }
 
 .inputs {
     width: 60%;
@@ -55,19 +68,18 @@ img {
 
 .inputs input {
     width: 100%;
-    border-bottom-left-radius: 40px;
     border-top-left-radius: 40px;
     border-right: none;
     padding-left: 10px;
     font-weight: bold;
-    border: 2px solid red;
+    border: 2px solid #6A994E;
 }
 
 .inputs button {
     width: 50px;
-    background: radial-gradient(circle, rgba(73, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 70%);
+    background: radial-gradient(circle, rgba(110, 145, 7, 1) 0%,rgba(110, 145, 7, 1) 70%);
     color: snow;
-    border: 2px solid red;
+    border: 2px solid rgba(110, 145, 7, 1);
 }
 
 .inputs .search {
@@ -126,11 +138,11 @@ button::selection {
 }
 
 p {
-    color: snow;
+    color: #BC4749;
     font-size: 20px;
 }
 .donate {
-    background-color: red;
+    background-color:#BC4749;
     color: snow;
     border-radius: 40px;
     padding: 10px;
