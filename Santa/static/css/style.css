@@ -3,6 +3,7 @@ body {
     margin: 0px;
     overflow: hidden;
     font-family: 'Molle', cursive !important;
+    top:0 !important;
 }
 
 .header {
@@ -65,16 +66,20 @@ h2 {
 }
 
 .goog-logo-link {
-    display:none !important;
-} 
-    
-.goog-te-gadget{
+    display: none !important;
+}
+
+.goog-te-gadget {
     color: transparent !important;
 }
 
 .goog-te-gadget .goog-te-combo {
-    color: #6A994E  !important;
- }
+    color: #6A994E !important;
+}
+body > .skiptranslate {
+    display: none;
+}
+
 .inputs {
     width: 60%;
     display: flex;
