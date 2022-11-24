@@ -151,7 +151,6 @@ p {
 }
 
 .footer {
-    z-index: 5;
     position: absolute;
     bottom: 0%;
     text-align: left;
