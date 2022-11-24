@@ -125,12 +125,12 @@ button::selection {
 }
 
 ::selection {
-    background: red;
+    background: #6A994E;
     color: snow;
 }
 
 ::-moz-selection {
-    background: red;
+    background: #6A994E;
     /* Gecko Browsers */
     color: snow;
 }
