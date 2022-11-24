@@ -3,7 +3,7 @@ body {
     margin: 0px;
     overflow: hidden;
     font-family: 'Molle', cursive !important;
-  }
+}
 
 .header {
     z-index: 5;
@@ -12,7 +12,7 @@ body {
     left: 0;
     right: 0;
     height: 70px;
-    background: radial-gradient(circle,#6A994E 40%, #6A994E 70%);
+    background: radial-gradient(circle, #6A994E 40%, #6A994E 70%);
     color: snow;
     text-align: center;
 
@@ -25,6 +25,7 @@ body {
     user-select: none;
     /* Standard */
 }
+
 img {
     z-index: 5;
     position: absolute;
@@ -39,7 +40,7 @@ img {
     width: 100%;
     display: flex;
     flex-direction: column;
-    color:rgba(110, 145, 7, 1);
+    color: rgba(110, 145, 7, 1);
     align-items: center;
 
 }
@@ -55,8 +56,25 @@ h2 {
     transform: translate(-50%, -50%);
     font-size: 3em;
     color: hsla(255, 255%, 255%, .1);
-  }
+}
 
+#google_translate_element {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.goog-logo-link {
+    display:none !important;
+} 
+    
+.goog-te-gadget{
+    color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    color: #6A994E  !important;
+ }
 .inputs {
     width: 60%;
     display: flex;
@@ -75,7 +93,7 @@ h2 {
 
 .inputs button {
     width: 50px;
-    background: radial-gradient(circle, rgba(110, 145, 7, 1) 0%,rgba(110, 145, 7, 1) 70%);
+    background: radial-gradient(circle, rgba(110, 145, 7, 1) 0%, rgba(110, 145, 7, 1) 70%);
     color: snow;
     border: 2px solid rgba(110, 145, 7, 1);
 }
@@ -139,8 +157,9 @@ p {
     color: #BC4749;
     font-size: 20px;
 }
+
 .donate {
-    background-color:#BC4749;
+    background-color: #BC4749;
     color: snow;
     border-radius: 40px;
     padding: 10px;
@@ -165,7 +184,7 @@ p {
     /* Standard */
 }
 
-.suggestions{
+.suggestions {
     font-size: large;
     list-style-type: none;
     border-bottom-left-radius: 20px;
@@ -176,7 +195,7 @@ p {
     overflow-y: auto;
 }
 
-.suggestions li{
+.suggestions li {
     cursor: pointer;
     border-bottom: 0.1px grey solid;
     padding-left: 10px;
