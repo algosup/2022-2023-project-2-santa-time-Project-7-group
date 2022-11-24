@@ -78,9 +78,9 @@ function getAnswer() {
                 // add li element to ul of id="autocomplete_list" with name of location
                 for (var i = 0; i < data.features.length; i++) {
                     console.log(data.features[i].properties.name);
-                    console.log(data.features[i].name);
+                    console.log(data.features[i].properties.type);
                     console.log("_______________________________\n");
-                    if (data.features[i].properties.type != "city" || data.features[i].properties.type != "street" || data.features[i].properties.type != "house") {
+                    if (data.features[i].properties.type != "city" && data.features[i].properties.type != "street" && data.features[i].properties.type != "house") {
                         continue;
                     }
 
