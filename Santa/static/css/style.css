@@ -170,8 +170,14 @@ p {
     list-style-type: none;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    background: beige;
+    width: 89.5%;
+    padding-left: 0;
+    overflow-y: auto;
 }
 
 .suggestions li{
     cursor: pointer;
+    border-bottom: 0.1px grey solid;
+    padding-left: 10px;
 }

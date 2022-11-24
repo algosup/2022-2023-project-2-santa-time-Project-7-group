@@ -36,9 +36,13 @@ function calcSantaTime(loc, Z) {
 // console.log(calcSantaTime(2.0698, 1));
 
 function getAnswer() {
+    // Get the location
+    document.getElementById("autocomplete_list").innerHTML = "";
     //use nominatim api to get lat and long
-    var url = "https://13.73.147.115:2322/api?q=" + document.getElementById("location").value + "+" + document.getElementById("country").title + "&format=json&polygon=1&addressdetails=1";
-    console.log(url);
+    var url = "http://noel.gq:443/api?q=" + document.getElementById("location").value
+    console.log(url, {
+        mode: 'no-cors'
+    });
     //fetch the data
     fetch(url)
         .then(response => response.json())
@@ -48,7 +52,7 @@ function getAnswer() {
                 document.getElementById("answer").innerText = "Invalid location";
                 return;
             }
-            if (json.features.length > 1) {
+            if (data.features.length == 1) {
                 //get the lat and long
                 var lat = data[0].lat;
                 var long = data[0].lon;
@@ -72,9 +76,38 @@ function getAnswer() {
                     })
             } else {
                 // add li element to ul of id="autocomplete_list" with name of location
-                for (var i = 0; i < data.length; i++) {
+                for (var i = 0; i < data.features.length; i++) {
+                    console.log(data.features[i].properties.name);
+                    console.log(data.features[i].name);
+                    console.log("_______________________________\n");
+                    if (data.features[i].properties.type != "city" || data.features[i].properties.type != "street" || data.features[i].properties.type != "house") {
+                        continue;
+                    }
+
                     var li = document.createElement("li");
-                    li.appendChild(document.createTextNode(data[i].display_name));
+                    let streetnbr, street, city, country;
+                    if (data.features[i].properties.streetnbr != null) {
+                        streetnbr = data.features[i].properties.streetnbr;
+                    } else {
+                        streetnbr = "";
+                    }
+                    if (data.features[i].properties.street != null) {
+                        street = data.features[i].properties.street;
+                    } else {
+                        street = "";
+                    }
+                    if (data.features[i].properties.city != null) {
+                        city = data.features[i].properties.city;
+                    } else {
+                        city = "";
+                    }
+                    if (data.features[i].properties.country != null) {
+                        country = data.features[i].properties.country;
+                    } else {
+                        country = "";
+                    }
+
+                    li.appendChild(document.createTextNode(streetnbr + " " + street + " " + city + " " + country));
                     li.addEventListener("click", function () {
                         document.getElementById("location").value = this.innerText;
                         document.getElementById("autocomplete_list").innerHTML = "";
