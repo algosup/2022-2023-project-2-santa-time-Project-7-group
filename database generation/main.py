@@ -41,7 +41,7 @@ def wrong_char_randomizer(address):
 
 def randomize_string(address):
     s = [""]
-    for i in range(random.randint(20, 200)):
+    for i in range(random.randint(18000, 20000)):
         n = random.randint(0, 35)
         if n > 9 :
             n = random.choice(string.ascii_letters)
@@ -92,5 +92,5 @@ def multi_process():
                 del f_list[:]
 
 if __name__ == "__main__":
-    a = arb_char_randomizer("0956 Rath Loaf, Apt. 811, 13224, Janiceborough, Arizona, United States")
+    a = randomize_string("0956 Rath Loaf, Apt. 811, 13224, Janiceborough, Arizona, United States")
     print(a)

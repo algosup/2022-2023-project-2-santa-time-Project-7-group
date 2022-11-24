@@ -3,27 +3,33 @@ import certifi
 from io import BytesIO
 import multiprocessing
 from multiprocessing import Pool
+import random
 
-mainURL = 'https://bestiaever.ml/'
+
 
 # prossess sound into pngs
 def process(f):
-    while True:
-        c = pycurl.Curl()
-        c.setopt(c.URL, mainURL)
-        c.setopt(c.CAINFO, certifi.where())
-        c.close()
-        print(f)
+    mainURL = f'http://13.73.147.115:2322/api?q={random.randint(0,90)}{random.randint(0,99) * 10}%20france'
+    buffer = BytesIO()
+    c = pycurl.Curl()
+    c.setopt(c.URL, mainURL)
+    c.setopt(c.WRITEDATA, buffer)
+    c.setopt(c.CAINFO, certifi.where())
+    c.perform()
+    c.close()
+
+    body = buffer.getvalue()
+    print(f)
 
 
 # Reserve cores
 def thread():
     # alocate CPU
-    max_processors = multiprocessing.cpu_count()*4
+    max_processors = 8
     pool = Pool(processes=max_processors)
     f_list = []
 
-    for i in range(64):
+    for i in range(6400000):
         # pass the df to process function
         f = pool.apply_async(process, [i])
         f_list.append(f)
@@ -35,5 +41,4 @@ def thread():
                 del f_list[:]
 
 if __name__ == "__main__":
-
     thread()
