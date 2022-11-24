@@ -39,7 +39,7 @@ function getAnswer() {
     // Get the location
     document.getElementById("autocomplete_list").innerHTML = "";
     //use nominatim api to get lat and long
-    var url = "http://noel.gq:443/api?q=" + document.getElementById("location").value
+    var url = "http://noel.gq/api?q=" + document.getElementById("location").value
     console.log(url, {
         mode: 'no-cors'
     });
