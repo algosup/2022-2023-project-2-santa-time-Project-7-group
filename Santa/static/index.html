@@ -18,13 +18,21 @@
     <div class="header">
         <h1 class="title">Merry Christmas!</h1>
         <img src="img/logo-7-V2.jpg" width="150" height="70">
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </div>
     <div class="container_santa">
         <h1>When will santa arrive?</h1>
 
         <div class="inputs">
-
-            <select class="selectpicker countrypicker countries" id="country" data-flag="true" style="border: radius 2px;"></select>
+            <select class="selectpicker countrypicker countries" id="country" data-flag="true"
+                style="border: radius 2px; "></select>
             <div style="flex-direction: column;">
                 <div style="display: flex;">
                     <input type="text" id="location">
@@ -32,7 +40,6 @@
                 </div>
                 <ul class="suggestions" id="autocomplete_list" style="font-size: large;
             list-style-type: none;">
-
                 </ul>
             </div>
             <button class="location">Location</button>
