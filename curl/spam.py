@@ -4,12 +4,17 @@ from io import BytesIO
 import multiprocessing
 from multiprocessing import Pool
 import random
+import json
+import csv
 
-
-
+data: list[list[str]]
+with open(f"../database-generation/adress0.csv", newline='') as f:
+    reader = csv.reader(f)
+    data = list(reader)
+print(data[2][0])
 # prossess sound into pngs
 def process(f):
-    mainURL = f'http://13.73.147.115:2322/api?q={random.randint(0,90)}{random.randint(0,99) * 10}%20france'
+    mainURL = f'http://13.73.147.115/api?q={"aa"}'
     buffer = BytesIO()
     c = pycurl.Curl()
     c.setopt(c.URL, mainURL)
@@ -18,7 +23,6 @@ def process(f):
     c.perform()
     c.close()
 
-    body = buffer.getvalue()
     print(f)
 
 
@@ -41,4 +45,5 @@ def thread():
                 del f_list[:]
 
 if __name__ == "__main__":
-    thread()
+    #thread()
+    print("end")
