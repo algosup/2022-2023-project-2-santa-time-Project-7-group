@@ -32,14 +32,14 @@
 
         <div class="inputs">
 
-            <select class="selectpicker countrypicker countries" data-flag="true" style="border: radius 2px; "></select>
+            <select class="selectpicker countrypicker countries" id="country" data-flag="true" style="border: radius 2px; "></select>
             <div>
-                <input type="text">
+                <input type="text" id="location">
                 <button class="search" onclick="getAnswer()"><i class="fa fa-search search"></i></button>
             </div>
             <button class="location">Location</button>
         </div>
-        <h1 id="output"></h1>
+        <h1 id="time"></h1>
     </div>
     <div class="footer">
         <p>Donate to the children's fund and help them have a better Christmas.</p>
@@ -53,6 +53,7 @@
     <script src="//unpkg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <script src="//unpkg.com/bootstrap-select@1.12.4/dist/js/bootstrap-select.min.js"></script>
     <script src="//unpkg.com/bootstrap-select-country@4.0.0/dist/js/bootstrap-select-country.min.js"></script>
+    <script src="js/maths.js"></script>
     <script src="js/snow.js"></script>
     <script>
         $('.countrypicker').countrypicker();
