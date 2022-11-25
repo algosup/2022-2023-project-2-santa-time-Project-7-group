@@ -89,6 +89,7 @@ body > .skiptranslate {
 .inputs input {
     width: 100%;
     border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
     border-right: none;
     padding-left: 10px;
     font-weight: bold;

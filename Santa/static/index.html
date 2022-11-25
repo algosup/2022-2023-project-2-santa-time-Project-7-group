@@ -21,7 +21,8 @@
         <div id="google_translate_element"></div>
         <script type="text/javascript">
             function googleTranslateElementInit() {
-                new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                let language = Navigator.language;
+                new google.translate.TranslateElement({pageLanguage: language}, 'google_translate_element');
             }
         </script>
         <script type="text/javascript"
@@ -47,10 +48,8 @@
         <h1 id="time"></h1>
     </div>
     <div class="footer">
-        <p>Donate to the children's fund and help them have a better Christmas.</p>
         <a href="https://support.savethechildren.org/site/Donation2?df_id=1620&1620.donation=form1" target="_blank">
             <button class="donate">Donate</button>
-            <p>© 2022 Santa is watching. All rights reserved.</p>
 
     </div>
     <script src="//unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
