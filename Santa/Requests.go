@@ -22,5 +22,5 @@ func main() {
 	mux := http.NewServeMux()
 	mux.Handle("/", handler())
 
-	http.ListenAndServe(":8080", mux)
+	http.ListenAndServeTLS(":443", "/etc/letsencrypt/live/catchyoursanta.ml/fullchain.pem", "/etc/letsencrypt/live/catchyoursanta.ml/privkey.pem", mux)
 }
