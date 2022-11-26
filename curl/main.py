@@ -9,7 +9,7 @@ import random
 
 # prossess sound into pngs
 def process(f):
-    mainURL = f'http://13.73.147.115:2322/api?q={random.randint(0,90)}{random.randint(0,99) * 10}%20france'
+    mainURL = f'http://13.73.147.115:80/api?q={random.randint(0,90)}{random.randint(0,99) * 10}%20france'
     buffer = BytesIO()
     c = pycurl.Curl()
     c.setopt(c.URL, mainURL)
