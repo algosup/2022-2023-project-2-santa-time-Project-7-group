@@ -4,8 +4,6 @@ import (
 	"embed"
 	"io/fs"
 	"net/http"
-
-	"golang.org/x/crypto/acme/autocert"
 )
 
 //go:embed static
@@ -20,16 +18,13 @@ func handler() http.Handler {
 }
 
 func main() {
-	http.Handle("/", handler())
-	m := &autocert.Manager{
-		Cache:      autocert.DirCache("secret-dir"),
-		Prompt:     autocert.AcceptTOS,
-		Email:      "louis.delavenne@algosup.com",
-		HostPolicy: autocert.HostWhitelist("catchyoursanta.ml"),
-	}
-	s := &http.Server{
-		Addr:      ":https",
-		TLSConfig: m.TLSConfig(),
-	}
-	s.ListenAndServeTLS("", "")
+	mux := http.NewServeMux()
+	mux.Handle("/", handler())
+	redirect := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, "https://catchyoursanta.ml"+r.RequestURI, http.StatusMovedPermanently)
+	})
+
+	go http.ListenAndServe(":http", redirect)
+
+	http.ListenAndServeTLS(":https", "keys/fullchain.pem", "keys/privkey.pem", mux)
 }
