@@ -1,13 +1,11 @@
 body {
-    background-color: #f9f7f2 !important;
-    margin: 0px;
-    overflow: hidden;
-    top:0 !important;
+    background-color: #f9f7f2;
+    top: 0px !important;
+    display: grid;
 }
 
 .header {
     z-index: 5;
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -15,6 +13,8 @@ body {
     background: radial-gradient(circle, #6A994E 40%, #6A994E 70%);
     color: snow;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
 
     -webkit-user-select: none;
     /* Safari */
@@ -28,15 +28,14 @@ body {
 
 img {
     z-index: 5;
-    position: absolute;
     bottom: 0%;
     left: 0%;
 }
 
 .container_santa {
-    z-index: 3;
+    display: flex;
+    justify-content: center;
     top: 30vh;
-    position: absolute;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -51,7 +50,6 @@ img {
 
 h2 {
     left: 50%;
-    position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     font-size: 3em;
@@ -59,7 +57,6 @@ h2 {
 }
 
 #google_translate_element {
-    position: absolute;
     top: 0;
     right: 0;
 }
@@ -164,15 +161,14 @@ p {
     font-size: 20px;
 }
 
+body footer{
+    display: flex;
+}
 
 footer {
-    display: flex;
-    bottom: 0%;
-    text-align: left;
+    align-items: center;
     width: 100%;
-    height: 25%;
     background-color: bisque;
-    z-index: 1;
 
     -webkit-user-select: none;
     /* Safari */
@@ -184,19 +180,28 @@ footer {
     /* Standard */
 }
 
-.donate {
+footer > div {
+    padding-left: 1%;
+    padding-right: 10%;
+}
+
+.primaryfooter{
+    width: 50%;
+}
+
+.secondaryfooter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donate {  
     background-color: #BC4749;
     color: snow;
     border-radius: 40px;
     padding: 10px;
     width: 130px;
-    text-align: center;
     font-size: 20px;
-    z-index: 100;
-    position: fixed;
-    right: 250px;
-    bottom: 90px;
-
 }
 
 .donate:hover {
@@ -211,10 +216,9 @@ footer {
     width: 130px;
     text-align: center;
     font-size: 20px;
-    position: absolute;
     right: 550px;
     bottom: 90px;
-    z-index: 1;
+    
 }
 
 .dogs:hover {
@@ -228,10 +232,9 @@ footer {
     padding: 10px;
     text-align: center;
     font-size: 20px;
-    position: absolute;
     right: 250px;
     bottom: 10px;
-    z-index: 1;
+    
 }
 
 .frakids:hover {
@@ -245,10 +248,9 @@ footer {
     padding: 10px;
     text-align: center;
     font-size: 20px;
-    position: absolute;
     right: 550px;
     bottom: 10px;
-    z-index: 1;
+    
 }
 
 .akids:hover {
@@ -256,17 +258,13 @@ footer {
 }
 
 .animals {
-    position: absolute;
-    left: 880px;
-    bottom: 50px;
-    z-index: 1;
+    width: auto;
 }
 
 .foundations {
-    position: absolute;
     left: 700px;
     bottom: 160px;
-    z-index: 1;
+    
 }
 
 .algosup {
@@ -278,7 +276,7 @@ footer {
     bottom: 130px;
 }
 .motiv {
-    z-index: 1;
+    
     display: flex;
 }
 .suggestions {
