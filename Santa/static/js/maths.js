@@ -38,11 +38,12 @@ function calcSantaTime(loc, Z) {
 function getAnswer() {
     // Get the location
     document.getElementById("autocomplete_list").innerHTML = "";
+    let formatData = document.getElementById("location").value;
+    //replace spaces with +
+    formatData = formatData.replace(/ /g, "+");
     //use nominatim api to get lat and long
-    var url = "http://noel.gq/api?q=" + document.getElementById("location").value
-    console.log(url, {
-        mode: 'no-cors'
-    });
+    var url = "http://noel.gq/api?q=" + formatData;
+    console.log(url);
     //fetch the data
     fetch(url)
         .then(response => response.json())
@@ -77,19 +78,20 @@ function getAnswer() {
             } else {
                 // add li element to ul of id="autocomplete_list" with name of location
                 for (var i = 0; i < data.features.length; i++) {
-                    console.log(data.features[i].properties.name);
-                    console.log(data.features[i].properties.type);
-                    console.log("_______________________________\n");
                     if (data.features[i].properties.type != "city" && data.features[i].properties.type != "street" && data.features[i].properties.type != "house") {
                         continue;
                     }
 
                     var li = document.createElement("li");
                     let streetnbr, street, city, country;
-                    if (data.features[i].properties.streetnbr != null) {
-                        streetnbr = data.features[i].properties.streetnbr;
+                    if (data.features[i].properties.housenumber != null) {
+                        streetnbr = data.features[i].properties.housenumber;
                     } else {
-                        streetnbr = "";
+                        if (data.features[i].properties.name != null) {
+                            streetnbr = data.features[i].properties.name;
+                        } else {
+                            streetnbr = "";
+                        }
                     }
                     if (data.features[i].properties.street != null) {
                         street = data.features[i].properties.street;
@@ -100,12 +102,16 @@ function getAnswer() {
                         city = data.features[i].properties.city;
                     } else {
                         city = "";
+                        continue;
                     }
                     if (data.features[i].properties.country != null) {
                         country = data.features[i].properties.country;
                     } else {
                         country = "";
+                        continue;
                     }
+                    console.log(data.features[i].properties);
+                    console.log(streetnbr + " " + street + " " + city + " " + country);
 
                     li.appendChild(document.createTextNode(streetnbr + " " + street + " " + city + " " + country));
                     li.addEventListener("click", function () {
