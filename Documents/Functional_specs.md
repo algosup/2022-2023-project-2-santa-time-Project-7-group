@@ -1,20 +1,21 @@
-# Functional Specifications
+# **Functional Specifications**
 
-## Table of contents
+# Table of contents
 
-* [Project scope](#Projectscope)
+* [Project scope](#projectscope)
 * [Requirements](#requirements)
 * [Risks and Assumptions](#risks-and-assumptions)
 * [Configuration](#configuration)
 * [UI/UX](#uiux)
+* [Marketing](#marketing)
+    * [Personas](#personas)
 * [Calculating Santa's arrival time](#santa-arrival-time)
-	* [The math](#santa-math)
-	* [Example](#uexampleu)
-* [Personas](#personas)
+	* [The math](#the-math)
+	* [Example](#example)
 * [Sources](#sources)
 * [Glossary](#glossary)
 
-## Project scope
+# Project scope
 
 The end goal of this project is to create a website where users could look up when will Santa arrive with their presents.
 
@@ -31,7 +32,7 @@ The end goal of this project is to create a website where users could look up wh
 
 - Finding users for the working product is part of the development team's duties. For this end, the product must move into its production phase before the 25th of November 2022.
 
-## Requirements
+# Requirements
 
 - The product must be realised in Docker.
 - The product must be available online.
@@ -45,7 +46,7 @@ The end goal of this project is to create a website where users could look up wh
 - (optional) The website must exist in multiple languages and allow the user to change the language the website is displayed in.
     - (optional) The website must detect the browsers language and display itself accordingly.
 
-## Risks and Assumptions
+# Risks and Assumptions
 
 - The maximum number of users at peak traffic is unknown.
 
@@ -58,18 +59,36 @@ The end goal of this project is to create a website where users could look up wh
 
 - It is assumed that a functional version of the project can be placed into production before the 25th of November 2022.
 
-## Configuration
+# Configuration
 
 The user must be able to use the website without any additional effort necessary on their behalf (there is no need for logging in, etc..).
 
-## UI/UX <span id="uiux"></span>
+# UI/UX <span id="uiux"></span>
 
 The website must keep its style simple but Christmassy.
 The input field for the location must also include a placeholder that specifies that it is supposed to recieve a location.
 
-## Calculating Santa's arrival time <span id="santa-arrival-time"></span>
+# Marketing
 
-### <u>The math</u> <span id="santa-math"></span>
+## SEO (Search Engine Optimization)
+
+The website must be optimized to maximise visibility on well known search engines (ex.: Google).
+
+## Social Media Marketing and Advertising
+
+## Personas
+
+These are personas that represent potential customers can be found.
+
+![Dennis](./images/persona_1.png)
+![Lois](./images/persona_2.png)
+![Geremy](./images/persona_3.png)
+![Mark](./images/persona_4.png)
+![Anon](./images/persona_5.png)
+
+# Calculating Santa's arrival time <span id="santa-arrival-time"></span>
+
+## The math
 
 Santa's exact arrival time will always be exactly 00:00 25th December, <u>solar time</u>.
 Therefore, the following equation can be used to calculate the local solar midnight time in hours:
@@ -118,7 +137,7 @@ E = 0.3829280015475218
 
 ---
 
-### <u>Example</u>
+## Example
 
 Let's take Vierzon, France as an example.
 
@@ -152,23 +171,13 @@ seconds = 20
 
 In this example, Santa will arrive at 00:51:20 on the 25th of December.
 
-## Personas
-
-These are personas that represent potential customers can be found.
-
-![Dennis](./images/persona_1.png)
-![Lois](./images/persona_2.png)
-![Geremy](./images/persona_3.png)
-![Mark](./images/persona_4.png)
-![Anon](./images/persona_5.png)
-
-## Sources
+# Sources
 
 - [Solar time calculator](https://koch-tcm.ch/wp-content/uploads/the-calculator.html)
 - [How to calculate solar time](https://www.powerfromthesun.net/book.html)
 - [How to calculate solar time (simplified)](https://faculty.eng.ufl.edu/jonathan-scheffe/wp-content/uploads/sites/100/2020/08/Solar-Time1419.pdf)
 
-## Glossary
+# Glossary
 
 [^1]: API : An <u>Application Programming Interface (API)</u> is a way for two or more computer programs to communicate with each other.
 
