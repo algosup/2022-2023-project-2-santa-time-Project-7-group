@@ -4,6 +4,14 @@ body {
     display: grid;
 }
 
+body h1 font{
+    font-size: 50px;
+}
+
+body font{
+    font-size: x-large;
+}
+
 .header {
     z-index: 5;
     top: 0;
@@ -27,9 +35,7 @@ body {
 }
 
 img {
-    z-index: 5;
-    bottom: 0%;
-    left: 0%;
+    width: auto;
 }
 
 .container_santa {
@@ -44,9 +50,6 @@ img {
 
 }
 
-.container h1 {
-    text-align: center;
-}
 
 h2 {
     left: 50%;
@@ -77,10 +80,9 @@ body > .skiptranslate {
 }
 
 .inputs {
-    width: 60%;
+    width: 75%;
     display: flex;
     flex-direction: row;
-
 }
 
 .inputs input {
@@ -112,9 +114,13 @@ body > .skiptranslate {
     color: snow
 }
 
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    overflow: visible !important;
+}
+
 .inputs .location {
     background-color: white;
-    width: 20%;
+    width: inherit;
     text-align: center;
     cursor: pointer;
     border-radius: 40px;
@@ -178,6 +184,12 @@ footer {
     /* IE10+/Edge */
     user-select: none;
     /* Standard */
+}
+
+@media screen and (max-width: 1000px) {
+    footer{
+    flex-direction: column;
+    }
 }
 
 footer > div {
