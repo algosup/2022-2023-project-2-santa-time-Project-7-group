@@ -1,7 +1,8 @@
 body {
-    background-color: #f9f7f2;
-    top: 0px !important;
+    background-color:	#6A994E	!important;
+    top: 0% !important;
     display: grid;
+    min-height: 50% !important;
 }
 
 body h1 font{
@@ -13,16 +14,16 @@ body font{
 }
 
 .header {
-    z-index: 5;
     top: 0;
     left: 0;
     right: 0;
-    height: 70px;
+    max-height: 80px;
     background: radial-gradient(circle, #6A994E 40%, #6A994E 70%);
     color: snow;
     text-align: center;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     -webkit-user-select: none;
     /* Safari */
@@ -45,7 +46,7 @@ img {
     width: 100%;
     display: flex;
     flex-direction: column;
-    color: rgba(110, 145, 7, 1);
+    color: #FA0;
     align-items: center;
 
 }
@@ -57,11 +58,6 @@ h2 {
     transform: translate(-50%, -50%);
     font-size: 3em;
     color: hsla(255, 255%, 255%, .1);
-}
-
-#google_translate_element {
-    top: 0;
-    right: 0;
 }
 
 .goog-logo-link {
@@ -94,25 +90,22 @@ body > .skiptranslate {
     border-right: none;
     padding-left: 10px;
     font-weight: bold;
-    border: 2px solid #6A994E;
+    border: 2px solid #FA0;
 }
 
 .inputs button {
     width: 50px;
-    background: radial-gradient(circle, rgba(110, 145, 7, 1) 0%, rgba(110, 145, 7, 1) 70%);
-    color: snow;
-    border: 2px solid rgba(110, 145, 7, 1);
+    background: radial-gradient(circle, gold 0%, #FA0 70%);
+    color: darkgreen;
+    font-weight: bold;
+    font-size: large;
+    border: 2px solid gold;
 }
 
 .inputs .search {
     border-bottom-right-radius: 40px;
     border-top-right-radius: 40px;
     border-left: none;
-}
-
-.inputs .countries button {
-    border-radius: 40px;
-    color: snow
 }
 
 .bootstrap-select.btn-group .dropdown-toggle .filter-option {
@@ -122,7 +115,8 @@ body > .skiptranslate {
 .inputs .location {
     height: max-content;
     background-color: white;
-    width: inherit;
+    width: 50%;
+    height: 80%;
     text-align: center;
     cursor: pointer;
     border-radius: 40px;
@@ -165,27 +159,23 @@ button::selection {
 }
 
 p {
-    color: #BC4749;
+    color: #044f18;
     font-size: 20px;
 }
 
 body footer{
     display: flex;
+
 }
 
 footer {
-    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    background-color: bisque;
-
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* IE10+/Edge */
-    user-select: none;
-    /* Standard */
+    background-color: #7caf5e;
+    color: black;
+    text-align: center; 
 }
 
 @media screen and (max-width: 1000px) {
@@ -195,23 +185,33 @@ footer {
 }
 
 footer > div {
-    padding-left: 1%;
-    padding-right: 10%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .primaryfooter{
     width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 
 .secondaryfooter{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.donation {
+    display: flex;
+    height: 100%;
+    flex-direction:column-reverse;
 }
 
 .donate {  
     background-color: #BC4749;
-    color: snow;
+    color: #044f18;
     border-radius: 40px;
     padding: 10px;
     width: 130px;
@@ -222,77 +222,28 @@ footer > div {
     cursor: pointer;
 }
 
-.dogs {
-    background-color: #BC4749;
-    color: snow;
-    border-radius: 40px;
-    padding: 10px;
-    width: 130px;
-    text-align: center;
-    font-size: 20px;
-    right: 550px;
-    bottom: 90px;
-    
-}
-
-.dogs:hover {
-    cursor: pointer;
-}
-
-.frakids {
-    background-color: #BC4749;
-    color: snow;
-    border-radius: 40px;
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    right: 250px;
-    bottom: 10px;
-    
-}
-
-.frakids:hover {
-    cursor: pointer;
-}
-
-.akids {
-    background-color: #BC4749;
-    color: snow;
-    border-radius: 40px;
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    right: 550px;
-    bottom: 10px;
-    
-}
-
-.akids:hover {
-    cursor: pointer;
-}
-
 .animals {
     width: auto;
 }
 
 .foundations {
+    color: snow;
     left: 700px;
     bottom: 160px;
     
 }
 
-.algosup {
+img.algosup {
     bottom: 0;
     right: 0;
 }
 
 .logo {
-    bottom: 130px;
-}
-.motiv {
-    
+    bottom: 0;
     display: flex;
 }
+
+
 .suggestions {
     font-size: 18px;
     list-style-type: none;
@@ -312,4 +263,10 @@ footer > div {
     cursor: pointer;
     border-bottom: 0.1px grey solid;
     padding-left: 10px;
+}
+
+@media (max-width : 320px) {
+    #google_translate_element {
+        width: 100%;
+    }  
 }
