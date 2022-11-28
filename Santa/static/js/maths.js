@@ -113,7 +113,7 @@ function getAnswer() {
                     console.log(data.features[i].properties);
                     console.log(streetnbr + " " + street + " " + city + " " + country);
 
-                    li.appendChild(document.createTextNode(streetnbr + " " + street + " " + city + " " + country));
+                    li.appendChild(document.createTextNode(streetnbr + " " + street + ", " + city + ", " + country));
                     li.addEventListener("click", function () {
                         document.getElementById("location").value = this.innerText;
                         document.getElementById("autocomplete_list").innerHTML = "";
