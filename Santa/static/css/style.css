@@ -1,15 +1,15 @@
 body {
-    background-color:	#6A994E	!important;
+    background-color:   #6CA0DC   !important;
     top: 0% !important;
     display: grid;
     min-height: 50% !important;
 }
 
-body h1 font{
+body h1 font {
     font-size: 50px;
 }
 
-body font{
+body font {
     font-size: x-large;
 }
 
@@ -18,7 +18,7 @@ body font{
     left: 0;
     right: 0;
     max-height: 80px;
-    background: radial-gradient(circle, #6A994E 40%, #6A994E 70%);
+    background: radial-gradient(circle, #0047AB 30%, #0047AB 70%);
     color: snow;
     text-align: center;
     display: flex;
@@ -37,17 +37,22 @@ body font{
 
 img {
     width: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .container_santa {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     top: 30vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    color: #FA0;
+    color: #0047AB;
     align-items: center;
+    position: relative;
+    transform: translate(0%, -50%);
 
 }
 
@@ -58,6 +63,8 @@ h2 {
     transform: translate(-50%, -50%);
     font-size: 3em;
     color: hsla(255, 255%, 255%, .1);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .goog-logo-link {
@@ -71,7 +78,8 @@ h2 {
 .goog-te-gadget .goog-te-combo {
     color: #6A994E !important;
 }
-body > .skiptranslate {
+
+body>.skiptranslate {
     display: none;
 }
 
@@ -90,18 +98,18 @@ body > .skiptranslate {
     border-right: none;
     padding-left: 10px;
     font-weight: bold;
-    border: 2px solid #FA0;
+    border: 2px solid #0F52BA;
 }
 
 
 
 .inputs button {
     width: 50px;
-    background: radial-gradient(circle, gold 0%, #FA0 70%);
-    color: darkgreen;
+    background: radial-gradient(circle, #0F52BA 0%, #0F52BA 70%);
+    color: #73C2FB;
     font-weight: bold;
     font-size: large;
-    border: 2px solid gold;
+    border: 2px solid #0F52BA;
 }
 
 .inputs .search {
@@ -160,12 +168,66 @@ button::selection {
     color: snow;
 }
 
+.tree {
+    left: 50%;
+    position: relative;
+    transform: translate(-4%, 170%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.tree2 {
+    left: 50%;
+    position: relative;
+    transform: translate(-57%, -350%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.sled {
+    position: relative;
+    left: 50%;
+    transform: translate(-85%, 68%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.village {
+    position: relative;
+    left: 50%;
+    transform: translate(-30%, -56%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.presents {
+    position: relative;
+    left: 50%;
+    transform: translate(-68%, -196%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 p {
     color: #044f18;
     font-size: 20px;
 }
 
-body footer{
+body footer {
     display: flex;
 
 }
@@ -176,30 +238,30 @@ footer {
     bottom: 0;
     width: 100%;
     height: 9%;
-    background-color: #7caf5e;
+    background-color: #5DADEC;
     color: black;
-    text-align: center; 
+    text-align: center;
 }
 
 @media screen and (max-width: 1000px) {
-    footer{
+    footer {
         flex-direction: column;
     }
 }
 
-footer > div {
+footer>div {
     display: flex;
     flex-wrap: wrap;
 }
 
-.primaryfooter{
+.primaryfooter {
     width: 50%;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
 }
 
-.secondaryfooter{
+.secondaryfooter {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -208,8 +270,9 @@ footer > div {
     flex-wrap: wrap;
     width: 50%;
 }
-.donate {  
-    background-color: #BC4749;
+
+.donate {
+    background-color: #6CA0DC;
     color: #044f18;
     border-radius: 40px;
     padding: 10px;
@@ -227,8 +290,7 @@ footer > div {
 
 .foundations {
     color: snow;
-    display: flex
-    ;
+    display: flex;
 }
 
 .algosup {
@@ -266,5 +328,5 @@ footer > div {
 @media (max-width : 320px) {
     #google_translate_element {
         width: 100%;
-    }  
+    }
 }
