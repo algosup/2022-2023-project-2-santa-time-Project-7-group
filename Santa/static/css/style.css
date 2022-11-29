@@ -93,6 +93,8 @@ body > .skiptranslate {
     border: 2px solid #FA0;
 }
 
+
+
 .inputs button {
     width: 50px;
     background: radial-gradient(circle, gold 0%, #FA0 70%);
@@ -115,7 +117,7 @@ body > .skiptranslate {
 .inputs .location {
     height: max-content;
     background-color: white;
-    width: 50%;
+    width: 25%;
     height: 80%;
     text-align: center;
     cursor: pointer;
@@ -173,6 +175,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 9%;
     background-color: #7caf5e;
     color: black;
     text-align: center; 
@@ -199,16 +202,12 @@ footer > div {
 .secondaryfooter{
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    align-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    width: 50%;
 }
-
-.donation {
-    display: flex;
-    height: 100%;
-    flex-direction:column-reverse;
-}
-
 .donate {  
     background-color: #BC4749;
     color: #044f18;
@@ -228,9 +227,8 @@ footer > div {
 
 .foundations {
     color: snow;
-    left: 700px;
-    bottom: 160px;
-    
+    display: flex
+    ;
 }
 
 .algosup {
