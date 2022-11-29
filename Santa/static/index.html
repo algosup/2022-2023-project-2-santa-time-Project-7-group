@@ -8,6 +8,7 @@
     <title>Santa is watching! This is a warning.</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/snow.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css"
@@ -17,9 +18,9 @@
 </head>
 
 <body>
+    
     <div class="header">
         <img src="img/present.png" width="150" height="70">
-
         <h1 class="title">Merry Christmas!</h1>
         <div id="google_translate_element"></div>
         <script type="text/javascript">
@@ -40,7 +41,7 @@
             <div style="flex-direction: column;">
                 <div style="display: flex;">
                     <input type="text" id="location" placeholder="Enter your location">
-                    <button class="search" onclick="getAnswer()"><i class="fa fa-search search" ></i></button>
+                    <button class="search" onclick="getAnswer()"><i class="fa fa-search search"></i></button>
                 </div>
                 <ul class="suggestions" id="autocomplete_list" style="font-size: large;
             list-style-type: none;">
@@ -49,6 +50,21 @@
             <button class="location">Use my location</button>
         </div>
         <h1 id="time"></h1>
+    </div>
+    <div class="tree">
+        <img src="img/tree.png" width="200" height="200">
+    </div>
+    <div class="sled">
+        <img src="img/sled.png" width="200" height="200">
+    </div>
+    <div class="village">
+        <img src="img/village.png" width="500" height="400">
+    </div>
+    <div class="presents">
+        <img src="img/presents.png" width="250" height="250">
+    </div>
+    <div class="tree2">
+        <img src="img/tree.png" width="200" height="200">
     </div>
     <footer>
         <div class="primaryfooter">
@@ -69,6 +85,7 @@
     <script src="//unpkg.com/bootstrap-select@1.12.4/dist/js/bootstrap-select.min.js"></script>
     <script src="//unpkg.com/bootstrap-select-country@4.0.0/dist/js/bootstrap-select-country.min.js"></script>
     <script src="js/maths.js"></script>
+    <script src="js/snow.js"></script>
 </body>
 
 </html>
