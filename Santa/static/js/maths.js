@@ -458,6 +458,32 @@ function calcSantaTime(loc, Z) {
     return [h, m, s];
 }
 
+function timeZone(lat, long) {
+    //get the time zone
+    var url = "http://20.232.61.188:2004/tz/"+lat+"/"+long;
+    //cors policy 
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            //get utc offset
+            var Z = map.get(data.tz);
+            if (Z == undefined) {
+                //check if tz contains "GMT"
+                if (data.tz.includes("Etc/GMT")) {
+                    //set Z to the number after GMT
+                    Z = data.tz.substring(7);
+                }
+                return;
+            }
+            var final = calcSantaTime(long, Z);
+            timeDiff(final, Z);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+
 function getAnswer() {
     // Get the location
     document.getElementById("autocomplete_list").innerHTML = "";
@@ -478,36 +504,15 @@ function getAnswer() {
                 //get the lat and long
                 var lat = data.features[0].geometry.coordinates[1];
                 var long = data.features[0].geometry.coordinates[0];
-                //get the time zone
-                var url = "http://20.232.61.188:2004/tz/"+lat+"/"+long;
-                //cors policy 
-                fetch(url)
-                    .then(response => response.json())
-                    .then(data => {
-                        //get utc offset
-                        var Z = map.get(data.tz);
-                        if (Z == undefined) {
-                            //check if tz contains "GMT"
-                            if (data.tz.includes("Etc/GMT")) {
-                                //set Z to the number after GMT
-                                Z = data.tz.substring(7);
-                            }
-                            return;
-                        }
-                        var final = calcSantaTime(long, Z);
-                        timeDiff(final, Z);
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    })
+                
             } else {
+                var temp = [];
                 // add li element to ul of id="autocomplete_list" with name of location
                 for (var i = 0; i < data.features.length; i++) {
                     if (data.features[i].properties.type != "city" && data.features[i].properties.type != "street" && data.features[i].properties.type != "house") {
                         continue;
                     }
 
-                    var li = document.createElement("li");
                     let streetnbr, street, city, country;
                     if (data.features[i].properties.housenumber != null) {
                         streetnbr = data.features[i].properties.housenumber;
@@ -536,11 +541,26 @@ function getAnswer() {
                         continue;
                     }
 
+                    var li = document.createElement("li");
                     li.appendChild(document.createTextNode(streetnbr + " " + street + ", " + city + ", " + country));
+                    li.setAttribute("id", data.features[i].geometry.coordinates[1] + "," + data.features[i].geometry.coordinates[0]);
                     li.addEventListener("click", function () {
                         document.getElementById("location").value = this.innerText;
+                        //get the id and split it by the comma
+                        var id = this.id.split(",");
+                        //get the lat and long
+                        var lat = id[0];
+                        var long = id[1];
+                        //get the time zone
+                        timeZone(lat, long);
                         document.getElementById("autocomplete_list").innerHTML = "";
                     });
+                    //check if the li element is already in the list
+                    if (temp.includes(li.innerText)) {
+                        continue;
+                    }
+                    //add li to temp
+                    temp.push(li);
                     document.getElementById("autocomplete_list").appendChild(li);
                 }
             }
