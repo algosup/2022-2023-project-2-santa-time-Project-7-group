@@ -342,11 +342,7 @@ footer>div {
 }
 
 #calendar_btn {
-    display: flex;
-    margin-left: auto;
-    margin-right: 2%;
     margin-top: 0.25%;
-    width: auto;
     height: 90%;
 }
 
