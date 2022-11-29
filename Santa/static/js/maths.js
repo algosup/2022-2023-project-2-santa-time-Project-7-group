@@ -1,36 +1,35 @@
 // These are here for good
 const dst = 0;
-const E = 0.3829280015475218;
+const E = 0.383;
+
+function modulo(a, b) {
+    return a - b * Math.floor(a / b);
+}
 
 function LT(loc, Z) {
-    var location = loc;
-    equation = dst + ((15 * Z - location) / 15) - (E / 60)
-    return equation;
-
+    return dst + ((15 * Z - loc) / 15) - (E / 60);
 }
 
 function hours(lt) {
-    hours = Math.floor(lt);
-    return hours;
+    return Math.trunc(lt);
 
 }
 
-function minutes(lt) {
-    converter = lt * 60;
-    minutes = Math.floor(converter % 60);
-    return minutes;
+function minutes(lt,h) {
+    return Math.trunc(60*(lt-h));;
 
 }
 
-function seconds(lt) {
-    converter = lt * 60;
-    seconds = Math.floor(converter % 1 * 60);
-    return seconds;
+function seconds(lt,h,m) {
+    return Math.trunc(3600*(lt-h-m/60));;
 }
 
 function calcSantaTime(loc, Z) {
-    lt = LT(loc, Z);
-    return [hours(lt), minutes(lt), seconds(lt)];
+    var lt = LT(loc, Z);
+    var h = hours(lt);
+    var m = minutes(lt, h);
+    var s = seconds(lt, h, m);
+    return [h,m,s];
 }
 
 // console.log(calcSantaTime(2.0698, 1));
