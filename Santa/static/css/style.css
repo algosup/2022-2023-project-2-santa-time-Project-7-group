@@ -222,6 +222,12 @@ footer {
     }
 }
 
+@media screen and (max-height: 760px) {
+    .imgcontainers {
+        width: 7vh;
+    }
+}
+
 footer>div {
     display: flex;
     flex-wrap: wrap;
