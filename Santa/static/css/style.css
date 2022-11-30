@@ -466,3 +466,10 @@ footer>div {
     width: 90vw;
     max-width: fit-content;
 }
+
+.imgico{
+    height: auto;
+    max-height: 90%;
+    width: 90%;
+    max-width: fit-content;
+}
