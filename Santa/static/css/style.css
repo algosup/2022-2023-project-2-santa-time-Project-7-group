@@ -172,7 +172,7 @@ button::selection {
 .tree {
     left: 50%;
     position: relative;
-    transform: translate(-4%, 170%);
+    transform: translate(-4%, 168%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -182,7 +182,7 @@ button::selection {
 .tree2 {
     left: 50%;
     position: relative;
-    transform: translate(-57%, -350%);
+    transform: translate(-57%, -360%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -192,7 +192,7 @@ button::selection {
 .sled {
     position: relative;
     left: 50%;
-    transform: translate(-85%, 68%);
+    transform: translate(-85%, 63%);
     width: 100%;
     height: 100%;
     display: flex;
