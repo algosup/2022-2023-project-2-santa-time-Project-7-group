@@ -35,7 +35,7 @@ document.getElementById("tooSoon").onclick = function() {
     document.getElementById("tooSoon").style.display = "none";
 }
 
-img_out.onclick = function () {
+function imgOut() {
     document.getElementById("big_image").style.display = "none";
     document.getElementById("denter_grid").style.display = "block";
     document.getElementById("close_popup").style.display = "block";
