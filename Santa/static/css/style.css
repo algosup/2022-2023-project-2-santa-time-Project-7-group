@@ -168,14 +168,14 @@ button::selection {
 
 .imgcontainers {
     overflow: hidden;
+    position: fixed;
     display: flex;
     align-items: flex-end;
     width: 100%;
-    bottom: 0;
+    bottom: 75px;
     /* height: 74vh; */
     max-height: 74vh;
     /* padding-bottom: 10%; */
-    margin-bottom: -21.5%;
 
 }
 
