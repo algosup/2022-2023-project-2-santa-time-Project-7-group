@@ -199,6 +199,7 @@ p {
 
 body footer {
     display: flex;
+    flex-direction: row;
 
 }
 
@@ -207,7 +208,6 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 9%;
     background-color: #5DADEC;
     color: black;
     text-align: center;
@@ -216,6 +216,9 @@ footer {
 @media screen and (max-width: 1000px) {
     footer {
         flex-direction: column;
+    }
+    .logo {
+        visibility: hidden;
     }
 }
 
@@ -227,8 +230,8 @@ footer>div {
 .primaryfooter {
     width: 50%;
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-end;
+    flex-wrap: nowrap;
 }
 
 .secondaryfooter {
@@ -246,12 +249,15 @@ footer>div {
     color: #044f18;
     border-radius: 40px;
     padding: 10px;
-    width: 130px;
-    font-size: 20px;
+    width: 100%;
 }
 
 .donate:hover {
     cursor: pointer;
+}
+
+.donate font {
+    font-size: medium !important;
 }
 
 .animals {
