@@ -1,5 +1,5 @@
 body {
-    overflow: hidden;
+    overflow: hidden !important;
     background-color: #6CA0DC !important;
     top: 0% !important;
     display: flex;
@@ -167,6 +167,7 @@ button::selection {
 }
 
 .imgcontainers {
+    overflow: hidden;
     display: flex;
     align-items: flex-end;
     width: 100%;
