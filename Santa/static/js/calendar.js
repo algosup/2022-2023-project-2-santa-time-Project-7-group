@@ -23,6 +23,11 @@ function bigImage (i) {
     if(i <= d){
         document.getElementById("big_image").style.display = "flex";
         document.getElementById("denter_grid").style.display = "none";
+
+        imgIco("./img/tree.png", i)
+
+        localStorage.setItem(`div_${i}`, "./img/tree.png");
+
         document.getElementById("close_popup").style.display = "none";
     }
     else {
@@ -43,16 +48,41 @@ function imgOut() {
 
 function div24() {
     var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
-    var arr = new shuffleArray(arr1);
-    for (let i = 0; i < arr.length; i++) {
-        let div = document.createElement("div");    
-        div.innerHTML = arr[i];
-        div.id = `div_id${arr[i]}`;
-        div.setAttribute("onclick" , `bigImage(${arr[i]})`);
-        grid.appendChild(div);
+    //arr1 = new shuffleArray(arr1);
+    for (let i = 0; i < arr1.length; i++) {
+        makeDiv24(arr1[i])
     }
 }
 
 function shuffleArray(array) {
     return array.sort(() => Math.random() - 0.5);
+}
+
+function makeDiv24(i) {
+    a = localStorage.getItem(`div_${i}`)
+    if(a == null){
+        let div = document.createElement("div");    
+        div.innerHTML = i;
+        div.id = `div_id${i}`;
+        div.setAttribute("onclick" , `bigImage(${i})`);
+        grid.appendChild(div);
+    }else{
+        let div = document.createElement("div");
+        div.id = `div_id${i}`;
+        div.setAttribute("onclick" , `bigImage(${i})`);
+        grid.appendChild(div);
+
+        imgIco(a, i)
+    }
+}
+
+function imgIco(inglink, i) {
+    img = document.createElement("img")
+    img.src = inglink
+    img.classList.add("imgico");
+
+    document.getElementById(`div_id${i}`).innerHTML = ""
+    document.getElementById(`div_id${i}`).appendChild(img)
+    document.getElementById(`div_id${i}`).style.display = "flex"
+    document.getElementById(`div_id${i}`).style.justifyContent ="center"
 }
