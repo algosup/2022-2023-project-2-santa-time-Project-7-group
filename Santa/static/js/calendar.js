@@ -4,6 +4,8 @@ var btn_out = document.getElementById("close_popup");
 var img_out = document.getElementById("close_img");
 var grid = document.getElementById("grid");
 
+var imgPath = "./img/gachas/";
+
 btn_out.onclick = function () {
     calendar.style.display = "none";
 };
@@ -24,9 +26,9 @@ function bigImage (i) {
         document.getElementById("big_image").style.display = "flex";
         document.getElementById("denter_grid").style.display = "none";
 
-        imgIco("./img/tree.png", i)
+        imgIco(imgPath + getGacha(d), i)
 
-        localStorage.setItem(`div_${i}`, "./img/tree.png");
+        document.getElementById("imgdisp").src = imgPath + getGacha(d)
 
         document.getElementById("close_popup").style.display = "none";
     }
@@ -47,10 +49,11 @@ function imgOut() {
 }
 
 function div24() {
-    var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
-    //arr1 = new shuffleArray(arr1);
+    var arr1 = [...Array(24).keys()].map(x => ++x);
+
+    // arr1 = new shuffleArray(arr1);
     for (let i = 0; i < arr1.length; i++) {
-        makeDiv24(arr1[i])
+        makeDiv24(arr1[i]);
     }
 }
 
