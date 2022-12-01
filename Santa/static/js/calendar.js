@@ -28,6 +28,8 @@ function bigImage (i) {
 
         if(verifGachaHistory(d)) gacha(d);
 
+        localStorage.setItem(`div_${d}`, true);
+
         imgIco(imgPath + getGacha(d), i);
 
         document.getElementById("imgdisp").src = imgPath + getGacha(d);
@@ -77,7 +79,7 @@ function makeDiv24(i) {
         div.setAttribute("onclick" , `bigImage(${i})`);
         grid.appendChild(div);
 
-        imgIco(a, i)
+        imgIco(imgPath + getGacha(i), i)
     }
 }
 
@@ -88,6 +90,4 @@ function imgIco(inglink, i) {
 
     document.getElementById(`div_id${i}`).innerHTML = ""
     document.getElementById(`div_id${i}`).appendChild(img)
-    document.getElementById(`div_id${i}`).style.display = "flex"
-    document.getElementById(`div_id${i}`).style.justifyContent ="center"
 }
