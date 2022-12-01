@@ -65,6 +65,14 @@ h2 {
     flex-wrap: wrap;
 }
 
+#google_translate_element select{
+    background:#f6edfd;
+    color:#383ffa;
+    border: blue;
+    border-radius:3px;
+    padding:6px 8px
+    }
+
 .goog-logo-link {
     display: none !important;
 }
@@ -76,7 +84,7 @@ h2 {
 .goog-te-gadget .goog-te-combo {
     color: #6A994E !important;
 }
-
+  
 body>.skiptranslate {
     display: none;
 }
