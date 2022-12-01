@@ -324,7 +324,7 @@ footer>div {
     height: 100vh;
     backdrop-filter: blur(4px);
     padding: 10%;
-    padding-top: 5%;
+    padding-top: 3%;
     display: none;
 }
 
@@ -355,7 +355,7 @@ footer>div {
     color: #fff200;
     background: #e40000;
     text-align: center;
-    border-color: #fff200;
+    border-color: #ffffff;
     border-style: solid;
     border-width: 0.5vh;
     border-radius: 5%;
@@ -493,15 +493,21 @@ footer>div {
 
 .imgdisp {
     height: auto;
-    max-height: 90vh;   
+    max-height: 70vh;
     width: 90vw;
     max-width: fit-content;
 }
 
-.imgico{
-    border-radius: 3px;
-    height: 100%;
-    width: 100%;
+@media (min-aspect-ratio: 1/1) {
+    .popup_calendar{
+        padding-top: 1%;
+    }
+    .imgdisp {
+        height: 70vh;
+        max-height: fit-content;
+        width: auto;
+        max-width: 80vw;
+    }
 }
 
 
@@ -626,5 +632,94 @@ footer>div {
       z-index: 5;
     }
   }
-  
-  
+
+.imgico{
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+}
+
+.epic{
+    background-color: rgb(255, 127, 255);
+    display: flex;
+    justify-content: center;
+}
+
+.epic > p {
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0.5vh 0.5vh #000;
+    font-size: 10vh;
+}
+
+.common{
+    background-color: rgb(119, 255, 74);
+    display: flex;
+    justify-content: center;
+}
+
+.common > p {
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0.5vh 0.5vh #000;
+    font-size: 10vh;
+}
+
+.rare{
+    background-color: rgb(71, 182, 255);
+    display: flex;
+    justify-content: center;
+}
+
+.rare > p {
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0.5vh 0.5vh #000;
+    font-size: 10vh;
+}
+
+.legendary{
+    background-color: #ffd700;
+    display: flex;
+    justify-content: center;
+}
+
+.legendary > p {
+    font-weight: bold;
+    color: #000;
+    text-shadow: 0.5vh 0.5vh #fff;
+    font-size: 10vh;
+}
+
+.mythical{
+    background-color: #e30000;
+    display: flex;
+    justify-content: center;
+}
+
+.mythical > p {
+    font-weight: bold;
+    color: #000;
+    text-shadow: 0.5vh 0.5vh #fff;
+    font-size: 10vh;
+}
+
+.cico {
+    border-color: rgb(119, 255, 74) !important;
+}
+
+.rico {
+    border-color: rgb(71, 182, 255) !important;
+}
+
+.eico {
+    border-color: rgb(255, 127, 255) !important;
+}
+
+.lico {
+    border-color: #ffd700 !important;
+}
+
+.mico {
+    border-color: #e30000 !important;
+}

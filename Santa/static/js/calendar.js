@@ -3,6 +3,7 @@ var btn_in = document.getElementById("calendar_btn");
 var btn_out = document.getElementById("close_popup");
 var img_out = document.getElementById("close_img");
 var grid = document.getElementById("grid");
+var rarittyID = document.getElementById("rarity");
 
 var imgPath = "./img/gachas/";
 
@@ -13,26 +14,29 @@ btn_out.onclick = function () {
 btn_in.onclick = function () {
     calendar.style.display = "block";
     div = document.getElementById("div_id1");
-    if (div == 'undefined' || div == null){
+    if (div == 'undefined' || div == null) {
         div24();
     }
 };
 
-function bigImage (i) {
+function bigImage(i) {
     //const d = new Date();
     let date = new Date();
-    let d = date.getDate();
-    if(i <= d){
+    let d = date.getDate(); 
+    if (i <= d) {
         document.getElementById("big_image").style.display = "flex";
         document.getElementById("denter_grid").style.display = "none";
 
-        if(verifGachaHistory(d)) gacha(d);
+        if (verifGachaHistory(i)) gacha(i);
 
-        localStorage.setItem(`div_${d}`, true);
+        rarity = Array.from(getGacha(i))[0];
+        SetRarity(rarity)
+        localStorage.setItem(`div_${i}`, rarity);
 
-        imgIco(imgPath + getGacha(d), i);
+        imgIco(imgPath + getGacha(i), i);
+        SetRarityIco(rarity, i)
 
-        document.getElementById("imgdisp").src = imgPath + getGacha(d);
+        document.getElementById("imgdisp").src = imgPath + getGacha(i);
 
         document.getElementById("close_popup").style.display = "none";
     }
@@ -42,7 +46,7 @@ function bigImage (i) {
     }
 }
 
-document.getElementById("tooSoon").onclick = function() {
+document.getElementById("tooSoon").onclick = function () {
     document.getElementById("tooSoon").style.display = "none";
 }
 
@@ -67,19 +71,22 @@ function shuffleArray(array) {
 
 function makeDiv24(i) {
     a = localStorage.getItem(`div_${i}`)
-    if(a == null){
-        let div = document.createElement("div");    
+    if (a == null) {
+        let div = document.createElement("div");
         div.innerHTML = i;
         div.id = `div_id${i}`;
-        div.setAttribute("onclick" , `bigImage(${i})`);
+        div.setAttribute("onclick", `bigImage(${i})`);
+        div.className = "notranslate"
         grid.appendChild(div);
-    }else{
+    } else {
         let div = document.createElement("div");
         div.id = `div_id${i}`;
-        div.setAttribute("onclick" , `bigImage(${i})`);
+        div.setAttribute("onclick", `bigImage(${i})`);
+        div.className = "notranslate"
         grid.appendChild(div);
 
         imgIco(imgPath + getGacha(i), i)
+        SetRarityIco(a, i)
     }
 }
 
@@ -90,4 +97,47 @@ function imgIco(inglink, i) {
 
     document.getElementById(`div_id${i}`).innerHTML = ""
     document.getElementById(`div_id${i}`).appendChild(img)
+}
+
+function SetRarity(r) {
+    switch (r) {
+        case "r":
+            rarittyID.className = "rare"
+            rarittyID.childNodes[0].textContent = "RARE"
+            break;
+        case "e":
+            rarittyID.className = "epic"
+            rarittyID.childNodes[0].textContent = "EPIC"
+            break;
+        case "l":
+            rarittyID.className = "legendary"
+            rarittyID.childNodes[0].textContent = "LEGENDARY"
+            break;
+        case "m":
+            rarittyID.className = "mythical"
+            rarittyID.childNodes[0].textContent = "MYTHICAL"
+            break;
+        default:
+            rarittyID.className = "common"
+            rarittyID.childNodes[0].textContent = "COMMON"
+    }
+}
+
+function SetRarityIco(r, i) {
+    switch (r) {
+        case "r":
+            document.getElementById(`div_id${i}`).className = "rico"
+            break;
+        case "e":
+            document.getElementById(`div_id${i}`).className = "eico"
+            break;
+        case "l":
+            document.getElementById(`div_id${i}`).className = "lico"
+            break;
+        case "m":
+            document.getElementById(`div_id${i}`).className = "mico"
+            break;
+        default:
+            document.getElementById(`div_id${i}`).className = "cico"
+    }
 }
