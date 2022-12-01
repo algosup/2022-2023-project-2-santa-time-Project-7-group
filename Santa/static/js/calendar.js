@@ -26,9 +26,11 @@ function bigImage (i) {
         document.getElementById("big_image").style.display = "flex";
         document.getElementById("denter_grid").style.display = "none";
 
-        imgIco(imgPath + getGacha(d), i)
+        if(verifGachaHistory(d)) gacha(d);
 
-        document.getElementById("imgdisp").src = imgPath + getGacha(d)
+        imgIco(imgPath + getGacha(d), i);
+
+        document.getElementById("imgdisp").src = imgPath + getGacha(d);
 
         document.getElementById("close_popup").style.display = "none";
     }
