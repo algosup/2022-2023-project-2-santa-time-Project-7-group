@@ -3,7 +3,7 @@ function CountdownTracker(label, value){
 
     var el = document.createElement('span');
   
-    el.className = 'flip-clock__piece';
+    el.className = 'flip-clock__piece notranslate';
     el.innerHTML = '<b class="flip-clock__card card"><b class="card__top"></b><b class="card__bottom"></b><b class="card__back"><b class="card__bottom"></b></b></b>' + '<span class="flip-clock__slot">' + label + '</span>';
   
     this.el = el;
