@@ -331,10 +331,16 @@ footer>div {
 #calendar_btn {
     margin-top: 0.25%;
     height: 90%;
+    width: fit-content;
 }
 
 #calendar_btn img {
-    width: 88px;
+    width: 10vh;
+}
+@media (min-aspect-ratio: 1/1) {
+    #calendar_btn img {
+        width: 10vw;
+    }
 }
 
 #grid {

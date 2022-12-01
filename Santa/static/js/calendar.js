@@ -22,21 +22,21 @@ btn_in.onclick = function () {
 function bigImage(i) {
     //const d = new Date();
     let date = new Date();
-    let d = date.getDate();
+    let d = date.getDate(); 
     if (i <= d) {
         document.getElementById("big_image").style.display = "flex";
         document.getElementById("denter_grid").style.display = "none";
 
-        if (verifGachaHistory(d)) gacha(d);
+        if (verifGachaHistory(i)) gacha(i);
 
-        rarity = Array.from(getGacha(d))[0];
+        rarity = Array.from(getGacha(i))[0];
         SetRarity(rarity)
-        localStorage.setItem(`div_${d}`, rarity);
+        localStorage.setItem(`div_${i}`, rarity);
 
-        imgIco(imgPath + getGacha(d), i);
+        imgIco(imgPath + getGacha(i), i);
         SetRarityIco(rarity, i)
 
-        document.getElementById("imgdisp").src = imgPath + getGacha(d);
+        document.getElementById("imgdisp").src = imgPath + getGacha(i);
 
         document.getElementById("close_popup").style.display = "none";
     }
@@ -76,11 +76,13 @@ function makeDiv24(i) {
         div.innerHTML = i;
         div.id = `div_id${i}`;
         div.setAttribute("onclick", `bigImage(${i})`);
+        div.className = "notranslate"
         grid.appendChild(div);
     } else {
         let div = document.createElement("div");
         div.id = `div_id${i}`;
         div.setAttribute("onclick", `bigImage(${i})`);
+        div.className = "notranslate"
         grid.appendChild(div);
 
         imgIco(imgPath + getGacha(i), i)
