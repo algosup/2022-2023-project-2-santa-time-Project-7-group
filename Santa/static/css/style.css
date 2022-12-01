@@ -82,6 +82,7 @@ body>.skiptranslate {
 }
 
 .inputs {
+    z-index: 1;
     width: 75%;
     display: flex;
     flex-direction: column;
@@ -174,7 +175,7 @@ button::selection {
     width: 100%;
     bottom: 75px;
     /* height: 74vh; */
-    max-height: 74vh;
+    max-height:  26vh;
     /* padding-bottom: 10%; */
 
 }

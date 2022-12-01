@@ -574,7 +574,7 @@ function timeDiff(arr, utc) {
     //get current day and month 
     var date = new Date();
     var day = 0;
-    var month = 24
+    var month = date.getMonth() + 1;
     var hours = 0;
     var minutes = 0;
     var seconds = 0;
@@ -591,7 +591,7 @@ function timeDiff(arr, utc) {
         }
         //add days in december if not dec
         if (month != 12) {
-            day += 23;
+            day += 24;
         }
     } else {
         day = 24 - date.getDate();
