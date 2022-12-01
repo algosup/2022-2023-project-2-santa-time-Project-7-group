@@ -517,7 +517,7 @@ footer>div {
   .card__back::after {
     display: block;
     height: 0.72em;;
-    color: #ccc;
+    color: #fff;
     background: #222;
     padding: 0.25em 0.25em;
     border-radius: 0.15em 0.15em 0 0;
@@ -533,7 +533,6 @@ footer>div {
     top: 50%;
     left: 0;
     border-top: solid 1px #000;
-    background: #393939; 
     border-radius: 0 0 0.15em 0.15em;; 
     pointer-events: none;
     overflow: hidden;

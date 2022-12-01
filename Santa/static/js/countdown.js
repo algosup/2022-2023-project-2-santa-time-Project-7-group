@@ -3,7 +3,7 @@ function CountdownTracker(label, value){
 
     var el = document.createElement('span');
   
-    el.className = 'flip-clock__piece notranslate';
+    el.className = 'flip-clock__piece notranslates';
     el.innerHTML = '<b class="flip-clock__card card"><b class="card__top"></b><b class="card__bottom"></b><b class="card__back"><b class="card__bottom"></b></b></b>' + '<span class="flip-clock__slot">' + label + '</span>';
   
     this.el = el;
@@ -106,6 +106,6 @@ function CountdownTracker(label, value){
   function createClock(timeend){
     var c = new Clock(timeend, function(){ alert('countdown complete') });
     var parentNode = document.getElementsByClassName("container_santa")[0];
-    console.log(c.el);
+    //console.log(c.el);
     parentNode.appendChild(c.el);
 }
