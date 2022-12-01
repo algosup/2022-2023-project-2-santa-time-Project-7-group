@@ -126,6 +126,7 @@ body>.skiptranslate {
     background-color: white;
     width: auto;
     height: 80%;
+    place-self: center;
     text-align: center;
     cursor: pointer;
     border-radius: 40px;
