@@ -554,6 +554,7 @@ function getAnswer() {
                         //get the time zone
                         timeZone(lat, long);
                         document.getElementById("autocomplete_list").innerHTML = "";
+                        document.getElementById("autocomplete_list").style.height = "0px";
                     });
                     //check if the li element is already in the list
                     if (temp.includes(li.innerText)) {
@@ -561,6 +562,7 @@ function getAnswer() {
                     }
                     //add li to temp
                     temp.push(li);
+                    document.getElementById("autocomplete_list").style.height = "68%";
                     document.getElementById("autocomplete_list").appendChild(li);
                 }
             }

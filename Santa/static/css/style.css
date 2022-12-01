@@ -126,6 +126,7 @@ body>.skiptranslate {
     background-color: white;
     width: auto;
     height: 80%;
+    place-self: center;
     text-align: center;
     cursor: pointer;
     border-radius: 40px;
@@ -288,12 +289,14 @@ footer>div {
 
 
 .suggestions {
+    position: fixed;
     font-size: 18px;
     list-style-type: none;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background: beige;
-    width: 89.5%;
+    top: 105px;
+    width: 72.5%;
     padding-left: 0;
     overflow-y: auto;
 }
@@ -317,8 +320,8 @@ footer>div {
 .popup_calendar {
     z-index: 999;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     backdrop-filter: blur(4px);
     padding: 10%;
     padding-top: 5%;
@@ -364,21 +367,24 @@ footer>div {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 99vh;
     backdrop-filter: blur(4px);
-    padding: 10%;
-    padding-top: 5%;
     display: none;
+    justify-content: center;
+    align-items: center;
 }
 
 #tooSoon>p {
-    background-color: #fff200;
-    border-radius: 10px;
+    background-color: #e40000;
+    border-radius: 1vw;
     border-style: solid;
-    border-width: 1vw;
+    border-width: 1vh;
+    padding: 2vh;
     border-color: #fff200;
-    font-size: 12vw;
+    font-size: 8vw;
     width: fit-content;
+    height: fit-content;
+    color: #fff200;
 }
 
 @media (min-aspect-ratio: 450/750) {

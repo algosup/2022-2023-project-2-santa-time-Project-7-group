@@ -31,7 +31,7 @@ function bigImage (i) {
         document.getElementById("close_popup").style.display = "none";
     }
     else {
-        document.getElementById("tooSoon").style.display = "block";
+        document.getElementById("tooSoon").style.display = "flex";
         document.getElementById("setText").innerHTML = `${i - d} days too soon`;
     }
 }
