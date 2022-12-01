@@ -351,7 +351,7 @@ footer>div {
 }
 
 #grid>div {
-    font-size: 12vw;
+    font-size: 9vw; 
     color: #fff200;
     background: #e40000;
     text-align: center;
@@ -362,6 +362,7 @@ footer>div {
     display: flex;
     justify-content: center;
     align-items: center;
+    aspect-ratio: 1;
 }
 
 #tooSoon {
@@ -384,7 +385,7 @@ footer>div {
     border-width: 1vh;
     padding: 2vh;
     border-color: #fff200;
-    font-size: 8vw;
+    font-size: 7vw;
     width: fit-content;
     height: fit-content;
     color: #fff200;
@@ -392,11 +393,11 @@ footer>div {
 
 @media (min-aspect-ratio: 450/750) {
     #grid {
-        grid-template-columns: repeat(auto-fill, minmax(10vh, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(9vh, 1fr));
     }
 
     #grid>div {
-        font-size: 10vw;
+        font-size: 8vw;
     }
 
     #tooSoon {
@@ -410,7 +411,7 @@ footer>div {
     }
 
     #grid>div {
-        font-size: 8vw;
+        font-size: 7vw;
     }
 
     #tooSoon {
@@ -420,11 +421,25 @@ footer>div {
 
 @media (min-aspect-ratio: 850/750) {
     #grid {
-        grid-template-columns: repeat(auto-fill, minmax(16vh, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(14vh, 1fr));
     }
 
     #grid>div {
+        font-size: 6vw;
+    }
+
+    #tooSoon {
         font-size: 7vw;
+    }
+}
+
+@media (min-aspect-ratio: 1100/750) {
+    #grid {
+        grid-template-columns: repeat(auto-fill, minmax(14vh, 1fr));
+    }
+
+    #grid>div {
+        font-size: 5vw;
     }
 
     #tooSoon {
@@ -438,7 +453,7 @@ footer>div {
     }
 
     #grid>div {
-        font-size: 5vw;
+        font-size: 4.8vw;
     }
 
     #tooSoon {
@@ -452,7 +467,7 @@ footer>div {
     }
 
     #grid>div {
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
 
     #tooSoon {
@@ -478,7 +493,7 @@ footer>div {
 
 .imgdisp {
     height: auto;
-    max-height: 90vh;
+    max-height: 90vh;   
     width: 90vw;
     max-width: fit-content;
 }
