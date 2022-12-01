@@ -620,6 +620,7 @@ function timeDiff(arr, utc) {
         hours -= 24;
         day++;
     }
-    document.getElementById("time").innerText = day + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
-
+    document.getElementById("time").innerText = day + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds \n Which is in:";
+    enddate = new Date(date.getFullYear(), month, 24, arr[0], arr[1], arr[2]);
+    createClock(enddate);
 }
