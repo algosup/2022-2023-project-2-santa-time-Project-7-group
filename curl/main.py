@@ -4,12 +4,13 @@ from io import BytesIO
 import multiprocessing
 from multiprocessing import Pool
 import random
+import time
 
 
 
 # prossess sound into pngs
 def process(f):
-    mainURL = f'http://13.73.147.115:80/api?q={random.randint(0,90)}{random.randint(0,99) * 10}%20france'
+    mainURL = f'https://13.73.147.115:443/api?q={random.randint(0,90)}{random.randint(0,99) * 10}%20france'
     buffer = BytesIO()
     c = pycurl.Curl()
     c.setopt(c.URL, mainURL)
@@ -18,7 +19,6 @@ def process(f):
     c.perform()
     c.close()
 
-    body = buffer.getvalue()
     print(f)
 
 
@@ -29,7 +29,7 @@ def thread():
     pool = Pool(processes=max_processors)
     f_list = []
 
-    for i in range(6400000):
+    for i in range(1000):
         # pass the df to process function
         f = pool.apply_async(process, [i])
         f_list.append(f)
@@ -41,4 +41,7 @@ def thread():
                 del f_list[:]
 
 if __name__ == "__main__":
+    start = time.time()
     thread()
+    end = time.time()
+    print(end-start)
