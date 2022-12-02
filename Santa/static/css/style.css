@@ -663,7 +663,6 @@ footer>div {
     font-weight: bold;
     color: #fff;
     text-shadow: 0.5vh 0.5vh #000;
-    font-size: 10vh;
 }
 
 .common{
@@ -676,7 +675,6 @@ footer>div {
     font-weight: bold;
     color: #fff;
     text-shadow: 0.5vh 0.5vh #000;
-    font-size: 10vh;
 }
 
 .rare{
@@ -689,7 +687,6 @@ footer>div {
     font-weight: bold;
     color: #fff;
     text-shadow: 0.5vh 0.5vh #000;
-    font-size: 10vh;
 }
 
 .legendary{
@@ -702,7 +699,6 @@ footer>div {
     font-weight: bold;
     color: #000;
     text-shadow: 0.5vh 0.5vh #fff;
-    font-size: 10vh;
 }
 
 .mythical{
@@ -715,7 +711,6 @@ footer>div {
     font-weight: bold;
     color: #000;
     text-shadow: 0.5vh 0.5vh #fff;
-    font-size: 10vh;
 }
 
 .cico {
@@ -741,4 +736,14 @@ footer>div {
 .mico {
     background-color:  #e30000 !important;
     border-color: #e30000 !important;
+}
+
+#rarity > p{
+    font-size: 11vw;
+}
+
+@media (min-aspect-ratio: 1/1){
+    #rarity > p{
+        font-size: 11vh;
+    }
 }
