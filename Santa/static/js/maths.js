@@ -2,6 +2,8 @@
 const dst = 0;
 const E = 0.383;
 
+
+//#region map
 //make map of timezones
 var map = new Map();
 //add to map the timezones
@@ -426,7 +428,7 @@ map.set("Africa/Lusaka", +2);
 map.set("Africa/Harare", +2);
 map.set("Europe/Mariehamn", +2);
 
-
+//#endregion
 
 function modulo(a, b) {
     return a - b * Math.floor(a / b);
@@ -456,6 +458,18 @@ function calcSantaTime(loc, Z) {
     var m = minutes(lt, h);
     var s = seconds(lt, h, m);
     return [h, m, s];
+}
+
+function useGPS() {
+    if (navigator.geolocation) {
+        const options = {
+            timeout: 5000,
+        };
+        navigator.geolocation.getCurrentPosition(position => {timeZone(position.coords.latitude, position.coords.longitude)},err => console.log(err),options);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+
 }
 
 function timeZone(lat, long) {
