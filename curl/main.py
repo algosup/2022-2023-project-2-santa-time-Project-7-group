@@ -10,7 +10,7 @@ import time
 
 # prossess sound into pngs
 def process(f):
-    mainURL = f'https://13.73.147.115:443/api?q={random.randint(0,90)}{random.randint(0,99) * 10}%20france'
+    mainURL = f'http://13.73.147.115:80/api?q={random.randint(0,90)}{random.randint(0,99) * 10}%20france'
     buffer = BytesIO()
     c = pycurl.Curl()
     c.setopt(c.URL, mainURL)
