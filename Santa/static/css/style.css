@@ -1,4 +1,7 @@
-body {
+body font {
+    font-size: x-large;
+}
+.bodystyle{
     overflow: hidden !important;
     background-color: #6CA0DC !important;
     top: 0% !important;
@@ -6,12 +9,6 @@ body {
     min-height: 50% !important;
     flex-direction: column;
 }
-
-
-body font {
-    font-size: x-large;
-}
-
 header {
     top: 0;
     left: 0;
@@ -33,12 +30,31 @@ header {
     /* Standard */
 }
 
+nav{
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+}
+
 img {
     width: auto;
     display: flex;
     flex-wrap: wrap;
 }
-
+.entered{
+    background-image: url("/Santa/static/img/star.jpg") !important;
+    background-size: auto;
+    background-repeat: repeat;
+    overflow: hidden !important;
+    top: 0% !important;
+    display: flex;
+    min-height: 50% !important;
+    flex-direction: column;
+}
+.merry{
+    width: 100%;
+    margin-right: 3%;
+}
 .container_santa {
     display: flex;
     flex-wrap: wrap;
@@ -53,8 +69,9 @@ img {
     transform: translate(0%, -50%);
 
 }
-
-
+.image-color{
+    filter: contrast(0.1);
+}
 h2 {
     left: 50%;
     top: 50%;
@@ -237,28 +254,26 @@ footer {
         width: 7vh;
     }
 }
-
+@media screen and (max-width:450px){
+    nav{
+        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+    #calendar_btn img{
+        margin-left: 0% !important;
+    }
+}
 footer>div {
     display: flex;
     flex-wrap: wrap;
 }
-
-.primaryfooter {
-    width: 50%;
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: nowrap;
-}
-
-.secondaryfooter {
+ footer{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    align-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    width: 50%;
-}
+    justify-content: space-around;
+ }
+
 
 .donate {
     background-color: #6CA0DC;
@@ -292,7 +307,7 @@ footer>div {
 
 .logo {
     bottom: 0;
-    display: flex;
+    mix-blend-mode: lighten;
 }
 
 
@@ -340,11 +355,17 @@ footer>div {
     margin-top: 0.25%;
     height: 90%;
     width: fit-content;
+    display: flex;
+
 }
 
 #calendar_btn img {
-    width: 10vh;
+    width: 6vh !important;
+    margin-left: 30%;
+    filter: invert(1);
+    mix-blend-mode: plus-lighter;
 }
+
 @media (min-aspect-ratio: 1/1) {
     #calendar_btn img {
         width: 10vw;

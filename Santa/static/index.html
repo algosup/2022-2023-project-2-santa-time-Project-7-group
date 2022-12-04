@@ -17,28 +17,34 @@
         type="text/css" />
 </head>
 
-<body>
+<body class="bodystyle">
     <header>
-
-        <h1 class="title">Merry Christmas!</h1>
-        <div id="google_translate_element"></div>
-        <script type="text/javascript">
-            function googleTranslateElementInit() {
-                let language = Navigator.language;
-                new google.translate.TranslateElement({
-                    pageLanguage: language
-                }, 'google_translate_element');
-            }
-        </script>
-        <script type="text/javascript"
-            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <nav>
+            <div id="calendar_btn">
+                <img src="./img/icons8-calendrier.gif" alt="calendar" width="100%" height="100%">
+                <caption>1</caption>
+            </div>
+            <div class="merry">
+                <h1 class="title">Merry Christmas!</h1>
+                <div id="google_translate_element"></div>
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        let language = Navigator.language;
+                        new google.translate.TranslateElement({
+                            pageLanguage: language
+                        }, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript"
+                    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+                </script>
+            </div>
+        </nav>
     </header>
-    <div id="calendar_btn">
-        <img src="./img/calendar.jpg" alt="calendar" width="100%" height="100%">
-    </div>
-
     <div id="popup_calendar" class="popup_calendar">
-        <div id="tooSoon"><p id="setText"></p></div>
+        <div id="tooSoon">
+            <p id="setText"></p>
+        </div>
         <button id="close_popup" class="cross" class="notranslate">X</button>
         <div class="centerdiv" id="denter_grid">
             <div id="grid">
@@ -48,12 +54,16 @@
             <div>
                 <button id="close_img" class="cross" class="notranslate">X</button>
                 <img src="" class="imgdisp" id="imgdisp">
-                <div class="common" id="rarity"><p class="notranslate">COMMON</p></div>
+                <div class="common" id="rarity">
+                    <p class="notranslate">COMMON</p>
+                </div>
             </div>
         </div>
     </div>
     <div class="container_santa">
-        <h1><font>When will santa arrive?</font></h1>
+        <h1>
+            <font>When will santa arrive?</font>
+        </h1>
 
         <div class="inputs">
             <div style="flex-direction: column;">
@@ -70,26 +80,24 @@
         <h1 id="time"></h1>
     </div>
     <div class="imgcontainers">
-            <img class="img-bottom" src="img/sled.png" width="200" height="200">
-            <img class="img-bottom" src="img/presents.png" id="presents" width="250" height="250">
-            <img class="img-bottom" src="img/tree.png" width="200" height="200">
-            <img src="img/village.png" class="img-bottom" id="village">
-            <img class="img-bottom" src="img/tree.png" width="200" height="200">
+        <img class="img-bottom" id="santa" src="img/sled.png" width="200" height="200">
+        <img class="img-bottom" src="img/presents.png" id="presents" width="250" height="250">
+        <img class="img-bottom" src="img/tree.png" width="200" height="200">
+        <img src="img/village.png" class="img-bottom" id="village">
+        <img class="img-bottom" src="img/tree.png" width="200" height="200">
     </div>
-    
+
 
     <footer>
-        <div class="primaryfooter">
-            <img class="algosup" src="img/ALGOSUP-bloc-marque-v2_black.png" width="250" height="70">
-            <img class="logo" src="img/logo-7-V2.jpg" width="150" height="80">
-        </div>
-        <div class="secondaryfooter">
-            <div class="donation">
-                <p class="foundations"></p>
-                <a href="https://don.unicef.fr/don-ponctuel-old/~mon-don?_cv=1" target="_blank">
-                    <button class="donate"><font>DONATE!</font></button>
-                </a>
-            </div>
+        <img class="algosup" src="img/ALGOSUP-bloc-marque-v2_black.png" width="250" height="70">
+        <img class="logo" src="img/logo-7-V2.jpg" width="150" height="80">
+        <div class="donation">
+            <p class="foundations"></p>
+            <a href="https://don.unicef.fr/don-ponctuel-old/~mon-don?_cv=1" target="_blank">
+                <button class="donate">
+                    <font>DONATE!</font>
+                </button>
+            </a>
         </div>
     </footer>
     <script src="//unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
@@ -103,6 +111,7 @@
 
     <script src="./js/gacha_data.js"></script>
     <script src="./js/gacha.js"></script>
+    <script src="./js/night.js"></script>
 </body>
 
 </html>
