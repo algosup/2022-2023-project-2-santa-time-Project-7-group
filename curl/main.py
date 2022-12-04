@@ -19,13 +19,11 @@ def process(f):
     c.perform()
     c.close()
 
-    print(f)
-
 
 # Reserve cores
-def thread():
+def thread(A):
     # alocate CPU
-    max_processors = 128
+    max_processors = A
     pool = Pool(processes=max_processors)
     f_list = []
 
@@ -40,8 +38,14 @@ def thread():
                 f.get()
                 del f_list[:]
 
+def getTime(A):
+    res: float = 0
+    for i in range(10):
+        start = time.time()
+        thread(A)
+        end = time.time()
+        res += end-start
+    return res
+
 if __name__ == "__main__":
-    start = time.time()
-    thread()
-    end = time.time()
-    print(end-start)
+    print(getTime(8))
