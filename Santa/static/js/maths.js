@@ -577,7 +577,8 @@ function getAnswer() {
                     }
                     //add li to temp
                     temp.push(li);
-                    document.getElementById("autocomplete_list").style.height = "68%";
+                    document.getElementById("autocomplete_list").style.height = "fit-content";
+                    document.getElementById("autocomplete_list").style.maxHeight = "68%";
                     document.getElementById("autocomplete_list").appendChild(li);
                 }
             }
