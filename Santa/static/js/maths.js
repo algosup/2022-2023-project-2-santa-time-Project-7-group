@@ -476,7 +476,7 @@ function timeZone(lat, long) {
     //get the time zone
     var url = "https://noel.gq/tz/"+lat+"/"+long;
     //cors policy 
-    fetch(url, { mode: 'no-cors' })
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             //get utc offset
@@ -508,7 +508,7 @@ function getAnswer() {
     var url = "https://noel.gq/api?q=" + formatData;
     console.log(url);
     //fetch the data
-    fetch(url, { mode: 'no-cors' })
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             if (data.length == 0) {

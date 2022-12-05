@@ -6,8 +6,12 @@ import (
 	"net/url"
 )
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+}
 
+func Handler(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
 	//add options
 	req := http.Request{
 		Method: "GET",
@@ -32,7 +36,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func Handlertz(w http.ResponseWriter, r *http.Request) {
-
+	enableCors(&w)
 	//add options
 	req := http.Request{
 		Method: "GET",
