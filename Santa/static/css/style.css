@@ -4,7 +4,6 @@ body font {
 }
 
 body {
-    background-image: url("/Santa/static/img/star.jpg")  !important;
     top: 0% !important;
     display: flex;
     min-height: 50% !important;
@@ -45,7 +44,7 @@ img {
 }
 
 .entered {
-    background-image: url("/Santa/static/img/star.jpg") !important;
+    background-image: url("./img/star.jpg") !important;
     background-size: auto;
     background-repeat: repeat;
     overflow: hidden !important;
@@ -237,7 +236,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #5DADEC;
+    background-color: #042640;
     color: black;
     text-align: center;
 }
@@ -316,6 +315,7 @@ footer>div {
 }
 
 .algosup {
+    filter: contrast(0.1);
     bottom: 0;
     right: 0;
 }
