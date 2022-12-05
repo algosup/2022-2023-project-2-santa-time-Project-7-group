@@ -474,9 +474,9 @@ function useGPS() {
 
 function timeZone(lat, long) {
     //get the time zone
-    var url = "http://20.232.61.188:2004/tz/"+lat+"/"+long;
+    var url = "https://noel.gq/tz/"+lat+"/"+long;
     //cors policy 
-    fetch(url)
+    fetch(url, { mode: 'no-cors' })
         .then(response => response.json())
         .then(data => {
             //get utc offset
@@ -505,9 +505,10 @@ function getAnswer() {
     //replace spaces with +
     formatData = formatData.replace(/ /g, "+");
     //use nominatim api to get lat and long
-    var url = "http://noel.gq/api?q=" + formatData;
+    var url = "https://noel.gq/api?q=" + formatData;
+    console.log(url);
     //fetch the data
-    fetch(url)
+    fetch(url, { mode: 'no-cors' })
         .then(response => response.json())
         .then(data => {
             if (data.length == 0) {
