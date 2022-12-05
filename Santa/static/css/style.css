@@ -1,9 +1,9 @@
 body font {
-    font-size: x-large;
+    font-size: x-large; 
     color: white;
 }
 
-.bodystyle {
+body {
     background-image: url("/Santa/static/img/star.jpg")  !important;
     top: 0% !important;
     display: flex;
@@ -212,21 +212,10 @@ button::selection {
     /* height: 74vh; */
     max-height: 26vh;
     /* padding-bottom: 10%; */
+    z-index: -1;
 
 }
 
-.imgcontainers #village {
-    margin-bottom: -2.2%;
-}
-
-.imgcontainers #presents {
-    margin-bottom: -1.4%;
-}
-
-.village {
-    height: 80%;
-    bottom: 0;
-}
 
 .sled{
     filter: contrast(0.1);
