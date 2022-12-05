@@ -237,7 +237,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #5DADEC;
+    background-color: #042640;
     color: black;
     text-align: center;
 }
@@ -316,6 +316,7 @@ footer>div {
 }
 
 .algosup {
+    filter: contrast(0.1);
     bottom: 0;
     right: 0;
 }
