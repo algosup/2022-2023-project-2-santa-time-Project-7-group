@@ -45,7 +45,7 @@ img {
 }
 
 .entered {
-    background-image: url("/Santa/static/img/star.jpg") !important;
+    background-image: url("./img/star.jpg") !important;
     background-size: auto;
     background-repeat: repeat;
     overflow: hidden !important;
