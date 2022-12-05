@@ -1,10 +1,10 @@
 body font {
     font-size: x-large;
+    color: white;
 }
 
 .bodystyle {
-    overflow: hidden !important;
-    background-color: #6CA0DC !important;
+    background-image: url("/Santa/static/img/star.jpg")  !important;
     top: 0% !important;
     display: flex;
     min-height: 50% !important;
@@ -228,6 +228,10 @@ button::selection {
     bottom: 0;
 }
 
+.sled{
+    filter: contrast(0.1);
+}
+
 p {
     color: #044f18;
     font-size: 20px;
@@ -281,13 +285,21 @@ footer>div {
     flex-wrap: wrap;
 }
 
-footer {
+.primaryfooter {
+    width: 50%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: nowrap;
 }
-
+.secondaryfooter {
+       display: flex;
+       flex-direction: row;
+       justify-content: flex-end;
+       align-content: space-between;
+       align-items: center;
+       flex-wrap: wrap;
+       width: 50%;
+   }
 
 .donate {
     background-color: #6CA0DC;
@@ -331,11 +343,12 @@ footer {
     list-style-type: none;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: beige;
+    background: #6CA0DC;
     top: 105px;
     width: 72.5%;
     padding-left: 0;
     overflow-y: auto;
+    color: #0047AB;
 }
 
 .suggestions * {
