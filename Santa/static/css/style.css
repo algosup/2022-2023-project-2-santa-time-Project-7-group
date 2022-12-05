@@ -388,7 +388,7 @@ footer {
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(8vh, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(7vh, 1fr));
     grid-gap: .6%;
     background-color: green;
     border-style: solid;
@@ -400,7 +400,7 @@ footer {
 }
 
 #grid>div {
-    font-size: 9vw;
+    font-size: 7vw;
     color: #fff200;
     background: #e40000;
     text-align: center;
@@ -440,6 +440,20 @@ footer {
     color: #fff200;
 }
 
+@media (min-aspect-ratio: 240/750) {
+    #grid {
+        grid-template-columns: repeat(auto-fill, minmax(8vh, 1fr));
+    }
+
+    #grid>div {
+        font-size: 9vw;
+    }
+
+    #tooSoon>p {
+        font-size: 10vw;
+    }
+}
+
 @media (min-aspect-ratio: 450/750) {
     #grid {
         grid-template-columns: repeat(auto-fill, minmax(9vh, 1fr));
@@ -449,7 +463,7 @@ footer {
         font-size: 8vw;
     }
 
-    #tooSoon {
+    #tooSoon>p {
         font-size: 10vw;
     }
 }
@@ -463,7 +477,7 @@ footer {
         font-size: 7vw;
     }
 
-    #tooSoon {
+    #tooSoon>p {
         font-size: 8vw;
     }
 }
@@ -477,7 +491,7 @@ footer {
         font-size: 6vw;
     }
 
-    #tooSoon {
+    #tooSoon>p {
         font-size: 7vw;
     }
 }
@@ -491,7 +505,7 @@ footer {
         font-size: 5vw;
     }
 
-    #tooSoon {
+    #tooSoon>p {
         font-size: 7vw;
     }
 }
@@ -505,7 +519,7 @@ footer {
         font-size: 4.8vw;
     }
 
-    #tooSoon {
+    #tooSoon>p {
         font-size: 5vw;
     }
 }
@@ -519,7 +533,7 @@ footer {
         font-size: 3.5vw;
     }
 
-    #tooSoon {
+    #tooSoon>p {
         font-size: 3vw;
     }
 }
@@ -580,6 +594,9 @@ footer {
 
 .flip-clock__slot {
     font-size: 2vw;
+}
+.flip-clock__slot > font {
+    font-size: 3vw;
 }
 
 .card {
