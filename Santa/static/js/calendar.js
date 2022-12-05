@@ -103,23 +103,23 @@ function SetRarity(r) {
     switch (r) {
         case "r":
             rarittyID.className = "rare"
-            rarittyID.childNodes[0].textContent = "RARE"
+            rarittyID.childNodes[1].textContent = "RARE"
             break;
         case "e":
             rarittyID.className = "epic"
-            rarittyID.childNodes[0].textContent = "EPIC"
+            rarittyID.childNodes[1].textContent = "EPIC"
             break;
         case "l":
             rarittyID.className = "legendary"
-            rarittyID.childNodes[0].textContent = "LEGENDARY"
+            rarittyID.childNodes[1].textContent = "LEGENDARY"
             break;
         case "m":
             rarittyID.className = "mythical"
-            rarittyID.childNodes[0].textContent = "MYTHICAL"
+            rarittyID.childNodes[1].textContent = "MYTHICAL"
             break;
         default:
             rarittyID.className = "common"
-            rarittyID.childNodes[0].textContent = "COMMON"
+            rarittyID.childNodes[1].textContent = "COMMON"
     }
 }
 
