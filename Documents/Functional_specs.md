@@ -84,7 +84,9 @@ These are personas that represent potential customers can be found.
 ![Lois](./images/persona_2.png)
 ![Geremy](./images/persona_3.png)
 ![Mark](./images/persona_4.png)
-![Anon](./images/persona_5.png)
+![Adam](./images/persona_5.png)
+![Julia](./images/persona_6.png)
+![Anon](./images/persona_7.png)
 
 # Calculating Santa's arrival time <span id="santa-arrival-time"></span>
 
