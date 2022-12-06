@@ -71,11 +71,11 @@
         <div class="inputs">
             <div style="flex-direction: column;">
                 <div style="display: flex; margin-bottom: 2vh;">
-                    <form class="formWidth" onsubmit="getAnswer();return false">
+                    <form class="formWidth" onsubmit="getAnswer(true);return false">
                         <input type="submit" hidden />
                         <input type="text" id="location" placeholder="Enter your location">
                     </form>
-                    <button class="search" onclick="getAnswer()"><i class="fa fa-search search"></i></button>
+                    <button class="search" onclick="getAnswer(true)"><i class="fa fa-search search"></i></button>
                 </div>
                 <ul class="suggestions" id="autocomplete_list" style="font-size: large;
             list-style-type: none;">

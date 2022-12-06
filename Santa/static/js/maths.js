@@ -465,7 +465,9 @@ function useGPS() {
         const options = {
             timeout: 5000,
         };
-        navigator.geolocation.getCurrentPosition(position => {timeZone(position.coords.latitude, position.coords.longitude)},err => console.log(err),options);
+        navigator.geolocation.getCurrentPosition(position => {
+            timeZone(position.coords.latitude, position.coords.longitude)
+        }, err => console.log(err), options);
     } else {
         alert("Geolocation is not supported by this browser.");
     }
@@ -474,7 +476,7 @@ function useGPS() {
 
 function timeZone(lat, long) {
     //get the time zone
-    var url = "https://noel.gq/tz/"+lat+"/"+long;
+    var url = "https://noel.gq/tz/" + lat + "/" + long;
     //cors policy 
     fetch(url)
         .then(response => response.json())
@@ -498,13 +500,19 @@ function timeZone(lat, long) {
         })
 }
 
+var lastFinal = "";
 
-function getAnswer() {
+function getAnswer(final) {
     // Get the location
     document.getElementById("autocomplete_list").innerHTML = "";
     let formatData = document.getElementById("location").value;
     //replace spaces with +
     formatData = formatData.replace(/ /g, "+");
+    if (formatData == lastFinal) {
+        return;
+    } else {
+        lastFinal = "";
+    }
     //use nominatim api to get lat and long
     var url = "https://noel.gq/api?q=" + formatData;
     //fetch the data
@@ -515,13 +523,18 @@ function getAnswer() {
                 document.getElementById("answer").innerText = "Invalid location";
                 return;
             }
-            if (data.features.length == 1) {
+            if (data.features.length == 1 || final) {
+                lastFinal = formatData;
+                document.getElementById("autocomplete_list").innerHTML = "";
+                document.getElementById("autocomplete_list").style.height = "0px";
                 //get the lat and long
                 var lat = data.features[0].geometry.coordinates[1];
                 var long = data.features[0].geometry.coordinates[0];
-                
+                timeZone(lat, long);
+
             } else {
                 var temp = [];
+                console.log(data.features);
                 // add li element to ul of id="autocomplete_list" with name of location
                 for (var i = 0; i < data.features.length; i++) {
                     if (data.features[i].properties.type != "city" && data.features[i].properties.type != "street" && data.features[i].properties.type != "house") {
@@ -546,8 +559,12 @@ function getAnswer() {
                     if (data.features[i].properties.city != null) {
                         city = data.features[i].properties.city;
                     } else {
-                        city = "";
-                        continue;
+                        if (data.features[i].properties.type == "city") {
+                            city = data.features[i].properties.name;
+                        } else {
+                            city = "";
+                            continue;
+                        }
                     }
                     if (data.features[i].properties.country != null) {
                         country = data.features[i].properties.country;
@@ -555,9 +572,27 @@ function getAnswer() {
                         country = "";
                         continue;
                     }
+                    var text ="";
+                    if (data.features[i].properties.type == "city") {
+                        text = city + ", " + country;
+                    } else {
+                        text = streetnbr + " " + street + ", " + city + ", " + country;
+                    }
+
+                    var exists = false;
+                    //check if the li element is already in the list
+                    for (var j = 0; j < temp.length; j++) {
+                        if (temp.includes(text)) {
+                            exists = true;
+                        }
+                    }
+                    if (exists) {
+                        continue;
+                    }
 
                     var li = document.createElement("li");
-                    li.appendChild(document.createTextNode(streetnbr + " " + street + ", " + city + ", " + country));
+                    li.appendChild(document.createTextNode(text));
+
                     li.setAttribute("id", data.features[i].geometry.coordinates[1] + "," + data.features[i].geometry.coordinates[0]);
                     li.addEventListener("click", function () {
                         document.getElementById("location").value = this.innerText;
@@ -571,10 +606,7 @@ function getAnswer() {
                         document.getElementById("autocomplete_list").innerHTML = "";
                         document.getElementById("autocomplete_list").style.height = "0px";
                     });
-                    //check if the li element is already in the list
-                    if (temp.includes(li.innerText)) {
-                        continue;
-                    }
+
                     //add li to temp
                     temp.push(li);
                     document.getElementById("autocomplete_list").style.height = "fit-content";
@@ -586,6 +618,12 @@ function getAnswer() {
         .catch(err => console.warn(err.message));
 }
 
+//onkeyup event for the input wait 1 second before calling getAnswer
+var timeout = null;
+document.getElementById("location").onkeyup = function () {
+    clearTimeout(timeout);
+    timeout = setTimeout(getAnswer(false), 1000);
+};
 
 function timeDiff(arr, utc) {
     //h m s in array are 24 of dec at  corresponding to local midnight 
@@ -628,14 +666,14 @@ function timeDiff(arr, utc) {
     if (minutes < 0) {
         minutes += 60;
         hours--;
-    }   else if (minutes > 60) {
+    } else if (minutes > 60) {
         minutes -= 60;
         hours++;
     }
     if (hours < 0) {
         hours += 24;
         day--;
-    }   else if (hours > 24) {
+    } else if (hours > 24) {
         hours -= 24;
         day++;
     }
