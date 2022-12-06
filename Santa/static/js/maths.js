@@ -639,6 +639,6 @@ function timeDiff(arr, utc) {
         day++;
     }
     //document.getElementById("time").innerText = day + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds \n Which is in:";
-    enddate = new Date(date.getFullYear(), 11, day+2, arr[0], arr[1]+1, arr[2]);
+    enddate = new Date(date.getFullYear(), 11, day+date.getDate(), arr[0], arr[1]+1, arr[2]);
     createClock(enddate);
 }

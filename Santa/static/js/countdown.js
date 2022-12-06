@@ -38,6 +38,7 @@ function CountdownTracker(label, value){
   
   function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date());
+    //console.log(Math.floor(t / (1000 * 60 * 60 * 24)));
     return {
       'Total': t,
       'Days': Math.floor(t / (1000 * 60 * 60 * 24)),
@@ -51,14 +52,13 @@ function CountdownTracker(label, value){
     var t = new Date();
     return {
       'Total': t,
-      'Hours': t.getHours() % 12,
+      'Hours': t.getHours(),
       'Minutes': t.getMinutes(),
       'Seconds': t.getSeconds()
     };
   }
   
   function Clock(countdown,callback) {
-    
     countdown = countdown ? new Date(Date.parse(countdown)) : false;
     callback = callback || function(){};
     
@@ -106,7 +106,6 @@ function CountdownTracker(label, value){
   function createClock(timeend){
     var parentNode = document.getElementsByClassName("container_santa")[0];
     const clocks = Array.from(document.getElementsByClassName('flip-clock'));
-
     clocks.forEach(clock => { clock.remove(); });
     var c = new Clock(timeend, function(){ alert('countdown complete') });
     //console.log(c.el);
