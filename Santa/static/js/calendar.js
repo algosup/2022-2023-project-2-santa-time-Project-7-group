@@ -7,7 +7,7 @@ var rarittyID = document.getElementById("rarity");
 
 //var imgPath = "./img/gachas/";
 
-base = "https://raw.githubusercontent.com/algosup/2022-2023-project-2-santa-time-Project-7-group/Santago/Santa/static/img/gachas/"
+base = "https://raw.githubusercontent.com/algosup/2022-2023-project-2-santa-time-Project-7-group/gatcha-image/gachas/"
 raw = "?raw=true"
 
 btn_out.onclick = function () {
