@@ -5,7 +5,10 @@ var img_out = document.getElementById("close_img");
 var grid = document.getElementById("grid");
 var rarittyID = document.getElementById("rarity");
 
-var imgPath = "./img/gachas/";
+//var imgPath = "./img/gachas/";
+
+base = "https://raw.githubusercontent.com/algosup/2022-2023-project-2-santa-time-Project-7-group/Santago/Santa/static/img/gachas/"
+raw = "?raw=true"
 
 btn_out.onclick = function () {
     calendar.style.display = "none";
@@ -33,10 +36,11 @@ function bigImage(i) {
         SetRarity(rarity)
         localStorage.setItem(`div_${i}`, rarity);
 
-        imgIco(imgPath + getGacha(i), i);
+        imgIco(base + getGacha(i) + raw, i);
         SetRarityIco(rarity, i)
 
-        document.getElementById("imgdisp").src = imgPath + getGacha(i);
+        document.getElementById("imgdisp").src = "";
+        document.getElementById("imgdisp").src = base + getGacha(i) + raw;
 
         document.getElementById("close_popup").style.display = "none";
     }
@@ -85,7 +89,7 @@ function makeDiv24(i) {
         div.className = "notranslate"
         grid.appendChild(div);
 
-        imgIco(imgPath + getGacha(i), i)
+        imgIco(base + getGacha(i) + raw, i)
         SetRarityIco(a, i)
     }
 }
