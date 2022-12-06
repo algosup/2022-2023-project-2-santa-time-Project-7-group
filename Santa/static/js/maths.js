@@ -534,7 +534,6 @@ function getAnswer(final) {
 
             } else {
                 var temp = [];
-                console.log(data.features);
                 // add li element to ul of id="autocomplete_list" with name of location
                 for (var i = 0; i < data.features.length; i++) {
                     if (data.features[i].properties.type != "city" && data.features[i].properties.type != "street" && data.features[i].properties.type != "house") {
@@ -622,7 +621,7 @@ function getAnswer(final) {
 var timeout = null;
 document.getElementById("location").onkeyup = function () {
     clearTimeout(timeout);
-    timeout = setTimeout(getAnswer(false), 1000);
+    timeout = setTimeout(getAnswer(false), 1500);
 };
 
 function timeDiff(arr, utc) {
