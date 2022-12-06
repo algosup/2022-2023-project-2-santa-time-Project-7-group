@@ -45,7 +45,7 @@ func main() {
 	})
 
 	redirect := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, "https://catchyoursanta.ml"+r.RequestURI, http.StatusMovedPermanently)
+		http.Redirect(w, r, "https://giftcountdown.algosup.com"+r.RequestURI, http.StatusMovedPermanently)
 	})
 
 	templates = template.New("html templates")

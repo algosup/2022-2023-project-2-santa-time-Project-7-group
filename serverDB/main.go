@@ -40,7 +40,7 @@ func Handlertz(w http.ResponseWriter, r *http.Request) {
 	//add options
 	req := http.Request{
 		Method: "GET",
-		URL:    &url.URL{Scheme: "http", Host: "10.0.1.4:2004", Path: r.URL.Path, RawQuery: r.URL.RawQuery},
+		URL:    &url.URL{Scheme: "http", Host: "10.1.1.4:2004", Path: r.URL.Path, RawQuery: r.URL.RawQuery},
 		//json
 		Header: http.Header{
 			"Content-Type": []string{"application/json"},
