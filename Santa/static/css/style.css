@@ -42,18 +42,6 @@ img {
     flex-wrap: wrap;
 }
 
-.entered {
-    background-image: url("./img/star.jpg") !important;
-    background-size: auto;
-    background-repeat: repeat;
-    overflow: hidden !important;
-    top: 0% !important;
-    display: flex;
-    min-height: 50% !important;
-    flex-direction: column;
-
-}
-
 .merry {
     width: 100%;
     margin-right: 3%;
@@ -136,11 +124,11 @@ body>.skiptranslate {
 
 .inputs button {
     width: 50px;
-    background: radial-gradient(circle, #0F52BA 0%, #0F52BA 70%);
-    color: #73C2FB;
+    background: radial-gradient(circle, #0047AB 0%, #0047AB 70%);
+    color: snow;
     font-weight: bold;
     font-size: large;
-    border: 2px solid #0F52BA;
+    border: 2px solid #0047AB ;
 }
 
 .inputs .search {
@@ -244,10 +232,6 @@ footer {
     footer {
         flex-direction: column;
     }
-
-    .logo {
-        visibility: hidden;
-    }
 }
 
 @media screen and (max-height: 760px) {
@@ -277,7 +261,10 @@ footer>div {
     display: flex;
     align-items: flex-end;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: flex-end;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
 .about {
     background-color:#0047AB ;
@@ -297,18 +284,20 @@ footer>div {
 }
 
 .secondaryfooter {
-       display: flex;
-       flex-direction: row;
-       justify-content: flex-end;
-       align-content: space-between;
-       align-items: center;
-       flex-wrap: wrap;
-       width: 50%;
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
    }
 
 .donate {
-    background-color: #6CA0DC;
-    color: #044f18;
+    background-color:#0047AB ;
+    border: #0047AB;
+    color: snow;
     border-radius: 40px;
     padding: 10px;
     width: 100%;
@@ -321,28 +310,6 @@ footer>div {
 .donate font {
     font-size: medium !important;
 }
-
-.animals {
-    width: auto;
-}
-
-.foundations {
-    color: snow;
-    display: flex;
-}
-
-.algosup {
-    filter: contrast(0.1);
-    bottom: 0;
-    right: 0;
-}
-
-.logo {
-    bottom: 0;
-    mix-blend-mode: lighten;
-}
-
-
 .suggestions {
     position: fixed;
     font-size: 18px;

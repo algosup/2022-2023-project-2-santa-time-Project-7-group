@@ -319,10 +319,6 @@ footer {
           footer {
                     flex-direction: column;
           }
-
-          .logo {
-                    visibility: hidden;
-          }
 }
 
 @media screen and (max-height: 760px) {
@@ -353,16 +349,19 @@ footer>div {
           align-items: flex-end;
           flex-wrap: nowrap;
           align-items: center;
+          padding-right: 10px;
+          padding-left: 10px;
+          padding-bottom: 10px;
 }
 
 .about {
-          background-color: #0047AB;
+          background-color:#0047AB ;
           border: #0047AB;
           color: snow;
           border-radius: 40px;
           padding: 10px;
           width: 100%;
-}
+      }
 
 .about:hover {
           cursor: pointer;
@@ -380,15 +379,19 @@ footer>div {
           align-items: center;
           flex-wrap: wrap;
           width: 50%;
+          padding-right: 10px;
+          padding-left: 10px;
+          padding-bottom: 10px;
 }
 
 .donate {
-          background-color: #6CA0DC;
-          color: #044f18;
+          background-color:#0047AB ;
+          border: #0047AB;
+          color: snow;
           border-radius: 40px;
           padding: 10px;
           width: 100%;
-}
+      }
 
 .donate:hover {
           cursor: pointer;
@@ -396,17 +399,6 @@ footer>div {
 
 .donate font {
           font-size: medium !important;
-}
-
-.algosup {
-          filter: contrast(0.1);
-          bottom: 0;
-          right: 0;
-}
-
-.logo {
-          bottom: 0;
-          mix-blend-mode: lighten;
 }
 
 @media (max-width : 320px) {
