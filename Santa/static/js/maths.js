@@ -490,6 +490,7 @@ function timeZone(lat, long) {
                 return;
             }
             var final = calcSantaTime(long, Z);
+
             timeDiff(final, Z);
         })
         .catch(err => {
@@ -506,7 +507,6 @@ function getAnswer() {
     formatData = formatData.replace(/ /g, "+");
     //use nominatim api to get lat and long
     var url = "https://noel.gq/api?q=" + formatData;
-    console.log(url);
     //fetch the data
     fetch(url)
         .then(response => response.json())
@@ -596,6 +596,7 @@ function timeDiff(arr, utc) {
     var hours = 0;
     var minutes = 0;
     var seconds = 0;
+
     if (month != 12 || date.getDate() > 24) {
         //get days in month
         let daysInMonth = new Date(date.getFullYear(), month + 1, 0).getDate();
@@ -638,7 +639,8 @@ function timeDiff(arr, utc) {
         hours -= 24;
         day++;
     }
+
     //document.getElementById("time").innerText = day + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds \n Which is in:";
-    enddate = new Date(date.getFullYear(), 11, day+date.getDate(), arr[0], arr[1]+1, arr[2]);
+    enddate = new Date(date.getFullYear(), 11, day+date.getDate(), hours+date.getHours(), minutes+date.getMinutes(), seconds+date.getSeconds());
     createClock(enddate);
 }
