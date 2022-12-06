@@ -45,6 +45,8 @@ The end goal of this project is to create a website where users could look up wh
 - In addition to the remaining time, the website must also show Santa's exact arrival time while taking into account the user's timezone. 
 - (optional) The website must exist in multiple languages and allow the user to change the language the website is displayed in.
     - (optional) The website must detect the browsers language and display itself accordingly.
+- (optional) A gacha system could be put in place to touch into a slightly older target audiance then the intended 5-15 years old range.
+
 
 # Risks and Assumptions
 
@@ -74,9 +76,47 @@ The input field for the location must also include a placeholder that specifies 
 
 The website must be optimized to maximise visibility on well known search engines (ex.: Google).
 
-## Social Media Marketing and Advertising
+## Market research
 
-## Personas
+The following form has been created for sake of product demand validation:
+[Google form english](https://forms.gle/ucnKXGWMtaWT9wYu5)
+
+## Advertisement on a personnal level
+
+The final product must be advertised to personnal connections of the developement team.
+This must be done before larger scale advertisement as the feedback from this will be essential in finding bugs in the freshly finished product.
+
+## Social Media Marketing and Forum Based Avertisement
+
+The website can be advertised in variety of social medias and online forums.
+Examples of such sites are (but not limited to):
+
+- Reddit
+- Linkedin
+- Twitter
+- Facebook
+- 18-25
+
+## Measuring Advertising Effectiveness
+
+Optionaly, a separate link can be prepared for every platform we advertise on.
+This way it could be possible to measure which platforms are the most effective.
+
+## Concurence
+
+Our research indicates the following websites to be our main concurencies:
+
+Concurent ALGOSUP groups:
+- [Group 5's website](http://xmas.algosup.com/)
+- [Group 6's website](http://santaclock.algosup.com/)
+- [Group 8's website](http://santa.algosup.com/)
+
+External concurences:
+- [North American Aerospace Defense Command](https://www.noradsanta.org/en/)
+- [Google's Santa tracker](https://santatracker.google.com/)
+- [Email Santa's Santa tracker](https://www.emailsanta.com/santa-tracker.asp)
+
+# Personas
 
 These are personas that represent potential customers can be found.
 
