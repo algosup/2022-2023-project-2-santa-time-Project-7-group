@@ -814,3 +814,7 @@ footer>div {
         font-size: 11vh;
     }
 }
+
+.formWidth{
+    width: 70vw;
+}

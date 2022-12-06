@@ -37,7 +37,7 @@
                 </script>
                 <script type="text/javascript"
                     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-                </script>
+                    </script>
             </div>
         </nav>
     </header>
@@ -62,16 +62,19 @@
     </div>
     <div class="container_santa">
         <div style="display: flex;align-items: flex-end;">
-        <h1>
-            <font>Find out when Santa arrives</font>
-        </h1>
-        <img src="./img/animated-arrow.gif" alt="down here !" style="transform: rotate(90deg); width: 36px;">
-    </div>
+            <h1>
+                <font>Find out when Santa arrives</font>
+            </h1>
+            <img src="./img/animated-arrow.gif" alt="down here !" style="transform: rotate(90deg); width: 36px;">
+        </div>
 
         <div class="inputs">
             <div style="flex-direction: column;">
                 <div style="display: flex; margin-bottom: 2vh;">
-                    <input type="text" id="location" placeholder="Enter your location">
+                    <form class="formWidth" onsubmit="getAnswer();return false">
+                        <input type="submit" hidden />
+                        <input type="text" id="location" placeholder="Enter your location">
+                    </form>
                     <button class="search" onclick="getAnswer()"><i class="fa fa-search search"></i></button>
                 </div>
                 <ul class="suggestions" id="autocomplete_list" style="font-size: large;
@@ -96,7 +99,9 @@
             <div class="donation">
                 <p class="foundations"></p>
                 <a href="https://don.unicef.fr/don-ponctuel-old/~mon-don?_cv=1" target="_blank">
-                    <button class="donate"><font>DONATE!</font></button>
+                    <button class="donate">
+                        <font>DONATE!</font>
+                    </button>
                 </a>
             </div>
     </footer>
