@@ -1,6 +1,5 @@
 body font {
     font-size: x-large; 
-    color: white;
 }
 
 body {
@@ -64,11 +63,11 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    top: 30vh;
+    top: 35vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    color: #0047AB;
+    color: snow;
     align-items: center;
     position: relative;
     transform: translate(0%, -50%);
@@ -106,11 +105,11 @@ h2 {
 }
 
 .goog-te-gadget .goog-te-combo {
-    color: #6A994E !important;
+    color: #094f81 !important;
 }
 
 body>.skiptranslate {
-    display: none;
+    display: none;  
 }
 
 .inputs {
@@ -191,12 +190,12 @@ button::selection {
 }
 
 ::selection {
-    background: #6A994E;
+    background: #075187;
     color: snow;
 }
 
 ::-moz-selection {
-    background: #6A994E;
+    background: #044878;
     /* Gecko Browsers */
     color: snow;
 }
@@ -278,7 +277,25 @@ footer>div {
     display: flex;
     align-items: flex-end;
     flex-wrap: nowrap;
+    align-items: center;
 }
+.about {
+    background-color:#0047AB ;
+    border: #0047AB;
+    color: snow;
+    border-radius: 40px;
+    padding: 10px;
+    width: 100%;
+}
+
+.about:hover {
+    cursor: pointer;
+}
+
+.about font {
+    font-size: medium !important;
+}
+
 .secondaryfooter {
        display: flex;
        flex-direction: row;
