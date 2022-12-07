@@ -8,7 +8,13 @@
 * [Configuration](#configuration)
 * [UI/UX](#uiux)
 * [Marketing](#marketing)
-    * [Personas](#personas)
+    * [SEO](#seo)
+    * [Market research](#market-research)
+    * [Advertisement on a personnal level](#advertisement-on-a-personnal-level)
+    * [Social Media Marketing and Forum Based Avertisment](#social-media-marketing-and-forum-based-avertisment)
+    * [Measuring Advertising Effectiveness](#measuring-advertising-effectiveness)
+    * [Concurence](#concurence)
+* [Personas](#personas)
 * [Calculating Santa's arrival time](#santa-arrival-time)
 	* [The math](#the-math)
 	* [Example](#example)
@@ -39,13 +45,14 @@ The end goal of this project is to create a website where users could look up wh
 - The product must be able to function under heavy user traffic as well adapt to sudden changes in user traffic.
 - It must be possible to search for locations using a search bar.
     - The search bar must draw its information from a database attached to the project, NOT an external API.
-    - (optional) Geolocalisation button.
-    - (optional) Search suggestions.
+    - Geolocalisation button.
+    - Search suggestions.
 - The product must be able to calculate Santa's arrival time using the longitude obtained from the input address and the current time.
 - In addition to the remaining time, the website must also show Santa's exact arrival time while taking into account the user's timezone. 
 - (optional) The website must exist in multiple languages and allow the user to change the language the website is displayed in.
     - (optional) The website must detect the browsers language and display itself accordingly.
 - (optional) A gacha system could be put in place to touch into a slightly older target audiance then the intended 5-15 years old range.
+- (optional) Market research has show interrest in a functionality to display random facts related to christmass, reindeers, etc.
 
 
 # Risks and Assumptions
@@ -70,9 +77,11 @@ The user must be able to use the website without any additional effort necessary
 The website must keep its style simple but Christmassy.
 The input field for the location must also include a placeholder that specifies that it is supposed to recieve a location.
 
+WIP
+
 # Marketing
 
-## SEO (Search Engine Optimization)
+## SEO (Search Engine Optimization) <span id="seo"></span>
 
 The website must be optimized to maximise visibility on well known search engines (ex.: Google).
 
@@ -81,12 +90,14 @@ The website must be optimized to maximise visibility on well known search engine
 The following form has been created for sake of product demand validation:
 [Google form english](https://forms.gle/ucnKXGWMtaWT9wYu5)
 
+WIP
+
 ## Advertisement on a personnal level
 
 The final product must be advertised to personnal connections of the developement team.
 This must be done before larger scale advertisement as the feedback from this will be essential in finding bugs in the freshly finished product.
 
-## Social Media Marketing and Forum Based Avertisement
+## Social Media Marketing and Forum Based Avertisment
 
 The website can be advertised in variety of social medias and online forums.
 Examples of such sites are (but not limited to):
@@ -112,9 +123,74 @@ Concurent ALGOSUP groups:
 - [Group 8's website](http://santa.algosup.com/)
 
 External concurences:
-- [North American Aerospace Defense Command](https://www.noradsanta.org/en/)
-- [Google's Santa tracker](https://santatracker.google.com/)
-- [Email Santa's Santa tracker](https://www.emailsanta.com/santa-tracker.asp)
+### [- North American Aerospace Defense Command](https://www.noradsanta.org/en/)
+
+NORAD's Santa Tracker is one of the oldest such sites.
+It has long history and is part of a long going tradition where children can call their hotline to report Santa's position.
+
+| Strengths | Weaknesses | Opportunities | Threats |
+|-----------|------------|---------------|---------|
+|Very well known worldwide|Their website is outdated|Opportunity for self-promotion and recruitement|Google's Santa Tracker|
+|They are traditional   |They are old (Since 1955)||http://catchyoursanta.ml/|
+|They are educational   ||||
+|They got their own gift shop||||
+|They got their own Youtube channel||||
+|They have their own hotline for children to call||||
+
+
+### [- Google's Santa tracker](https://santatracker.google.com/)
+
+Google's Santa Tracker is the main competitor for NORAD's. 
+Their main advantage over NORAD is their website, which is a lot more modern and appeals better to the younger genereations.
+
+| Strengths | Weaknesses | Opportunities | Threats |
+|-----------|------------|---------------|---------|
+|Awesome website        |Website can be overhelming|Opportunity to influence the younger generations (3-15 years old)|NORAD's Santa Tracker|
+|Lots of animations     |Not as personal as NORAD for example||http://catchyoursanta.ml/|
+|Strong color scheme    ||||
+|Lots of online games   ||||
+|Strong advertisement   ||||
+
+
+### [- Email Santa's Santa tracker](https://www.emailsanta.com/santa-tracker.asp)
+
+A gimicky website, while originall created to send letters to santa they also posess a Santa tracker that shows exactly where Santa is.
+
+| Strengths | Weaknesses | Opportunities | Threats |
+|-----------|------------|---------------|---------|
+|They identify users by their email addresses|Badly made website||Website might not appeal to parents||GDPR|
+|Lots of gimicks and moving parts on the website|Annoying music plays automatically||http://catchyoursanta.ml/|
+|They show Santa's exact position|Website asks for application to be installed at almost every step|
+
+### [- Planefinder](https://planefinder.net/)
+
+Website who's goal is to track airplane positions. They recently added a feature to also show Santa's Sleight.
+
+| Strengths | Weaknesses | Opportunities | Threats |
+|-----------|------------|---------------|---------|
+|Gigantic user base|No actual countdown||http://catchyoursanta.ml/|
+
+### [- Sky Q](https://www.sky.com/)
+
+Sky Q is a subscription-based television and entertainment service operated by British satellite television provider Sky, as a part of its operations in Austria and Germany, Ireland, Italy and in the UK.
+
+| Strengths | Weaknesses | Opportunities | Threats |
+|-----------|------------|---------------|---------|
+|Voice commands|Very limited availibilty||http://catchyoursanta.ml/|
+
+
+### Mobile applications
+
+There are a number of phone applications that allow to follow santa both for Android and IOS.
+These are both very numerous and very simular to each other therefore they will only be mentioned as a whole.
+
+[Google Play Store](https://play.google.com/store/search?q=Santa%20Tracker&c=apps)
+[Apple Store](https://www.apple.com/us/search/santa-tracker?src=globalnav)
+
+| Strengths | Weaknesses | Opportunities | Threats |
+|-----------|------------|---------------|---------|
+|Easy availibilty|Very generic||http://catchyoursanta.ml/|
+|Easily found by children|
 
 # Personas
 
@@ -218,6 +294,7 @@ In this example, Santa will arrive at 00:51:20 on the 25th of December.
 - [Solar time calculator](https://koch-tcm.ch/wp-content/uploads/the-calculator.html)
 - [How to calculate solar time](https://www.powerfromthesun.net/book.html)
 - [How to calculate solar time (simplified)](https://faculty.eng.ufl.edu/jonathan-scheffe/wp-content/uploads/sites/100/2020/08/Solar-Time1419.pdf)
+- [NORAD Santa Tracker vs Google Santa Tracker](https://www.pocket-lint.com/apps/news/131903-norad-tracks-santa-vs-google-santa-tracker-which-tracks-father-christmas-best)
 
 # Glossary
 
