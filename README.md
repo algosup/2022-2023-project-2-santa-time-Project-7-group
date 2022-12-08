@@ -2,4 +2,6 @@
 
 # Documentations
 
-- [Functional specifications](Documents\Functional_specs.md)
+- [Test plan](https://algosup.sharepoint.com/:t:/s/Schedule/ETlflKGpf6NMq3_Z9ulFhnEBp7JZQ9_AEoZweuoQIJthZA?e=LD397F)
+- [Functional specifications](Documents/Functional_specs.md)
+- [Marketing plan](Documents/Marketing_Plan.md)

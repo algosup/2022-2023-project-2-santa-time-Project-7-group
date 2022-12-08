@@ -7,14 +7,6 @@
 * [Risks and Assumptions](#risks-and-assumptions)
 * [Configuration](#configuration)
 * [UI/UX](#uiux)
-* [Marketing](#marketing)
-    * [SEO](#seo)
-    * [Market research](#market-research)
-    * [Advertisement on a personnal level](#advertisement-on-a-personnal-level)
-    * [Social Media Marketing and Forum Based Avertisment](#social-media-marketing-and-forum-based-avertisment)
-    * [Measuring Advertising Effectiveness](#measuring-advertising-effectiveness)
-    * [Concurence](#concurence)
-* [Personas](#personas)
 * [Calculating Santa's arrival time](#santa-arrival-time)
 	* [The math](#the-math)
 	* [Example](#example)
@@ -54,7 +46,6 @@ The end goal of this project is to create a website where users could look up wh
 - (optional) A gacha system could be put in place to touch into a slightly older target audiance then the intended 5-15 years old range.
 - (optional) Market research has show interrest in a functionality to display random facts related to christmass, reindeers, etc.
 
-
 # Risks and Assumptions
 
 - The maximum number of users at peak traffic is unknown.
@@ -79,130 +70,6 @@ The input field for the location must also include a placeholder that specifies 
 
 WIP
 
-# Marketing
-
-## SEO (Search Engine Optimization) <span id="seo"></span>
-
-The website must be optimized to maximise visibility on well known search engines (ex.: Google).
-
-## Market research
-
-The following form has been created for sake of product demand validation:
-[Google form english](https://forms.gle/ucnKXGWMtaWT9wYu5)
-
-WIP
-
-## Advertisement on a personnal level
-
-The final product must be advertised to personnal connections of the developement team.
-This must be done before larger scale advertisement as the feedback from this will be essential in finding bugs in the freshly finished product.
-
-## Social Media Marketing and Forum Based Avertisment
-
-The website can be advertised in variety of social medias and online forums.
-Examples of such sites are (but not limited to):
-
-- Reddit
-- Linkedin
-- Twitter
-- Facebook
-- 18-25
-
-## Measuring Advertising Effectiveness
-
-Optionaly, a separate link can be prepared for every platform we advertise on.
-This way it could be possible to measure which platforms are the most effective.
-
-## Concurence
-
-Our research indicates the following websites to be our main concurencies:
-
-Concurent ALGOSUP groups:
-- [Group 5's website](http://xmas.algosup.com/)
-- [Group 6's website](http://santaclock.algosup.com/)
-- [Group 8's website](http://santa.algosup.com/)
-
-External concurences:
-### [- North American Aerospace Defense Command](https://www.noradsanta.org/en/)
-
-NORAD's Santa Tracker is one of the oldest such sites.
-It has long history and is part of a long going tradition where children can call their hotline to report Santa's position.
-
-| Strengths | Weaknesses | Opportunities | Threats |
-|-----------|------------|---------------|---------|
-|Very well known worldwide|Their website is outdated|Opportunity for self-promotion and recruitement|Google's Santa Tracker|
-|They are traditional   |They are old (Since 1955)||http://catchyoursanta.ml/|
-|They are educational   ||||
-|They got their own gift shop||||
-|They got their own Youtube channel||||
-|They have their own hotline for children to call||||
-
-
-### [- Google's Santa tracker](https://santatracker.google.com/)
-
-Google's Santa Tracker is the main competitor for NORAD's. 
-Their main advantage over NORAD is their website, which is a lot more modern and appeals better to the younger genereations.
-
-| Strengths | Weaknesses | Opportunities | Threats |
-|-----------|------------|---------------|---------|
-|Awesome website        |Website can be overhelming|Opportunity to influence the younger generations (3-15 years old)|NORAD's Santa Tracker|
-|Lots of animations     |Not as personal as NORAD for example||http://catchyoursanta.ml/|
-|Strong color scheme    ||||
-|Lots of online games   ||||
-|Strong advertisement   ||||
-
-
-### [- Email Santa's Santa tracker](https://www.emailsanta.com/santa-tracker.asp)
-
-A gimicky website, while originall created to send letters to santa they also posess a Santa tracker that shows exactly where Santa is.
-
-| Strengths | Weaknesses | Opportunities | Threats |
-|-----------|------------|---------------|---------|
-|They identify users by their email addresses|Badly made website||Website might not appeal to parents||GDPR|
-|Lots of gimicks and moving parts on the website|Annoying music plays automatically||http://catchyoursanta.ml/|
-|They show Santa's exact position|Website asks for application to be installed at almost every step|
-
-### [- Planefinder](https://planefinder.net/)
-
-Website who's goal is to track airplane positions. They recently added a feature to also show Santa's Sleight.
-
-| Strengths | Weaknesses | Opportunities | Threats |
-|-----------|------------|---------------|---------|
-|Gigantic user base|No actual countdown||http://catchyoursanta.ml/|
-
-### [- Sky Q](https://www.sky.com/)
-
-Sky Q is a subscription-based television and entertainment service operated by British satellite television provider Sky, as a part of its operations in Austria and Germany, Ireland, Italy and in the UK.
-
-| Strengths | Weaknesses | Opportunities | Threats |
-|-----------|------------|---------------|---------|
-|Voice commands|Very limited availibilty||http://catchyoursanta.ml/|
-
-
-### Mobile applications
-
-There are a number of phone applications that allow to follow santa both for Android and IOS.
-These are both very numerous and very simular to each other therefore they will only be mentioned as a whole.
-
-[Google Play Store](https://play.google.com/store/search?q=Santa%20Tracker&c=apps)
-[Apple Store](https://www.apple.com/us/search/santa-tracker?src=globalnav)
-
-| Strengths | Weaknesses | Opportunities | Threats |
-|-----------|------------|---------------|---------|
-|Easy availibilty|Very generic||http://catchyoursanta.ml/|
-|Easily found by children|
-
-# Personas
-
-These are personas that represent potential customers can be found.
-
-![Dennis](./images/persona_1.png)
-![Lois](./images/persona_2.png)
-![Geremy](./images/persona_3.png)
-![Mark](./images/persona_4.png)
-![Adam](./images/persona_5.png)
-![Julia](./images/persona_6.png)
-![Anon](./images/persona_7.png)
 
 # Calculating Santa's arrival time <span id="santa-arrival-time"></span>
 
