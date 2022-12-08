@@ -17,11 +17,11 @@ var (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	if r.Host != domains[0] {
-		//redirect to giftcountdown.algosup.com
-		http.Redirect(w, r, "https://giftcountdown.algosup.com"+r.RequestURI, http.StatusMovedPermanently)
-		return
-	}
+	// if r.Host != domains[0] {
+	// 	//redirect to giftcountdown.algosup.com
+	// 	http.Redirect(w, r, domains[0]+r.RequestURI, http.StatusMovedPermanently)
+	// 	return
+	// }
 	if r.URL.Path != "/" {
 		//redirect to home
 		http.Redirect(w, r, "/", http.StatusMovedPermanently)
@@ -67,7 +67,7 @@ func main() {
 	r, _ := content.ReadFile("static/index.html")
 	templates.New("index").Parse(string(r))
 	r, _ = content.ReadFile("static/about.html")
-	templates.New("aboutus").Parse(string(r))
+	templates.New("about").Parse(string(r))
 	// http.ListenAndServe(":8080", mux)
 
 	redirect := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
