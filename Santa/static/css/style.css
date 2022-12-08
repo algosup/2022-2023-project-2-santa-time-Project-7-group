@@ -789,6 +789,21 @@ footer>div {
     border-color: #e30000 !important;
 }
 
+.formWidth{
+    width: 70vw;
+}
+
+.shareDiv{
+    padding: 1vh;
+    display: flex;
+    justify-content: right;
+}
+
+.shareIcon{
+    padding: 1vw;
+    height: 10vw;
+}
+
 #rarity>p {
     font-size: 11vw;
 }
@@ -797,8 +812,9 @@ footer>div {
     #rarity>p {
         font-size: 11vh;
     }
+    .shareIcon{
+        padding: 1vh;
+        height: 10vh;
+    }
 }
 
-.formWidth{
-    width: 70vw;
-}
