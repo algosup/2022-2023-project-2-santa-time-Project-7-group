@@ -2,8 +2,10 @@ package main
 
 import (
 	"embed"
+	"log"
 	"net/http"
 	"text/template"
+	"time"
 )
 
 var (
@@ -22,6 +24,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	templates.ExecuteTemplate(w, "index", nil)
 }
 
+func abouthandler(w http.ResponseWriter, r *http.Request) {
+	templates.ExecuteTemplate(w, "aboutus", nil)
+}
+
 func filesHandler(w http.ResponseWriter, r *http.Request, ty string) {
 	//get file from content
 	html, _ := content.ReadFile("static" + r.URL.Path)
@@ -34,6 +40,7 @@ func filesHandler(w http.ResponseWriter, r *http.Request, ty string) {
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", handler)
+	mux.HandleFunc("/about", abouthandler)
 	mux.HandleFunc("/css/", func(w http.ResponseWriter, r *http.Request) {
 		filesHandler(w, r, "css")
 	})
@@ -51,9 +58,20 @@ func main() {
 	templates = template.New("html templates")
 	r, _ := content.ReadFile("static/index.html")
 	templates.New("index").Parse(string(r))
+	r, _ = content.ReadFile("static/about.html")
+	templates.New("aboutus").Parse(string(r))
 	// http.ListenAndServe(":8080", mux)
 
 	go http.ListenAndServe(":http", redirect)
+	//serv redirect to giftcountdown.algosup.com if other domain
+	srv := &http.Server{
+		Addr: ":https",
+		// Good practice to set timeouts to avoid Slowloris attacks.
+		WriteTimeout: 5 * time.Second,
+		ReadTimeout:  5 * time.Second,
+		IdleTimeout:  60 * time.Second,
+		Handler:      mux, // Pass our instance of gorilla/mux in.
+	}
 
-	http.ListenAndServeTLS(":https", "keys/fullchain.pem", "keys/privkey.pem", mux)
+	log.Fatal(srv.ListenAndServeTLS("giftcountdown.algosup.com/fullchain.pem", "giftcountdown.algosup.com/privkey.pem"))
 }

@@ -11,6 +11,11 @@ func enableCors(w *http.ResponseWriter) {
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
+	//check url size if > 150
+	if len(r.URL.Path) > 150 {
+		http.Error(w, "URL too long", http.StatusBadRequest)
+		return
+	}
 	enableCors(&w)
 	//add options
 	req := http.Request{
@@ -36,6 +41,11 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func Handlertz(w http.ResponseWriter, r *http.Request) {
+	//check url size if > 150
+	if len(r.URL.Path) > 150 {
+		http.Error(w, "URL too long", http.StatusBadRequest)
+		return
+	}
 	enableCors(&w)
 	//add options
 	req := http.Request{

@@ -1,4 +1,4 @@
 FROM scratch
-COPY keys /keys
+COPY giftcountdown.algosup.com /giftcountdown.algosup.com
 COPY Requests /Requests
 CMD ["/Requests"]
