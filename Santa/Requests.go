@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"embed"
 	"log"
 	"net/http"
@@ -12,6 +13,7 @@ var (
 	//go:embed static
 	content   embed.FS
 	templates *template.Template
+	domains   = []string{"giftcountdown.algosup.com", "giftcountdown.algosup.com"}
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -51,10 +53,6 @@ func main() {
 		filesHandler(w, r, "img")
 	})
 
-	redirect := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, "https://giftcountdown.algosup.com"+r.RequestURI, http.StatusMovedPermanently)
-	})
-
 	templates = template.New("html templates")
 	r, _ := content.ReadFile("static/index.html")
 	templates.New("index").Parse(string(r))
@@ -62,10 +60,26 @@ func main() {
 	templates.New("aboutus").Parse(string(r))
 	// http.ListenAndServe(":8080", mux)
 
+	redirect := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, "https://giftcountdown.algosup.com"+r.RequestURI, http.StatusMovedPermanently)
+	})
+
 	go http.ListenAndServe(":http", redirect)
+
+	tlsConfig := &tls.Config{}
+
+	for _, v := range domains {
+		cert, err := tls.LoadX509KeyPair(v+"/fullchain.pem", v+"/privkey.pem")
+		if err != nil {
+			println(err)
+		}
+		tlsConfig.Certificates = append(tlsConfig.Certificates, cert)
+	}
+
 	//serv redirect to giftcountdown.algosup.com if other domain
 	srv := &http.Server{
-		Addr: ":https",
+		Addr:      ":https",
+		TLSConfig: tlsConfig,
 		// Good practice to set timeouts to avoid Slowloris attacks.
 		WriteTimeout: 5 * time.Second,
 		ReadTimeout:  5 * time.Second,
