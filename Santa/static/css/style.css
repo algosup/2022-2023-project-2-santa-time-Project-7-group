@@ -75,6 +75,22 @@ h2 {
     display: flex;
     flex-wrap: wrap;
 }
+#google_translate_element {
+    position: relative;
+    left: 45vw;
+    bottom: 3vw;
+    display: flex;
+    flex-direction: column;
+
+}
+@media screen and (max-width: 1000px) {
+#google_translate_element  {
+    position: relative;
+    left: 0vw;
+    bottom: 0vw;
+    display: flex
+}
+}
 
 #google_translate_element select {
     background: #f6edfd;
