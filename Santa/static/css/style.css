@@ -52,7 +52,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    top: 35vh;
+    top: 25vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -63,6 +63,11 @@ img {
 
 }
 
+@media screen and (max-width: 345px) {
+    body font {
+        font-size: 5vw;
+    }
+}
 .image-color {
     filter: contrast(0.1);
 }
