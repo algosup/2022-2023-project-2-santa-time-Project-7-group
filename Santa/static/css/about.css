@@ -248,7 +248,8 @@ h2 {
 #google_translate_element {
         position: relative;
         left: 45vw;
-        bottom: 3vw;
+        bottom: 4vw;
+        right: 1vw;
         display: flex;
         flex-direction: column;
 
@@ -366,11 +367,20 @@ footer {
 
 .proj-box-format {
     float: left;
-    height: 400px;
+    width: 73vh;
+    height: 48vh;
     border: 2px groove #73C2FB;
     margin: 10px;
     
 }
+
+@media screen and (max-width:650px) {
+    .proj-box-format {
+        width: 30vh ;
+        margin-left: 6vh;
+}
+}
+
 
 iframe {
     width: 100%;
