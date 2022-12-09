@@ -1,15 +1,24 @@
-function validateURL(link) {
-    inc++;
-    if (link.indexOf("https://") == 0) {
-        document.getElementById("frame_ref" + inc).href = link;
-        document.getElementById("frame" + inc).src = link;
-    }
-    else {
-        document.getElementById("frame_ref" + inc).style.visibility = "hidden";
-    }
-}
-var inc = 0
+const controller = new AbortController()
 
-validateURL("xmas.algosup.com/");
-validateURL("santaclock.algosup.com/")
-validateURL("santa.algosup.com/")
+// 1 second timeout:
+
+const timeoutId = setTimeout(() => controller.abort(), 1000)
+
+//function to fetch an https url to see if it exists
+function urlExists(link) {
+    //fetch with timeout
+    fetch(link, {method: 'HEAD', mode: 'no-cors',signal: controller.signal})
+        .then(function(response) {
+            inc++;
+            document.getElementById("frame_ref" + inc).href = link;
+            document.getElementById("frame" + inc).src = link;
+        })
+        .catch(function(error) {
+            inc++;
+            document.getElementById("frame_ref" + inc).style.visibility = "hidden";
+        });
+}
+inc = 0;
+urlExists("https://xmas.algosup.com/");
+urlExists("https://santaclock.algosup.com/");
+urlExists("https://santa.algosup.com/");
