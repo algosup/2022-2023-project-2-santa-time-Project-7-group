@@ -20,37 +20,37 @@
 
 # Marketing mission
 
-Our mission is to maximise website traffic until the 25th of December. Due to the projects nature, traffic should peak between 12PM 24th to 12PM 25th of December.
+Our mission is to maximise website traffic until the 25th of December. Due to the project's nature, traffic should peak between 12PM 24th to 12PM 25th of December.
 Therefore we have until the 24th of december to make the website as well known as possible.
 
-<small>*This document has been separated from the functionnal specifications under the recommendation of Fabien GOULAMHOUSSEN.</small>
+<small>*This document has been separated from the functional specifications under the recommendation of Fabien GOULAMHOUSSEN.</small>
 
 # Market research
 
 The following form has been created for sake of product demand validation:
 [Google form](https://forms.gle/ucnKXGWMtaWT9wYu5)
 
-This suvey has been shared both to the developpement teams personal connections and on https://www.reddit.com/r/SampleSize.
+This survey has been shared both to the developpement teams personal connections and on https://www.reddit.com/r/SampleSize.
 
 
-The answers to the survey consist of a list of recommendations to make the website more interresting as well as the following statistics.
-
-[Detailed answers recieved from the survey](https://docs.google.com/spreadsheets/d/19plA9aklFpZFfaZvr5TJz5VEsMhbK4ZLhS_6mfdiDqg/edit?usp=sharing)
+The answers to the survey consist of a list of recommendations to make the website more interesting as well as the following statistics.
 
 ![intro](./images/stats_intro.png)
 ![interest](./images/stats_interest.png)
 ![gacha](./images/stats_gacha.png)
 
+Detailed answers received from the survey can be found [here](https://docs.google.com/spreadsheets/d/19plA9aklFpZFfaZvr5TJz5VEsMhbK4ZLhS_6mfdiDqg/edit?usp=sharing).
+
 # Key performance indicators
 
-Statistics of website traffic can be found on portal.azure.com, for further details please consult our Technical Specifications
+Statistics of website traffic can be found on portal.azure.com, for further details please consult our Technical Specifications.
 
 Optionaly, a separate link can be prepared for every platform we advertise on.
 This way it could be possible to measure which platforms bring in the most clicks.
 
 # Personas
 
-These are personas that represent for potential users.
+These are personas that represent potential users.
 
 ![Dennis](./images/persona_1.png)
 ![Lois](./images/persona_2.png)
@@ -62,14 +62,14 @@ These are personas that represent for potential users.
 
 # Advertisment strategy
 
-## Advertisement on a personnal level
+## Advertisement on a personal level
 
-The final product must be advertised to personnal connections of the developement team.
+The final product must be advertised to personal connections of the development team.
 This must be done before larger scale advertisement as the feedback from this will be essential in finding bugs in the freshly finished product.
 
 ## Social Media Marketing and Forum Based Avertisment
 
-The website can be advertised in variety of social medias and online forums.
+The website can be advertised in a variety of social media and online forums.
 Examples of such sites are (but not limited to):
 
 - Reddit
@@ -80,43 +80,43 @@ Examples of such sites are (but not limited to):
 
 # Conpetition
 
-Our research indicates the following websites to be our main concurencies:
+Our research indicates the following websites to be our main concurrencies:
 
-Concurent ALGOSUP groups:
+Concurrent ALGOSUP groups:
 - [Group 5's website](http://xmas.algosup.com/)
 - [Group 6's website](http://santaclock.algosup.com/)
 - [Group 8's website](http://santa.algosup.com/)
 
-External concurences:
+External concurrences:
 
 ## [North American Aerospace Defense Command](https://www.noradsanta.org/en/)
 
 NORAD's Santa Tracker is one of the oldest such sites.
-It has long history and is part of a long going tradition where children can call their hotline to report Santa's position.
+It has a long history and is part of a long going tradition where children can call their hotline to report Santa's position.
 
 | Strengths | Weaknesses | Opportunities | Threats |
 |-----------|------------|---------------|---------|
-|Very well known worldwide|Their website is outdated|Opportunity for self-promotion and recruitement|Google's Santa Tracker|
+|Very well known worldwide|Their website is outdated|Opportunity for self-promotion and recruitment|Google's Santa Tracker|
 |They are traditional   |They are old (Since 1955)|Connection to older generations|Mostly North American|
 |They are educational   |Hard to see color palet|Access to military budget|Tied to the military|
-|They got their own gift shop|very heavy website|Colabs with flightTrackers|https://catchyoursanta.ml/|
+|They got their own gift shop|very heavy website|Collabs with flightTrackers|https://catchyoursanta.ml/|
 |They got their own Youtube channel||||
 |They have their own hotline for children to call||||
 |Multilingual Map tracking|
-|3D animtions|
+|3D animations|
 |Online games|
 |Music|
 
 ## [Google's Santa tracker](https://santatracker.google.com/)
 
 Google's Santa Tracker is the main competitor for NORAD's. 
-Their main advantage over NORAD is their website, which is a lot more modern and appeals better to the younger genereations.
+Their main advantage over NORAD is their website, which is a lot more modern and appeals better to the younger generations.
 
 | Strengths | Weaknesses | Opportunities | Threats |
 |-----------|------------|---------------|---------|
-|Awesome website        |Website can be overhelming|Opportunity to influence the younger generations (3-15 years old)|NORAD's Santa Tracker|
+|Awesome website        |Website can be overwhelming|Opportunity to influence the younger generations (3-15 years old)|NORAD's Santa Tracker|
 |Lots of animations     |Not as personal as NORAD for example||Past issues with security and data|
-|Strong color scheme    |Focuses sorely on little children||https://catchyoursanta.ml/|
+|Strong color scheme    |Focuses solely on little children||https://catchyoursanta.ml/|
 |Lots of online games   |Limited localisation|||
 |Strong advertisement   ||||
 |Strong servers/backend|
@@ -127,12 +127,12 @@ Their main advantage over NORAD is their website, which is a lot more modern and
 
 ## [Email Santa's Santa tracker](https://www.emailsanta.com/santa-tracker.asp)
 
-A gimicky website, while originall created to send letters to santa they also posess a Santa tracker that shows exactly where Santa is.
+A gimmicky website, while originally created to send letters to Santa they also possess a Santa tracker that shows exactly where Santa is.
 
 | Strengths | Weaknesses | Opportunities | Threats |
 |-----------|------------|---------------|---------|
 |They identify users by their email addresses|Badly made website||Website might not appeal to parents||GDPR|
-|Lots of gimicks and moving parts on the website|Annoying music plays automatically||https://catchyoursanta.ml/|
+|Lots of gimmicks and moving parts on the website|Annoying music plays automatically||https://catchyoursanta.ml/|
 |They show Santa's exact position|Website asks for application to be installed at almost every step|
 |Santa themed chatbot|Old|
 |lots of functionalities|
@@ -140,7 +140,7 @@ A gimicky website, while originall created to send letters to santa they also po
 
 ## [Planefinder](https://planefinder.net/)
 
-Website who's goal is to track airplane positions. They recently added a feature to also show Santa's Sleight.
+Website whose goal is to track aeroplane positions. They recently added a feature to also show Santa's Sleigh.
 
 | Strengths | Weaknesses | Opportunities | Threats |
 |-----------|------------|---------------|---------|
@@ -152,13 +152,13 @@ Sky Q is a subscription-based television and entertainment service operated by B
 
 | Strengths | Weaknesses | Opportunities | Threats |
 |-----------|------------|---------------|---------|
-|Voice commands|Very limited availibilty||https://catchyoursanta.ml/|
+|Voice commands|Very limited availability||https://catchyoursanta.ml/|
 
 
 ## Mobile applications
 
-There are a number of phone applications that allow to follow santa both for Android and IOS.
-These are both very numerous and very simular to each other therefore they will only be mentioned as a whole.
+There are a number of phone applications that allows users to follow Santa both for Android and IOS.
+These are both very numerous and very similar to each other therefore they will only be mentioned as a whole.
 
 [Google Play Store](https://play.google.com/store/search?q=Santa%20Tracker&c=apps)
 
@@ -166,10 +166,10 @@ These are both very numerous and very simular to each other therefore they will 
 
 | Strengths | Weaknesses | Opportunities | Threats |
 |-----------|------------|---------------|---------|
-|Easy availibilty|Very generic||https://catchyoursanta.ml/|
+|Easy availability|Very generic||https://catchyoursanta.ml/|
 |Easily found by children|
 
 
 # SEO (Search Engine Optimization) <span id="seo"></span>
 
-The website must be optimized to maximise visibility on well known search engines (ex.: Google).
+The website must be optimised to maximise visibility on well known search engines (ex.: Google).

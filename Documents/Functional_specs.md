@@ -165,11 +165,11 @@ In this example, Santa will arrive at 00:51:20 on the 25th of December.
 
 # Glossary
 
-[^1]: API : An <u>Application Programming Interface (API)</u> is a way for two or more computer programs to communicate with each other.
+[^1]: API : An Application Programming Interface (API) is a way for two or more computer programs to communicate with each other.
 
 [^2]: Solar time: Solar time is a calculation of the passage of time based on the position of the Sun.
 
-[^3]: Coordinates: [click here for details.](https://en.wikipedia.org/wiki/Geographic_coordinate_system#Latitude_and_longitude)
+[^3]: Coordinates: The [Geographic Coordinate System (GCS)](https://en.wikipedia.org/wiki/Geographic_coordinate_system#Latitude_and_longitude) is a spherical or ellipsoidal coordinate system for measuring and communicating positions directly on the Earth as latitude and longitude.
 
 [^4]: Docker: [Docker](https://www.docker.com/) is a set of platform as a service product that use OS-level virtualization to deliver software in packages called containers.
 
