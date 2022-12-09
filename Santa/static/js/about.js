@@ -1,13 +1,15 @@
-function validateURL(link)
-{
-    if (link.indexOf("http://") == 0 || link.indexOf("https://") == 0) {
-        console.log("The link has http or https.");
+function validateURL(link) {
+    inc++;
+    if (link.indexOf("https://") == 0) {
+        document.getElementById("frame_ref" + inc).href = link;
+        document.getElementById("frame" + inc).src = link;
     }
-    else{
-        console.log("The link doesn't have http or https.");
+    else {
+        document.getElementById("frame_ref" + inc).style.visibility = "hidden";
     }
 }
+var inc = 0
 
-validateURL("https://xmas.algosup.com/");
-validateURL("https://santaclock.algosup.com/")
-validateURL("https://santa.algosup.com/")
+validateURL("xmas.algosup.com/");
+validateURL("santaclock.algosup.com/")
+validateURL("santa.algosup.com/")
