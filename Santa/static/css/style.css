@@ -840,3 +840,6 @@ footer>div {
     }
 }
 
+#goog-gt-tt{
+    display: none !important;
+}

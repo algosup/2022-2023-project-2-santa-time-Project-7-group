@@ -503,3 +503,7 @@ footer>div {
         height: 5vh;
     }
 }
+
+#goog-gt-tt{
+    display: none !important;
+}
