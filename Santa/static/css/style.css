@@ -17,7 +17,7 @@ header {
     background: radial-gradient(circle, #0047AB 30%, #0047AB 70%);
     color: snow;
     text-align: center;
-    display: flex !important;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 
