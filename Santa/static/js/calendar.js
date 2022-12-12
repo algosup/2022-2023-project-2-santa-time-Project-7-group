@@ -54,6 +54,20 @@ document.getElementById("tooSoon").onclick = function () {
     document.getElementById("tooSoon").style.display = "none";
 }
 
+document.getElementById("popup_calendar").onclick = function(event){;
+    let once = false;
+    let twice =true;
+    if (document.getElementById('big_image').style.display == "none" || document.getElementById('big_image').style.display == ""){
+        once = true;
+    }
+    if (document.getElementById('tooSoon').style.display == "none" || document.getElementById('tooSoon').style.display == ""){
+        twice = true;
+    }
+    if(once && twice){
+        event.path[0].style.display = 'none';
+    }
+};  
+
 function imgOut() {
     document.getElementById("big_image").style.display = "none";
     document.getElementById("denter_grid").style.display = "block";

@@ -26,8 +26,6 @@ function verifGachaHistory(day){
 }
 
 function getGacha(day){
-    console.log(JSON.parse(localStorage.getItem("santa_gachas")));
-    console.log(JSON.parse(localStorage.getItem("santa_gachas")).filter(e => e[0] == day)[1]);
 
     return JSON.parse(localStorage.getItem("santa_gachas")).filter(e => e[0] == day)[0][1];
 }
