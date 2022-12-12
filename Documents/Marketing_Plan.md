@@ -75,8 +75,7 @@ Examples of such sites are (but not limited to):
 - Reddit
 - Linkedin
 - Twitter
-- Facebook
-- 18-25
+- Discord
 
 # Conpetition
 
