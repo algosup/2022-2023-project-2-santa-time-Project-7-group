@@ -27,6 +27,8 @@
     user-select: none;
 }
 
+/* End header */
+
 /* main body */
 .container_santa {
     display: flex;
@@ -53,9 +55,6 @@
 }
 
 @media (min-aspect-ratio: 1/1) {
-    #rarity>p {
-        font-size: 11vh;
-    }
     .shareIcon{
         padding: 1vh;
         height: 10vh;
@@ -69,6 +68,8 @@
     display: flex;
 
 }
+
+/* End main */
 
 /* Footer */
 .footer {
@@ -104,3 +105,5 @@
 .footer button:hover {
     cursor: pointer;
 }
+
+/* End footer */
