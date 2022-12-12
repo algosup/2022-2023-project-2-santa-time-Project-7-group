@@ -41,20 +41,12 @@ h2 {
 }
 #google_translate_element {
     position: relative;
-    left: 42vw;
-    bottom: 4vw;
-    display: flex;
-    flex-direction: column;
-
-}
-@media screen and (max-width: 1000px) {
-#google_translate_element  {
-    position: relative;
     left: 0vw;
     bottom: 0vw;
     display: flex
+
 }
-}
+
 
 #google_translate_element select {
     background: #f6edfd;
@@ -686,17 +678,6 @@ p {
 .mico {
     background-color: #e30000 !important;
     border-color: #e30000 !important;
-}
-
-.shareDiv{
-    padding: 1vh;
-    display: flex;
-    justify-content: right;
-}
-
-.shareIcon{
-    padding: 1vw;
-    height: 10vw;
 }
 
 #rarity>p {

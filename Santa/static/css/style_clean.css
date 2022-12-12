@@ -39,6 +39,31 @@
     position: fixed;
 }
 
+/* Share buttons */
+
+.shareDiv{
+    padding: 1vh;
+    display: flex;
+    justify-content: right;
+}
+
+.shareIcon{
+    padding: 1vw;
+    height: 10vw;
+}
+
+@media (min-aspect-ratio: 1/1) {
+    #rarity>p {
+        font-size: 11vh;
+    }
+    .shareIcon{
+        padding: 1vh;
+        height: 10vh;
+    }
+}
+
+/* Main */
+
 .container_santa form{
     width: 70vw;
     display: flex;
