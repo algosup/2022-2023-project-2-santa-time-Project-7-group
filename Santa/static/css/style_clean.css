@@ -9,6 +9,7 @@
     text-align: center;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: 5px;
@@ -26,6 +27,12 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+@media (max-width: 500px) {
+    .header {
+        justify-content: space-around;
+    }
+} 
 
 /* End header */
 
@@ -50,15 +57,8 @@
 }
 
 .shareIcon{
-    padding: 1vw;
-    height: 10vw;
-}
-
-@media (min-aspect-ratio: 1/1) {
-    .shareIcon{
-        padding: 1vh;
-        height: 10vh;
-    }
+    padding: 5px;
+    height: 40px;
 }
 
 /* Main */
