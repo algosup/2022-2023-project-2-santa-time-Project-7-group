@@ -83,20 +83,20 @@ h2 {
 }
 #google_translate_element {
     position: relative;
-    left: 42vw;
-    bottom: 4vw;
+    right: 0vw;
+    bottom: 0vw;
     display: flex;
     flex-direction: column;
-
 }
-@media screen and (max-width: 1000px) {
+/*@media screen and (max-width: 1000px) {
 #google_translate_element  {
     position: relative;
     left: 0vw;
     bottom: 0vw;
-    display: flex
+    display: flex;
+    flex-direction: column;
 }
-}
+}*/
 
 #google_translate_element select {
     background: #f6edfd;
