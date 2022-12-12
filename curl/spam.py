@@ -6,12 +6,15 @@ from multiprocessing import Pool
 import random
 import json
 import csv
+import urllib.parse
 
 data: list[list[str]]
 with open(f"./adressF.csv", newline='') as f:
     reader = csv.reader(f)
     data = list(reader)
 
+for i in data:
+    i[0] = urllib.parse.quote(i[0], safe='')
 
 def process(f):
     mainURL = f'https://noel.gq/api?q={data[f][0]}'
