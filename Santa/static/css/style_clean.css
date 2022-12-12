@@ -1,0 +1,81 @@
+/* header */
+.header{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #042640;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.header .center{
+    color: snow;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: "Mountains of Christmas";
+
+    /* Prevent text selection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* main body */
+.container_santa {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    top: 150px;
+    width: 100%;
+    align-items: center;
+    position: fixed;
+}
+
+.container_santa form{
+    width: 70vw;
+    display: flex;
+
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right:0;
+    background-color: #042640;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 360px) {
+    .footer {
+        justify-content: center;
+    }
+} 
+
+.footer button {
+    background-color:#0047AB ;
+    color: snow;
+    border-radius: 40px;
+    padding: 10px;
+    /* width: 100%; */
+    font-size: medium;
+    border: none;
+    margin: 5px;
+}
+
+.footer button:hover {
+    cursor: pointer;
+}

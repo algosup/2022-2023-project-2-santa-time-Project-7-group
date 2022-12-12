@@ -9,18 +9,19 @@
     <title>Catch your Santa</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_clean.css">
     <!-- <link rel="stylesheet" href="css/snow.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css"
-        type="text/css" />
-    <link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css"
-        type="text/css" />
+    <link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css" type="text/css" />
+    <link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css" type="text/css" />
+
+    <link href='https://fonts.googleapis.com/css?family=Mountains of Christmas' rel='stylesheet'>
 </head>
 
 <body style="background-image: url('./img/star.jpg')">
     <div id="fb-root"></div>
-    <header>
+    <!-- <header>
         <nav>
             <div id="calendar_btn">
                 <img src="./img/icons8-calendrier.gif" alt="calendar" width="100%" height="100%">
@@ -42,7 +43,13 @@
                     </script>
             </div>
         </nav>
-    </header>
+    </header> -->
+
+    <div class="header">
+        <div class="center">Merry Christmas Folks</div>
+        <div id="google_translate_element"></div>
+    </div>
+
     <div id="popup_calendar" class="popup_calendar">
         <div id="tooSoon">
             <p id="setText"></p>
@@ -62,6 +69,7 @@
             </div>
         </div>
     </div>
+
     <div class="shareDiv">
         <a href="https://www.facebook.com/sharer/sharer.php?src=sp&amp;u=https%3A%2F%2Fcatchyoursanta.ml" target="_blank">
             <img src="./img/facebook.png" class="shareIcon">
@@ -73,27 +81,18 @@
             <img src="./img/linkedin.png" class="shareIcon">
         </a>
     </div>
-    <div class="container_santa">
-        <div style="display: flex;align-items: flex-end;">
-            <h1>
-                <font>Find out when Santa arrives</font>
-            </h1>
-            <img src="./img/animated-arrow.gif" alt="down here !" style="transform: rotate(90deg); width: 36px;">
-        </div>
 
+    <div class="container_santa">
+        <h1> Find out when Santa arrives </h1>
         <div class="inputs">
-            <div style="flex-direction: column;">
-                <div style="display: flex; margin-bottom: 2vh;">
-                    <form class="formWidth" onsubmit="getAnswer(true);return false">
-                        <input type="submit" hidden />
-                        <input type="text" id="location" placeholder="Enter your location">
-                    </form>
-                    <button class="search" onclick="getAnswer(true)"><i class="fa fa-search search"></i></button>
-                </div>
-                <ul class="suggestions" id="autocomplete_list" style="font-size: large;
-            list-style-type: none;">
-                </ul>
-            </div>
+            <form onsubmit="getAnswer(true);return false">
+                <input type="submit" hidden />
+                <input type="text" id="location" placeholder="Enter your location">
+                <button class="search" onclick="getAnswer(true)"><i class="fa fa-search search"></i></button>
+            </form>
+            <ul id="autocomplete_list" style="font-size: large; list-style-type: none;"></ul>
+        </div>
+        <div>
             <button class="location" onclick="useGPS()">Use my location</button>
         </div>
         <h1 id="time"></h1>
@@ -101,24 +100,19 @@
     <div class="imgcontainers">
         <img class="sled" id="santa" src="img/sled.png" width="200" height="200">
     </div>
-    <footer>
-        <div class="primaryfooter">
-            <a href="about">
-                <button class="about">
-                    <font>About us</font>
-                </button>
-            </a>
-        </div>
-        <div class="secondaryfooter">
-            <div class="donation">
-                <a href="https://don.unicef.fr/don-ponctuel-old/~mon-don?_cv=1" target="_blank">
-                    <button class="donate">
-                        <font>DONATE!</font>
-                    </button>
-                </a>
 
-            </div>
-    </footer>
+    <!-- Footer -->
+    <div class="footer">
+        <a href="about">
+            <button> About us </button>
+        </a>
+
+        <a href="https://don.unicef.fr/don-ponctuel-old/~mon-don?_cv=1" target="_blank">
+            <button> DONATE! </button>
+        </a>
+    </div>
+    <!-- End footer -->
+
     <div id="fb-root"></div>
     <script src="//unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
     <script src="//unpkg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
@@ -130,6 +124,9 @@
     <script src="./js/gacha_data.js"></script>
     <script src="./js/gacha.js"></script>
     <script src="./js/share.js"></script>
+
+    <script src="./js/translate.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

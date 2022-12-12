@@ -10,33 +10,6 @@ body {
     overflow: hidden;
 }
 
-header {
-    top: 0;
-    left: 0;
-    right: 0;
-    background: radial-gradient(circle, #0047AB 30%, #0047AB 70%);
-    color: snow;
-    text-align: center;
-    display: flex !important;
-    flex-direction: column;
-    justify-content: space-between;
-
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* IE10+/Edge */
-    user-select: none;
-    /* Standard */
-}
-
-nav {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-}
-
 img {
     width: auto;
     display: flex;
@@ -46,21 +19,6 @@ img {
 .merry {
     width: 100%;
     margin-right: 3%;
-}
-
-.container_santa {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    top: 25vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    color: snow;
-    align-items: center;
-    position: relative;
-    transform: translate(0%, -50%);
-
 }
 
 @media screen and (max-width: 345px) {
@@ -234,28 +192,6 @@ p {
     font-size: 20px;
 }
 
-body footer {
-    display: flex;
-    flex-direction: row;
-
-}
-
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #042640;
-    color: black;
-    text-align: center;
-}
-
-@media screen and (max-width: 1000px) {
-    footer {
-        flex-direction: column;
-    }
-}
-
 @media screen and (max-height: 760px) {
     .imgcontainers {
         width: 7vh;
@@ -273,65 +209,6 @@ footer {
     }
 }
 
-footer>div {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.primaryfooter {
-    width: 50%;
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-}
-.about {
-    background-color:#0047AB ;
-    border: #0047AB;
-    color: snow;
-    border-radius: 40px;
-    padding: 10px;
-    width: 100%;
-}
-
-.about:hover {
-    cursor: pointer;
-}
-
-.about font {
-    font-size: medium !important;
-}
-
-.secondaryfooter {
-    width: 50%;
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-   }
-
-.donate {
-    background-color:#0047AB ;
-    border: #0047AB;
-    color: snow;
-    border-radius: 40px;
-    padding: 10px;
-    width: 100%;
-}
-
-.donate:hover {
-    cursor: pointer;
-}
-
-.donate font {
-    font-size: medium !important;
-}
 .suggestions {
     position: fixed;
     font-size: 18px;
@@ -809,10 +686,6 @@ footer>div {
 .mico {
     background-color: #e30000 !important;
     border-color: #e30000 !important;
-}
-
-.formWidth{
-    width: 70vw;
 }
 
 .shareDiv{
