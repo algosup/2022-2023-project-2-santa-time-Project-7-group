@@ -8,13 +8,13 @@ import json
 import csv
 
 data: list[list[str]]
-with open(f"../database-generation/adress0.csv", newline='') as f:
+with open(f"./adressF.csv", newline='') as f:
     reader = csv.reader(f)
     data = list(reader)
-print(data[2][0])
-# prossess sound into pngs
+
+
 def process(f):
-    mainURL = f'http://13.73.147.115/api?q={"aa"}'
+    mainURL = f'https://noel.gq/api?q={data[f][0]}'
     buffer = BytesIO()
     c = pycurl.Curl()
     c.setopt(c.URL, mainURL)
@@ -22,18 +22,18 @@ def process(f):
     c.setopt(c.CAINFO, certifi.where())
     c.perform()
     c.close()
-
-    print(f)
+    body = buffer.getvalue()
+    print(body.decode('iso-8859-1'))
 
 
 # Reserve cores
-def thread():
+def thread(A):
     # alocate CPU
-    max_processors = 128
+    max_processors = A
     pool = Pool(processes=max_processors)
     f_list = []
 
-    for i in range(6400000):
+    for i in range(1000):
         # pass the df to process function
         f = pool.apply_async(process, [i])
         f_list.append(f)
@@ -45,5 +45,5 @@ def thread():
                 del f_list[:]
 
 if __name__ == "__main__":
-    #thread()
-    print("end")
+    thread(32)
+    print('end')
