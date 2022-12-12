@@ -7,6 +7,8 @@ import random
 import json
 import csv
 import urllib.parse
+import time
+import datetime
 
 data: list[list[str]]
 with open(f"./adressF.csv", newline='') as f:
@@ -25,8 +27,6 @@ def process(f):
     c.setopt(c.CAINFO, certifi.where())
     c.perform()
     c.close()
-    body = buffer.getvalue()
-    print(body.decode('iso-8859-1'))
 
 
 # Reserve cores
@@ -36,9 +36,9 @@ def thread(A):
     pool = Pool(processes=max_processors)
     f_list = []
 
-    for i in range(1000):
+    for i in range(200):
         # pass the df to process function
-        f = pool.apply_async(process, [i])
+        f = pool.apply_async(process, [random.randint(0,9535)])
         f_list.append(f)
 
         # safe gard from OOM
@@ -47,6 +47,22 @@ def thread(A):
                 f.get()
                 del f_list[:]
 
+def getTime(A):
+    t = time.time()
+    respons = [[float]]
+    for i in range(20):
+        start = time.time()
+        thread(A)
+        end = time.time()
+        respons.append([(end-start),(start-t)])
+    return respons
+
+def toFile(inp):
+    f = open(f"out{datetime.datetime.now()}.txt", "a")
+    for i in inp:
+        f.write(f"{i}\n")
+    f.close()
+
 if __name__ == "__main__":
-    thread(32)
+    toFile(getTime(16))
     print('end')
