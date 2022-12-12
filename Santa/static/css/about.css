@@ -466,16 +466,17 @@ footer>div {
 
 .shareDiv {
     position: relative;
-    left: 40vw;
+    left: 45vw;
     padding: 1vh;
     display: flex;
+    flex-direction: column;
     justify-content: right;
     height: 0px;
 }
 
 .shareIcon {
-    padding: 1vw;
-    height: 5vw;
+    padding: 1vh;
+    height: 8vh;
 }
 
 @media (max-width : 320px) {
