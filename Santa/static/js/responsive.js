@@ -3,7 +3,6 @@ var loca = document.getElementById("location")
 loca.ontouchstart = function () {
     document.getElementsByClassName("header")[0].style.display = "none";
     document.getElementsByClassName("footer")[0].style.display = "none";
-    document.getElementById("findOut").style.display = "none";
     document.getElementById("calendar_btn").style.display = "none";
     document.getElementsByClassName("container_santa")[0].style.justifyContent = "start";
     document.getElementsByClassName("inputs")[0].style.marginTop = "2vh"
@@ -12,7 +11,6 @@ loca.ontouchstart = function () {
 
 window.onresize = function () {
     document.getElementsByClassName("header")[0].style.display = "flex";
-    document.getElementById("findOut").style.display ="flex";
     document.getElementById("calendar_btn").style.display ="flex";
     document.getElementsByClassName("footer")[0].style.display = "flex";
     document.getElementsByClassName("container_santa")[0].style.justifyContent = "center";
