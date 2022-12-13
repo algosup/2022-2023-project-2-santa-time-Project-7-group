@@ -46,6 +46,13 @@ section {
     color: white;
     margin-right: 45px;
 }
+.content em {
+    padding-bottom: 15px;
+    width: 60%;
+    text-align: center;
+    color: #748bfa;
+    font-size: 4vh;
+}
 
 .content strong {
     padding-bottom: 15px;
