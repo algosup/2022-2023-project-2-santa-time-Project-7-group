@@ -62,9 +62,9 @@ def getTime(A):
     return respons, dt
 
 def toFile(inp, dt):
-    f = open(f"../Test-report/API_stress_test_{dt}.md", "a")
-    f.write(f"#API test from the {dt} \n\n")
-    f.write(f"The test measure the time to respond to {rep} requests, with {cpu} simultaneous request.\n")
+    f = open(f"../Test-report/API_stress_test_front-End_{dt}.md", "a")
+    f.write(f"#Front End fetch test from the {dt} \n\n")
+    f.write(f"The test measure the time it takes to respond to {rep} requests, with {cpu} simultaneous request.\n")
     f.write(f"The process is repeated {n} time to get an average process time.\n\n")
     f.write(f"##RESULT\n\nIt takes {round(getAvg(inp), 5)}s on average to process {rep} requests. it took {inp[len(inp)-1][1]}s in total\n")
     f.write(f"You can find more detailed result below\n\n")
