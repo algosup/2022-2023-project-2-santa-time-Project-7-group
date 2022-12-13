@@ -63,7 +63,7 @@ document.getElementById("popup_calendar").onclick = function(event){;
     if (document.getElementById('tooSoon').style.display == "none" || document.getElementById('tooSoon').style.display == ""){
         twice = true;
     }
-    if(once && twice){
+    if(once && twice && !(event.path[0].id).includes("div_id")){
         event.path[0].style.display = 'none';
     }
 };  
