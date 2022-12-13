@@ -42,8 +42,9 @@ def thread(A):
 def getTime(A):
     t = time.time()
     dt = datetime.datetime.now()
+    dt = dt.strftime('%Y-%m-%d %H-%M-%S')
     respons = [[float]]
-    for i in range(10):
+    for i in range(20):
         start = time.time()
         thread(A)
         end = time.time()
@@ -51,7 +52,7 @@ def getTime(A):
     return respons, dt
 
 def toFile(inp, dt):
-    f = open(f"out-front{dt}.txt", "a")
+    f = open(f"../Test-report/out-front{dt}.txt", "a")
     f.write(f"time for {rep} request\n")
     f.write(f"started at {dt}\n\n")
     f.write(f"[time for ex, time since start]\n")
@@ -60,6 +61,6 @@ def toFile(inp, dt):
     f.close()
 
 if __name__ == "__main__":
-    a, b = getTime(16)
+    a, b = getTime(64)
     toFile(a, b)
     print('end')
