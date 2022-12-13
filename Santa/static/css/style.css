@@ -239,14 +239,15 @@ p {
     font-size: medium !important;
 }
 .suggestions {
-    /* position: fixed; */
+    position: absolute;
+    z-index: 5;
     font-size: 18px;
     list-style-type: none;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background: #6CA0DC;
     /* top: 105px; */
-    /* width: 72.5%; */
+    width: 100%;
     padding-left: 0;
     overflow-y: auto;
     color: #0047AB;

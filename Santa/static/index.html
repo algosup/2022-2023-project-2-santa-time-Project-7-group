@@ -13,14 +13,16 @@
     <link rel="stylesheet" href="css/style_cleaned.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css" type="text/css" />
-    <link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css" type="text/css" />
+    <link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css"
+        type="text/css" />
+    <link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css"
+        type="text/css" />
 
     <link href='https://fonts.googleapis.com/css?family=Mountains of Christmas' rel='stylesheet'>
 </head>
 
 <body style="background-image: url('./img/star.jpg')">
-    
+
     <!-- Header -->
     <div class="header">
         <div class="center">Merry Christmas Folks</div>
@@ -47,34 +49,6 @@
             </div>
         </div>
     </div>
-    <div class="shareDiv" id="shareDiv">
-        <a href="https://www.facebook.com/sharer/sharer.php?src=sp&amp;u=https%3A%2F%2Fcatchyoursanta.ml"
-            target="_blank">
-            <img src="./img/facebook.png" class="shareIcon">
-        </a>
-        <a href="https://twitter.com/share?text=Catch%20your%20Santa%20at&amp;url=https%3A%2F%2Fcatchyoursanta.ml"
-            target="_blank">
-            <img src="./img/twitter.png" class="shareIcon">
-        </a>
-        <a href="https://www.linkedin.com/shareArticle?mini=1&amp;url=https%3A%2F%2Fcatchyoursanta.ml" target="_blank">
-            <img src="./img/linkedin.png" class="shareIcon">
-        </a>
-        <a href="https://reddit.com/submit?url=https%3A%2F%2Fcatchyoursanta.ml&title=Checkout%20this%20website%20that%20tell%20you%20when%20will%20Santa%20arive"
-            target="_blank">
-            <img src="./img/reddit.png" class="shareIcon">
-        </a>
-        <a href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fcatchyoursanta.ml&media=&description=Checkout%20this%20website%20that%20tell%20you%20when%20will%20Santa%20arive"
-            target="_blank">
-            <img src="./img/pinterest.png" class="shareIcon">
-        </a>
-        <a href="mailto:?subject=&body=Checkout%20this%20website%20that%20tell%20you%20when%20will%20Santa%20arive%20%3A%0A-%3E%20https%3A%2F%2Fcatchyoursanta.ml%0A%0A"
-            target="_blank">
-            <img src="./img/mail.png" class="shareIcon">
-        </a>
-        <button onclick="navigator.clipboard.writeText('https://catchyoursanta.ml');"
-            style="background-color: transparent; border-width: 0;"><img src="./img/copy.png"
-                class="shareIcon"></button>
-    </div>
     <div class="container_santa">
         <div style="display: flex;align-items: flex-end;" id="findOut">
             <h1>
@@ -89,12 +63,11 @@
                     <form class="formWidth" onsubmit="getAnswer(true);return false">
                         <input type="submit" hidden />
                         <input type="text" id="location" placeholder="Enter your location">
+                        <ul class="suggestions" id="autocomplete_list" style="font-size: large; list-style-type: none;">
+                        </ul>
                     </form>
                     <button class="search" onclick="getAnswer(true)"><i class="fa fa-search search"></i></button>
                 </div>
-                <ul class="suggestions" id="autocomplete_list" style="font-size: large;
-            list-style-type: none;">
-                </ul>
             </div>
             <div class="under-searchbar">
                 <div id="calendar_btn">
@@ -107,27 +80,45 @@
     <div class="imgcontainers">
         <img class="sled" id="santa" src="img/sled.png" width="200" height="200">
     </div>
-    
+
     <!-- Footer -->
     <div class="footer">
         <div class="shareDiv">
-            <a href="https://www.facebook.com/sharer/sharer.php?src=sp&amp;u=https%3A%2F%2Fcatchyoursanta.ml" target="_blank">
+            <a href="https://www.facebook.com/sharer/sharer.php?src=sp&amp;u=https%3A%2F%2Fcatchyoursanta.ml"
+                target="_blank">
                 <img src="./img/facebook.png" class="shareIcon">
             </a>
-            <a href="https://twitter.com/share?text=Catch%20your%20Santa%20at&amp;url=https%3A%2F%2Fcatchyoursanta.ml" target="_blank">
+            <a href="https://twitter.com/share?text=Catch%20your%20Santa%20at&amp;url=https%3A%2F%2Fcatchyoursanta.ml"
+                target="_blank">
                 <img src="./img/twitter.png" class="shareIcon">
             </a>
-            <a href="https://www.linkedin.com/shareArticle?mini=1&amp;url=https%3A%2F%2Fcatchyoursanta.ml" target="_blank">
+            <a href="https://www.linkedin.com/shareArticle?mini=1&amp;url=https%3A%2F%2Fcatchyoursanta.ml"
+                target="_blank">
                 <img src="./img/linkedin.png" class="shareIcon">
             </a>
+            <a href="https://reddit.com/submit?url=https%3A%2F%2Fcatchyoursanta.ml&title=Checkout%20this%20website%20that%20tell%20you%20when%20will%20Santa%20arive"
+                target="_blank">
+                <img src="./img/reddit.png" class="shareIcon">
+            </a>
+            <a href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fcatchyoursanta.ml&media=&description=Checkout%20this%20website%20that%20tell%20you%20when%20will%20Santa%20arive"
+                target="_blank">
+                <img src="./img/pinterest.png" class="shareIcon">
+            </a>
+            <a href="mailto:?subject=&body=Checkout%20this%20website%20that%20tell%20you%20when%20will%20Santa%20arive%20%3A%0A-%3E%20https%3A%2F%2Fcatchyoursanta.ml%0A%0A"
+                target="_blank">
+                <img src="./img/mail.png" class="shareIcon">
+            </a>
+            <button onclick="navigator.clipboard.writeText('https://catchyoursanta.ml');"
+                style="background-color: transparent; border-width: 0; padding: 0;"><img src="./img/copy.png"
+                    class="shareIcon"></button>
         </div>
-        
+
         <a href="about">
-            <button> About us </button>
+            <button class="footer-button"> About us </button>
         </a>
 
         <a href="https://don.unicef.fr/don-ponctuel-old/~mon-don?_cv=1" target="_blank">
-            <button> DONATE! </button>
+            <button class="footer-button"> DONATE! </button>
         </a>
     </div>
     <!-- End footer -->
@@ -143,7 +134,8 @@
     <script src="./js/gacha.js"></script>
     <!-- <script src="./js/responsive.js"></script> -->
     <script src="./js/translate.js"></script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

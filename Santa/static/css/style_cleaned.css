@@ -44,6 +44,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
+    margin-top: 15px;
     /* max-height: 40px; */
 }
 
@@ -83,7 +84,7 @@
     }
 } 
 
-.footer button {
+.footer-button {
     background-color:#0047AB ;
     color: snow;
     border-radius: 40px;
