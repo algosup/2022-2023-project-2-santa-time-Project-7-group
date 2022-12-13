@@ -238,7 +238,9 @@ p {
 .donate font {
     font-size: medium !important;
 }
-.suggestions {
+
+.suggestions
+ {
     position: absolute;
     z-index: 5;
     font-size: 18px;
