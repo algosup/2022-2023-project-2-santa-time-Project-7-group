@@ -7,34 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About us</title>  
   <link rel="stylesheet" href="css/about.css">
-  <!-- <link rel="stylesheet" href="css/snow.css"> -->
+  <link rel="stylesheet" href="css/style_cleaned.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="//unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css" type="text/css" />
-  <link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css"
-    type="text/css" />
+  <link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css" type="text/css" />
+
+  <link href='https://fonts.googleapis.com/css?family=Mountains of Christmas' rel='stylesheet'>
 </head>
 
 <body style="background-image: url('./img/star.jpg')">
-  <header>
-    <nav>
-      <div class="merry">
-        <h1 class="title">About us</h1>
-        <div id="google_translate_element"></div>
-        <script type="text/javascript">
-          function googleTranslateElementInit() {
-            let language = Navigator.language;
-            new google.translate.TranslateElement({
-              pageLanguage: language
-            }, 'google_translate_element');
-          }
-        </script>
-        <script type="text/javascript"
-          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-          </script>
-      </div>
-    </nav>
-  </header>
+  
+  <!-- Header -->
+    <div class="header">
+      <div class="center">Merry Christmas Folks</div>
+      <div id="google_translate_element"></div>
+  </div>
+  <!-- End header -->
+
   <div class="content">
     <div class="shareDiv">
       <a href="https://www.facebook.com/sharer/sharer.php?src=sp&amp;u=https%3A%2F%2Fcatchyoursanta.ml" target="_blank">
@@ -83,23 +73,31 @@
                 </div>
               </a>
               </section> <br><br>
-              <footer>
-                <div class="primaryfooter">
-                  <a href="index.html">
-                    <button class="about">
-                      <font>Main</font>
-                    </button>
-                  </a>
-                </div>
-                <div class="secondaryfooter">
-                  <div class="donation">
-                    <a href="https://don.unicef.fr/don-ponctuel-old/~mon-don?_cv=1" target="_blank">
-                      <button class="donate">
-                        <font>DONATE!</font>
-                      </button>
+              
+              <!-- Footer -->
+              <div class="footer">
+                <div class="shareDiv">
+                    <a href="https://www.facebook.com/sharer/sharer.php?src=sp&amp;u=https%3A%2F%2Fcatchyoursanta.ml" target="_blank">
+                        <img src="./img/facebook.png" class="shareIcon">
                     </a>
-                  </div>
-              </footer>
+                    <a href="https://twitter.com/share?text=Catch%20your%20Santa%20at&amp;url=https%3A%2F%2Fcatchyoursanta.ml" target="_blank">
+                        <img src="./img/twitter.png" class="shareIcon">
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=1&amp;url=https%3A%2F%2Fcatchyoursanta.ml" target="_blank">
+                        <img src="./img/linkedin.png" class="shareIcon">
+                    </a>
+                </div>
+                
+                <a href="index">
+                    <button> Home </button>
+                </a>
+
+                <a href="https://don.unicef.fr/don-ponctuel-old/~mon-don?_cv=1" target="_blank">
+                    <button> DONATE! </button>
+                </a>
+            </div>
+            <!-- End footer -->
+
               <script src="//unpkg.com/jquery@3.4.1/dist/jquery.min.js">
               </script>
               <script src="//unpkg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js">
@@ -111,5 +109,9 @@
               <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous">
               </script>
               <script src="js/about.js"></script>
+
+              <script src="./js/translate.js"></script>
+              <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          
           </body>
           </html>

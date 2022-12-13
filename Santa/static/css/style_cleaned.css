@@ -1,0 +1,101 @@
+/* header */
+.header{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #042640;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.header .center{
+    color: snow;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: "Mountains of Christmas";
+
+    /* Prevent text selection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (max-width: 500px) {
+    .header {
+        justify-content: space-around;
+    }
+} 
+
+/* End header */
+
+/* main body */
+
+.under-searchbar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* max-height: 40px; */
+}
+
+/* End main */
+
+/* Share buttons */
+
+.shareDiv{
+    padding: 1vh;
+    display: flex;
+    justify-content: right;
+}
+
+.shareIcon{
+    padding: 5px;
+    height: 40px;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right:0;
+    background-color: #042640;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+@media (max-width: 360px) {
+    .footer {
+        justify-content: center;
+    }
+} 
+
+.footer button {
+    background-color:#0047AB ;
+    color: snow;
+    border-radius: 40px;
+    padding: 10px;
+    /* width: 100%; */
+    font-size: medium;
+    border: none;
+    margin: 5px;
+}
+
+.footer button:hover {
+    cursor: pointer;
+}
+
+/* End footer */

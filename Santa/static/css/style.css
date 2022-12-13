@@ -4,37 +4,11 @@ body font {
 
 body {
     top: 0% !important;
-    display: flex;
-    min-height: 50% !important;
-    flex-direction: column;
+    height: 100vh;
+    /* display: flex; */
+    /* min-height: 50% !important; */
+    /* flex-direction: column; */
     overflow: hidden;
-}
-
-header {
-    top: 0;
-    left: 0;
-    right: 0;
-    background: radial-gradient(circle, #0047AB 30%, #0047AB 70%);
-    color: snow;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* IE10+/Edge */
-    user-select: none;
-    /* Standard */
-}
-
-nav {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
 }
 
 img {
@@ -50,16 +24,17 @@ img {
 
 .container_santa {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    top: 25vh;
     width: 100%;
-    display: flex;
+    height: 100%;
     flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* top: 25vh; */
+    /* display: flex; */
     color: snow;
     align-items: center;
-    position: relative;
-    transform: translate(0%, -50%);
+    /* position: relative; */
+    /* transform: translate(0%, -50%); */
 
 }
 
@@ -83,10 +58,9 @@ h2 {
 }
 #google_translate_element {
     position: relative;
-    right: 0vw;
+    left: 0vw;
     bottom: 0vw;
     display: flex;
-    flex-direction: column;
 }
 
 #google_translate_element select {
@@ -156,9 +130,9 @@ body>.skiptranslate {
 
 .inputs .location {
     height: max-content;
-    background-color: white;
+    /* background-color: white; */
     width: auto;
-    height: 80%;
+    height: 100%;
     place-self: center;
     text-align: center;
     cursor: pointer;
@@ -225,60 +199,12 @@ p {
     font-size: 20px;
 }
 
-body footer {
-    display: flex;
-    flex-direction: row;
-
-}
-
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #042640;
-    color: black;
-    text-align: center;
-}
-
-@media screen and (max-width: 1000px) {
-    footer {
-        flex-direction: column;
-    }
-}
-
 @media screen and (max-height: 760px) {
     .imgcontainers {
         width: 7vh;
     }
 }
 
-@media screen and (max-width:450px) {
-    nav {
-        flex-direction: column;
-        flex-direction: column-reverse;
-    }
-
-    #calendar_btn img {
-        margin-left: 0% !important;
-    }
-}
-
-footer>div {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.primaryfooter {
-    width: 50%;
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-}
 .about {
     background-color:#0047AB ;
     border: #0047AB;
@@ -295,17 +221,6 @@ footer>div {
 .about font {
     font-size: medium !important;
 }
-
-.secondaryfooter {
-    width: 50%;
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-   }
 
 .donate {
     background-color:#0047AB ;
@@ -347,12 +262,6 @@ footer>div {
     padding-left: 10px;
 }
 
-@media (max-width : 320px) {
-    #google_translate_element {
-        width: 100%;
-    }
-}
-
 .popup_calendar {
     z-index: 999;
     position: absolute;
@@ -365,25 +274,25 @@ footer>div {
 }
 
 #calendar_btn {
-    margin-top: 0.25%;
-    height: 90%;
-    width: fit-content;
-    display: flex;
-
+    /* margin-top: 0.25%; */
+    max-height: 35px;
+    max-width: 35px;
+    /* width: fit-content; */
+    background-color: #0047AB;
+    margin-right: 15px;
+    padding: 4px;
+    border-radius: 40px;
+    border: 2px solid #0047AB;
 }
 
 #calendar_btn img {
-    width: 6vh !important;
-    margin-left: 30%;
+    /* width: 6vh !important; */
     filter: invert(1);
     mix-blend-mode: plus-lighter;
+    width: 100%;
+    height: 100%;
 }
 
-@media (min-aspect-ratio: 1/1) {
-    #calendar_btn img {
-        width: 10vw;
-    }
-}
 
 #grid {
     display: grid;
@@ -806,17 +715,6 @@ footer>div {
     width: 70vw;
 }
 
-.shareDiv{
-    padding: 1vh;
-    display: flex;
-    justify-content: right;
-}
-
-.shareIcon{
-    padding: 1vw;
-    height: 10vw;
-}
-
 #rarity>p {
     font-size: 11vw;
 }
@@ -824,10 +722,6 @@ footer>div {
 @media (min-aspect-ratio: 1/1) {
     #rarity>p {
         font-size: 11vh;
-    }
-    .shareIcon{
-        padding: 1vh;
-        height: 10vh;
     }
 }
 
