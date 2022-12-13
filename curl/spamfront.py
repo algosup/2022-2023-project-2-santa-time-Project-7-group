@@ -52,7 +52,7 @@ def getTime(A):
     return respons, dt
 
 def toFile(inp, dt):
-    f = open(f"../Test-report/out-front{dt}.txt", "a")
+    f = open(f"../Test-report/Front_stress_test_{dt}.txt", "a")
     f.write(f"time for {rep} request\n")
     f.write(f"started at {dt}\n\n")
     f.write(f"[time for ex, time since start]\n")

@@ -8,7 +8,9 @@ import urllib.parse
 import time
 import datetime
 
-rep = 100
+rep = 5
+cpu = 8
+n = 2
 
 data: list[list[str]]
 with open(f"./adressF.csv", newline='') as f:
@@ -52,23 +54,32 @@ def getTime(A):
     dt = datetime.datetime.now()
     dt = dt.strftime('%Y-%m-%d %H-%M-%S')
     respons = [[float]]
-    for i in range(20):
+    for i in range(n):
         start = time.time()
         thread(A)
         end = time.time()
-        respons.append([(end-start),(start-t)])
+        respons.append([round((end-start), 5),round((start-t), 5)])
     return respons, dt
 
 def toFile(inp, dt):
-    f = open(f"../Test-report/out{dt}.txt", "a")
-    f.write(f"time for {rep} request\n")
-    f.write(f"started at {dt}\n\n")
-    f.write(f"[time for ex, time since start]\n")
-    for i in inp:
-        f.write(f"{i}\n")
+    f = open(f"../Test-report/API_stress_test_{dt}.md", "a")
+    f.write(f"#API test from the {dt} \n\n")
+    f.write(f"The test measure the time to respond to {rep} requests, with {cpu} simultaneous request.\n")
+    f.write(f"The process is repeated {n} time to get an average process time.\n\n")
+    f.write(f"##RESULT\n\nIt takes {round(getAvg(inp), 5)}s on average to process {rep} requests. it took {inp[len(inp)-1][1]}s in total\n")
+    f.write(f"You can find more detailed result below\n\n")
+    f.write(f"time to process {rep} requests, time since start of execution in second\n")
+    for i in inp[1:]:
+        f.write(f"{i}"[1:-1] + "\n")
     f.close()
 
+def getAvg(inp):
+    res = 0
+    for i in inp[1:]:
+        res += i[0]
+    return (res / len(inp))
+
 if __name__ == "__main__":
-    a, b = getTime(64)
+    a, b = getTime(cpu)
     toFile(a, b)
     print('end')
