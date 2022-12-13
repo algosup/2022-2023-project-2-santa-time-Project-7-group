@@ -100,3 +100,15 @@
 }
 
 /* End footer */
+
+/*  color buttons */
+
+@keyframes color {
+    0%   { background: #00F; }
+    16%  { background: #0F0; }
+    32%  { background: #F00; }
+    48%  { background: #FF0; }
+    62%  { background: #F0F; }
+    88% { background: #0FF; }
+    100%   { background: #00F; }
+  }

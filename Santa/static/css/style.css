@@ -286,6 +286,7 @@ p {
     padding: 4px;
     border-radius: 40px;
     border: 2px solid #0047AB;
+    animation: color 9s infinite linear;
 }
 
 #calendar_btn img {
