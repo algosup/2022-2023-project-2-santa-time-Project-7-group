@@ -348,6 +348,10 @@ p {
     color: #fff200;
 }
 
+#tooSoon>p font{
+    font-size: 6vw;
+}
+
 @media (min-aspect-ratio: 240/750) {
     #grid {
         grid-template-columns: repeat(auto-fill, minmax(8vh, 1fr));
