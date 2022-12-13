@@ -15,7 +15,7 @@ function urlExists(link) {
         })
         .catch(function(error) {
             inc++;
-            document.getElementById("frame_ref" + inc).style.visibility = "hidden";
+            document.getElementById("frame_ref" + inc).style.display = "none";
         });
 }
 inc = 0;
