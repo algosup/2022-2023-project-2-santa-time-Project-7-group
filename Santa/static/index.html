@@ -19,10 +19,8 @@
     <link rel="stylesheet" href="css/style_cleaned.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css"
-        type="text/css" />
-    <link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css"
-        type="text/css" />
+    <link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css" type="text/css" />
+    <link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css" type="text/css" />
 
     <link href='https://fonts.googleapis.com/css?family=Mountains of Christmas' rel='stylesheet'>
 </head>
@@ -69,9 +67,8 @@
                 <div style="display: flex;">
                     <form class="formWidth" onsubmit="getAnswer(true);return false">
                         <input type="submit" hidden />
-                        <input type="text" id="location" placeholder="Enter your location">
-                        <ul class="suggestions" id="autocomplete_list" style="font-size: large; list-style-type: none;">
-                        </ul>
+                        <input type="text" id="location" placeholder="Enter your location" onfocus="setShowResults(true)" onblur="setShowResults(false)">
+                        <ul class="suggestions" id="autocomplete_list" style="font-size: large; list-style-type: none;"></ul>
                     </form>
                     <button class="search" onclick="getAnswer(true)"><i class="fa fa-search search"></i></button>
                 </div>
@@ -132,8 +129,8 @@
     <script src="./js/gacha.js"></script>
     <script src="./js/responsive.js"></script>
     <script src="./js/translate.js"></script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="./js/hideResults.js"></script>
 </body>
 
 </html>

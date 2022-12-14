@@ -101,7 +101,7 @@
 
 /* End footer */
 
-/*  color buttons */
+/*  calendar rainbow button colors */
 
 @keyframes color {
     0%   { background: #00F; }
@@ -111,4 +111,30 @@
     62%  { background: #F0F; }
     88% { background: #0FF; }
     100%   { background: #00F; }
-  }
+}
+
+/* End calendar rainbow button colors */
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #042640;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #0047AB;
+}
+
+/* End scrollbar */

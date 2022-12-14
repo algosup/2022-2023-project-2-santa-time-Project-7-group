@@ -239,6 +239,9 @@ p {
     font-size: medium !important;
 }
 
+.suggestions-out{
+    display: none;
+}
 .suggestions
  {
     position: absolute;
@@ -250,6 +253,8 @@ p {
     background: #6CA0DC;
     /* top: 105px; */
     width: 70vw;
+    max-height: 120px;
+    overflow-y: scroll;
     padding-left: 0;
     overflow-y: auto;
     color: #0047AB;
