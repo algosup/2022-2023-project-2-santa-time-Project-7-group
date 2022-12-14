@@ -7,6 +7,9 @@
 * [Risks and Assumptions](#risks-and-assumptions)
 * [Configuration](#configuration)
 * [UI/UX](#uiux)
+    * [The home page](#the-home-page)
+    * [(optional) Gacha](#optional-gacha)
+    * [The about us page](#the-about-us-page)
 * [Calculating Santa's arrival time](#santa-arrival-time)
 	* [The math](#the-math)
 	* [Example](#example)
@@ -65,11 +68,51 @@ The user must be able to use the website without any additional effort necessary
 
 # UI/UX <span id="uiux"></span>
 
-The website must keep its style simple but Christmassy.
-The input field for the location must also include a placeholder that specifies that it is supposed to recieve a location.
+## The home page
 
-WIP
+The website must keep its style simple but Christmasy.
 
+The home page must include:
+- A header with a language selector
+- A search bar
+    - The search bar must have a placeholder that precises that it needs a location as an input.
+    - The search bar must show suggestions.
+    - In case the user launches the search without selecting a suggested location, the first suggestin must be selected.
+- A geolocalisation button
+- Once the user selects a location, a countdown must appear with the remaining time before Santa arrives (Days-Hours-Minutes-Seconds).
+- A footer with links to the "about us" page and to a charity website.
+    - Example for the charity website: https://don.unicef.fr/don-ponctuel-old/~mon-don?_cv=1
+
+Home page as the user first sees it:
+![home on open](./images/sp1.png)
+
+Home page while searching:
+![Home page on search](./images/sp2.png)
+
+Home page with countdown:
+![Home page countdown](./images/sp10.png)
+
+
+The website must also be responsive.
+|   |   |   | 
+|---|---|---|
+|![home phone 1](./images/sp3.png)|![home phone 2](./images/sp4.png)|![home phone 2](./images/sp11.png)|
+
+## (optional) Gacha
+
+One of the ways we could incentivize users to repeatedly came back to the website is to create an advent calendar.
+As giving out through trough the internet is rather difficult, a gacha system can be put in place.
+
+This calendar must be accessible and visible on the home page.
+
+![gacha calendar](./images/sp6.png)
+
+## The about us page
+
+A page with a small description on who we are and what are we trying to do in here.
+This page must also contain links towards the websites of the other groups working on the same project.
+
+![gacha calendar](./images/sp5.png)
 
 # Calculating Santa's arrival time <span id="santa-arrival-time"></span>
 
