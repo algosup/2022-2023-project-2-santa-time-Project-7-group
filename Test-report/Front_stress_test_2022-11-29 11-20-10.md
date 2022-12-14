@@ -5,7 +5,7 @@ The process is repeated 20 time to get an average process time.
 
 ##RESULT
 
-It takes 21.7616455s on average to process 50 requests. it took 435.23291s in total
+It takes 21.7616455s on average to process 128 requests. it took 435.23291s in total
 You can find more detailed result below
 
 time to process 5, time since start of execution
