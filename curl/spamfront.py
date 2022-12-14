@@ -6,9 +6,9 @@ import random
 import time
 import datetime
 
-rep = 5
-cpu = 8
-n = 2
+rep = 100
+cpu = 64
+n = 20
 
 def process(f):
     mainURL = f'https://catchyoursanta.ml/'
@@ -52,8 +52,8 @@ def getTime(A):
     return respons, dt
 
 def toFile(inp, dt):
-    f = open(f"../Test-report/API_stress_test_{dt}.md", "a")
-    f.write(f"#API test from the {dt} \n\n")
+    f = open(f"../Test-report/Front-end_stress_test_{dt}.md", "a")
+    f.write(f"#Front-end test from the {dt} \n\n")
     f.write(f"The test measure the time it takes to respond to {rep} requests, with {cpu} simultaneous request.\n")
     f.write(f"The process is repeated {n} time to get an average process time.\n\n")
     f.write(f"##RESULT\n\nIt takes {round(getAvg(inp), 5)}s on average to process {rep} requests. it took {inp[len(inp)-1][1]}s in total\n")
@@ -64,7 +64,13 @@ def toFile(inp, dt):
     f.close()
     f.close()
 
+def getAvg(inp):
+    res = 0
+    for i in inp[1:]:
+        res += i[0]
+    return (res / len(inp))
+
 if __name__ == "__main__":
-    a, b = getTime(64)
+    a, b = getTime(cpu)
     toFile(a, b)
     print('end')
