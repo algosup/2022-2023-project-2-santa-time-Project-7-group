@@ -193,6 +193,41 @@ button::selection {
 .sled{
     filter: contrast(0.1);
 }
+#cookie {
+    position: fixed;
+    right: 0;
+    bottom:54px;
+    background-color: #0047AB;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding: 5px;
+}
+
+@media (max-width: 420px) {
+    #cookie {
+        bottom: 111px;
+    }
+}
+
+.cookie_p {
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    margin: 0;
+}
+
+.cookiebtn {
+    background-color: #042640;
+    border: #042640;
+    color: snow;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.cookiebtn:hover {
+    cursor: pointer;
+}
 
 p {
     color: #044f18;
