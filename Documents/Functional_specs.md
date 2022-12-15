@@ -1,23 +1,26 @@
-# Functional Specifications
+# **Functional Specifications**
 
-## Table of contents
+# Table of contents
 
-* [Project scope](#Projectscope)
+* [Project scope](#projectscope)
 * [Requirements](#requirements)
-* [Timetables](#timetables)
 * [Risks and Assumptions](#risks-and-assumptions)
 * [Configuration](#configuration)
-* [Calculating solar time](#santa-arrival-time)
-	* [Calculating solar time](#ucalculating-solar-timeu)
-	* [Calculating Santa's arrival time](#santa-arrival-time-2)
-	* [Example](#uexampleu)
-* [Personas](#personas)
+* [UI/UX](#uiux)
+    * [The home page](#the-home-page)
+    * [(optional) Gacha](#optional-gacha)
+    * [The about us page](#the-about-us-page)
+* [Calculating Santa's arrival time](#santa-arrival-time)
+	* [The math](#the-math)
+	* [Example](#example)
 * [Sources](#sources)
 * [Glossary](#glossary)
 
-## Project scope
+# Project scope
 
 The end goal of this project is to create a website where users could look up when will Santa arrive with their presents.
+
+[Link towards the websites](https://catchyoursanta.ml/)
 
 - The end product must contain a search tool to look up addresses and, subsequently, Santa's arrival time to said addresses. 
     - To avoid unnecessary performance bottlenecks, the search tool must look up the addresses from a database linked with the project instead of using already existing APIs[^1].
@@ -32,30 +35,23 @@ The end goal of this project is to create a website where users could look up wh
 
 - Finding users for the working product is part of the development team's duties. For this end, the product must move into its production phase before the 25th of November 2022.
 
-## Requirements
+# Requirements
 
 - The product must be realised in Docker.
 - The product must be available online.
 - The product must be able to function under heavy user traffic as well adapt to sudden changes in user traffic.
 - It must be possible to search for locations using a search bar.
     - The search bar must draw its information from a database attached to the project, NOT an external API.
-    - (optional) Geolocalisation button.
+    - Geolocalisation button.
+    - Search suggestions.
 - The product must be able to calculate Santa's arrival time using the longitude obtained from the input address and the current time.
 - In addition to the remaining time, the website must also show Santa's exact arrival time while taking into account the user's timezone. 
+- (optional) The website must exist in multiple languages and allow the user to change the language the website is displayed in.
+    - (optional) The website must detect the browsers language and display itself accordingly.
+- (optional) A gacha[^6] system based Advent calendar could be put in place to touch into a slightly older target audience then the intended 5-15 years old range.
+- (optional) Market research has show interrest in a functionality to display random facts related to christmass, reindeers, etc.
 
-## Timetables
-
-| Deliverables | Responsability of | Deadline |
-|:------------|:-----------------|:--------|
-| Website frontend | Software engineer | 18/11/22 |
-| Web hosting service | Tech Lead | 22/11/22 |
-| website backend | Software engineer | 24/11/22 |
-| Address database | Tech Lead, Software engineer | 24/11/22 |
-| Project testing solution(s) | Q&A | 25/11/22 (+) |
-| Publicity solution(s)| Program manager | 28/11/22 |
-| Final presentation | Full team | 16/12/22 |
-
-## Risks and Assumptions
+# Risks and Assumptions
 
 - The maximum number of users at peak traffic is unknown.
 
@@ -68,54 +64,61 @@ The end goal of this project is to create a website where users could look up wh
 
 - It is assumed that a functional version of the project can be placed into production before the 25th of November 2022.
 
-## Configuration
+# Configuration
 
 The user must be able to use the website without any additional effort necessary on their behalf (there is no need for logging in, etc..).
 
-## Calculating Solar time <span id="santa-arrival-time"></span>
+# UI/UX <span id="uiux"></span>
 
-### <u>Local time to solar time</u>
+## The home page
 
-The equation to calculate solar time is as follows:
+The website must keep its style simple but Christmasy.
 
-```
-solar time = standard time + 4(Lst − Lloc) + E
-```
+The home page must include:
+- A header with a language selector
+- A search bar
+    - The search bar must have a placeholder that precises that it needs a location as an input.
+    - The search bar must show suggestions.
+    - In case the user launches the search without selecting a suggested location, the first suggestin must be selected.
+- A geolocalisation button
+- Once the user selects a location, a countdown must appear with the remaining time before Santa arrives (Days-Hours-Minutes-Seconds).
+- A footer with links to the "about us" page and to a charity website.
+    - Example for the charity website: https://don.unicef.fr/don-ponctuel-old/~mon-don?_cv=1
 
-Where:
+Home page as the user first sees it:
+![home on open](./images/sp1.png)
 
-```
-Standard time is the Local Standard Time (LST). Not to be confused with either Daylight Savings Time (DST) or Greenwich Mean Time (GMT).
-```
+Home page while searching:
+![Home page on search](./images/sp2.png)
 
-```
-Lst is the Local Standard Meridian.
-To determine Lst, multiply the difference in time between local standard clock time (LST) and Greenwich Mean Time (GMT) in hours by 15°.
-
-Lst = 15*(standard time - Greenwich time)
-```
-
-```
-Lloc is the location's longitude.
-```
-
-<span id="Ecalc"></span>
-
-```
-E is the equation of time in minutes. It calculates as follows:
-
-E = 0.258 * cos(B) - 7.416 * sin(B) - 3.648 * cos(2*B) - 9.228 * sin(2*B);
-
-B = 360 * (n - 1) * (pi/180) / 365.242
+Home page with countdown:
+![Home page countdown](./images/sp10.png)
 
 
-Here, n is the day in the year, and B has its units in radians. The units for the right-hand side of the equation
-used to calculate solar time are minutes.
-```
+The website must also be responsive.
+|   |   |   | 
+|---|---|---|
+|![home phone 1](./images/sp3.png)|![home phone 2](./images/sp4.png)|![home phone 2](./images/sp11.png)|
 
----
+## (optional) Gacha
 
-### <u>Calculating Santa's arrival time</u> <span id="santa-arrival-time-2"></span>
+One of the ways we could incentivize users to repeatedly come back to the website is to create an advent calendar.
+As giving out chocolate trough the internet is rather difficult, a gacha[^6] system can be put in place.
+
+This calendar must be accessible and visible on the home page.
+
+![gacha calendar](./images/sp6.png)
+
+## The about us page
+
+A page with a small description on who we are and what are we trying to do in here.
+This page must also contain links towards the websites of the other groups working on the same project.
+
+![gacha calendar](./images/sp5.png)
+
+# Calculating Santa's arrival time <span id="santa-arrival-time"></span>
+
+## The math
 
 Santa's exact arrival time will always be exactly 00:00 25th December, <u>solar time</u>.
 Therefore, the following equation can be used to calculate the local solar midnight time in hours:
@@ -152,11 +155,19 @@ As we will always be looking for the 24th of December, E is going to be constant
 E = 0.3829280015475218
 ```
 
-For the exact calculation to find E, please see the explanation [above](#Ecalc).
+<details>
+    <summary>How do we get this value?</summary>
+
+    E = 0.258 * cos(B) - 7.416 * sin(B) - 3.648 * cos(2*B) - 9.228 * sin(2*B);
+
+    B = 360 * (n - 1) * (pi/180) / 365.242
+
+    Here, n is the day in the year, and B has its units in radians.
+</details>
 
 ---
 
-### <u>Example</u>
+## Example
 
 Let's take Vierzon, France as an example.
 
@@ -174,7 +185,8 @@ LT = 0.85563119997
 ```
 
 This means that Santa will arrive at precisely 0.85563119997 hours.
-This means:
+
+Consequently:
 
 ```
 hours = floor(0.85563119997)
@@ -189,25 +201,23 @@ seconds = 20
 
 In this example, Santa will arrive at 00:51:20 on the 25th of December.
 
-## Personas
-
-Personas for potential customers can be found [here](https://docs.google.com/presentation/d/1luQGbXf-8R1pEh4sa8H7ViEgxD-Bjj4fWfB4a5iV280/edit?usp=sharing).
-
-
-## Sources
+# Sources
 
 - [Solar time calculator](https://koch-tcm.ch/wp-content/uploads/the-calculator.html)
 - [How to calculate solar time](https://www.powerfromthesun.net/book.html)
 - [How to calculate solar time (simplified)](https://faculty.eng.ufl.edu/jonathan-scheffe/wp-content/uploads/sites/100/2020/08/Solar-Time1419.pdf)
+- [NORAD Santa Tracker vs Google Santa Tracker](https://www.pocket-lint.com/apps/news/131903-norad-tracks-santa-vs-google-santa-tracker-which-tracks-father-christmas-best)
 
-## Glossary
+# Glossary
 
-[^1]: API : An <u>Application Programming Interface (API)</u> is a way for two or more computer programs to communicate with each other.
+[^1]: API : An Application Programming Interface (API) is a way for two or more computer programs to communicate with each other.
 
 [^2]: Solar time: Solar time is a calculation of the passage of time based on the position of the Sun.
 
-[^3]: Coordinates: [click here for details.](https://en.wikipedia.org/wiki/Geographic_coordinate_system#Latitude_and_longitude)
+[^3]: Coordinates: The [Geographic Coordinate System (GCS)](https://en.wikipedia.org/wiki/Geographic_coordinate_system#Latitude_and_longitude) is a spherical or ellipsoidal coordinate system for measuring and communicating positions directly on the Earth as latitude and longitude.
 
 [^4]: Docker: [Docker](https://www.docker.com/) is a set of platform as a service product that use OS-level virtualization to deliver software in packages called containers.
 
 [^5]: ALGOSUP: [ALGOSUP](https://algosup.com/) is a software development school in Vierzon, France.
+
+[^6]: Gacha: A [gacha game](https://en.wikipedia.org/wiki/Gacha_game) is a video game that implements the gacha (toy vending machine) mechanic.
