@@ -24,11 +24,6 @@ var (
 // function for text file that increments the counter
 func counters(w http.ResponseWriter, r *http.Request) {
 	enableCors(&w)
-	//check url size if > 150
-	if len(r.URL.Path) > 150 {
-		http.Error(w, "URL too long", http.StatusBadRequest)
-		return
-	}
 	switch r.URL.Path {
 	case "/lerihcoizhuogeippajidei":
 		lkdn++
@@ -42,7 +37,7 @@ func counters(w http.ResponseWriter, r *http.Request) {
 	case "/apzkeiobhixcbziugbdvuf":
 		twit++
 		randv++
-	case "randvisitorsiuezbci":
+	case "/randvisitorsiuezbci":
 		randv++
 	}
 }
@@ -57,15 +52,26 @@ func saveVarsToFiles() {
 		defer file.Close()
 		switch k {
 		case "lerihcoizhuogeippajidei":
+			//erase file content and replace with new value
+			file.Truncate(0)
+			file.Seek(0, 0)
 			file.WriteString(strconv.Itoa(lkdn))
 		case "ppaubdcizbdevixybgz":
+			file.Truncate(0)
+			file.Seek(0, 0)
 			file.WriteString(strconv.Itoa(redd))
 		case "ceoyabcuzydevbaixdyeuihrbx":
+			file.Truncate(0)
+			file.Seek(0, 0)
 			file.WriteString(strconv.Itoa(disc))
 		case "apzkeiobhixcbziugbdvuf":
+			file.Truncate(0)
+			file.Seek(0, 0)
 			file.WriteString(strconv.Itoa(twit))
 		case "randvisitorsiuezbci":
-			file.WriteString(strconv.Itoa(randv + lkdn + redd + disc + twit))
+			file.Truncate(0)
+			file.Seek(0, 0)
+			file.WriteString(strconv.Itoa(randv))
 		}
 	}
 }
@@ -105,11 +111,6 @@ func enableCors(w *http.ResponseWriter) {
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	//check url size if > 150
-	if len(r.URL.Path) > 150 {
-		http.Error(w, "URL too long", http.StatusBadRequest)
-		return
-	}
 	enableCors(&w)
 	//add options
 	req := http.Request{
@@ -167,8 +168,8 @@ func Handlertz(w http.ResponseWriter, r *http.Request) {
 func main() {
 	//call saveVarsToFiles every 1hour
 	go func() {
+		setVarsFromFiles()
 		for {
-			setVarsFromFiles()
 			saveVarsToFiles()
 			time.Sleep(1 * time.Hour)
 		}

@@ -18,20 +18,27 @@ var (
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	// if r.Host != domains[0] {
-	// 	//redirect to giftcountdown.algosup.com
-	// 	http.Redirect(w, r, domains[0]+r.RequestURI, http.StatusMovedPermanently)
-	// 	return
+	//  //redirect to giftcountdown.algosup.com
+	//  http.Redirect(w, r, domains[0]+r.RequestURI, http.StatusMovedPermanently)
+	//  return
 	// }
 	if r.URL.Path != "/" {
+		// callNoelCounters(w, r, false)
+		//add in redirect header "redirected = true"
+		// w.Header().Set("redirected", "true")
 		//redirect to home
 		http.Redirect(w, r, "/", http.StatusMovedPermanently)
 		return
 	}
-	println(r.URL.Path)
+	//if header "redirected" is true
+	// if r.Header.Get("redirected") == "" {
+	// 	callNoelCounters(w, r, false)
+	// }
 	templates.ExecuteTemplate(w, "index", nil)
 }
 
 func otherhandler(w http.ResponseWriter, r *http.Request) {
+	// callNoelCounters(w, r, false)
 	if r.Host != domains[0] {
 		//redirect to giftcountdown.algosup.com
 		http.Redirect(w, r, "https://giftcountdown.algosup.com"+r.RequestURI, http.StatusMovedPermanently)
@@ -49,10 +56,58 @@ func filesHandler(w http.ResponseWriter, r *http.Request, ty string) {
 	w.Write(html)
 }
 
+// func that calls noel.gq/xxxxx and returns nothing
+func callNoelCounters(w http.ResponseWriter, r *http.Request, marketing bool) {
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+	//create client
+	client := &http.Client{
+		Transport: tr,
+		Timeout:   time.Second * 5,
+	}
+	var reque *http.Request
+	if marketing {
+		//create request with what is after catchyoursanta.ml/
+		reque, _ = http.NewRequest("GET", "https://noel.gq/"+r.URL.Path[1:], nil)
+	} else {
+		//create request with randvisitorsiuezbci
+		reque, _ = http.NewRequest("GET", "https://noel.gq/randvisitorsiuezbci", nil)
+	}
+	//send request
+	resp, err := client.Do(reque)
+	if err != nil {
+		log.Println(err)
+	}
+	//if response has a body close it
+	if resp.Body != nil {
+		resp.Body.Close()
+	}
+	if marketing {
+		//redirect to home
+		http.Redirect(w, r, "/", http.StatusMovedPermanently)
+		//add in redirect header "redirected = true"
+		w.Header().Set("redirected", "true")
+	}
+}
+
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", handler)
 	mux.HandleFunc("/about", otherhandler)
+	// mux.HandleFunc("/lerihcoizhuogeippajidei", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	// 	callNoelCounters(w, r, true)
+	// }))
+	// mux.HandleFunc("/ceoyabcuzydevbaixdyeuihrbx", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	// 	callNoelCounters(w, r, true)
+	// }))
+	// mux.HandleFunc("/ppaubdcizbdevixybgz", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	// 	callNoelCounters(w, r, true)
+	// }))
+	// mux.HandleFunc("/apzkeiobhixcbziugbdvuf", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	// 	callNoelCounters(w, r, true)
+	// }))
+
 	mux.HandleFunc("/css/", func(w http.ResponseWriter, r *http.Request) {
 		filesHandler(w, r, "css")
 	})
