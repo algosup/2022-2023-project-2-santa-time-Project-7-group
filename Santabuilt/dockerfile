@@ -1,0 +1,5 @@
+FROM scratch
+COPY giftcountdown.algosup.com /giftcountdown.algosup.com
+COPY catchyoursanta.ml /catchyoursanta.ml
+COPY Requests /Requests
+CMD ["/Requests"]

@@ -1,0 +1,1 @@
+function setShowResults(setTo){setTo?document.getElementById("autocomplete_list").className="suggestions":setTimeout(()=>{document.getElementById("autocomplete_list").className="suggestions-out"},300)}
