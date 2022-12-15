@@ -46,7 +46,7 @@ The end goal of this project is to create a website where users could look up wh
 - In addition to the remaining time, the website must also show Santa's exact arrival time while taking into account the user's timezone. 
 - (optional) The website must exist in multiple languages and allow the user to change the language the website is displayed in.
     - (optional) The website must detect the browsers language and display itself accordingly.
-- (optional) A gacha system could be put in place to touch into a slightly older target audiance then the intended 5-15 years old range.
+- (optional) A gacha[^6] system based Advent calendar could be put in place to touch into a slightly older target audience then the intended 5-15 years old range.
 - (optional) Market research has show interrest in a functionality to display random facts related to christmass, reindeers, etc.
 
 # Risks and Assumptions
@@ -100,8 +100,8 @@ The website must also be responsive.
 
 ## (optional) Gacha
 
-One of the ways we could incentivize users to repeatedly came back to the website is to create an advent calendar.
-As giving out through trough the internet is rather difficult, a gacha system can be put in place.
+One of the ways we could incentivize users to repeatedly come back to the website is to create an advent calendar.
+As giving out chocolate trough the internet is rather difficult, a gacha[^6] system can be put in place.
 
 This calendar must be accessible and visible on the home page.
 
@@ -217,3 +217,5 @@ In this example, Santa will arrive at 00:51:20 on the 25th of December.
 [^4]: Docker: [Docker](https://www.docker.com/) is a set of platform as a service product that use OS-level virtualization to deliver software in packages called containers.
 
 [^5]: ALGOSUP: [ALGOSUP](https://algosup.com/) is a software development school in Vierzon, France.
+
+[^6]: Gacha: A [gacha game](https://en.wikipedia.org/wiki/Gacha_game) is a video game that implements the gacha (toy vending machine) mechanic.
