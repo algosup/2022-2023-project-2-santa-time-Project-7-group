@@ -1,9 +1,1 @@
-function setShowResults(setTo){
-    if(setTo){
-        document.getElementById("autocomplete_list").className = "suggestions";
-    }else{
-        setTimeout(() => {
-            document.getElementById("autocomplete_list").className = "suggestions-out";
-        }, 300);
-    }
-}
+function setShowResults(setTo){setTo?document.getElementById("autocomplete_list").className="suggestions":setTimeout(()=>{document.getElementById("autocomplete_list").className="suggestions-out"},300)}
