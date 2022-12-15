@@ -8,7 +8,7 @@
 * [Personas](#personas)
 * [Advertisment strategy](#advertisment-strategy)
     * [Advertisement on a personnal level](#advertisement-on-a-personnal-level)
-    * [Social Media Marketing and Forum Based Avertisment](#social-media-marketing-and-forum-based-avertisment)
+    * [Social Media Marketing and Forum Based Advertisment](#social-media-marketing-and-forum-based-avertisment)
 * [Competition](#competition)
     * [North American Aerospace Defense Command](#north-american-aerospace-defense-command)
     * [Google's Santa tracker](#googles-santa-tracker)
@@ -20,7 +20,7 @@
 
 # Marketing mission
 
-Our mission is to maximise website traffic until the 25th of December. Due to the project's nature, traffic should peak between 12PM 24th to 12PM 25th of December.
+Our mission is to maximise website traffic until the 25th of December. Due to the project's nature, traffic should peak between 12PM 24th to 12AM 25th of December.
 Therefore we have until the 24th of december to make the website as well known as possible.
 
 <small>*This document has been separated from the functional specifications under the recommendation of Fabien GOULAMHOUSSEN.</small>
@@ -43,7 +43,7 @@ Detailed answers received from the survey can be found [here](https://docs.googl
 
 # Key performance indicators
 
-Statistics of website traffic can be found on portal.azure.com, for further details please consult our Technical Specifications.
+Statistics of website traffic can be found on the Google Cloud Platform, for further details please consult our Technical Specifications.
 
 Optionaly, a separate link can be prepared for every platform we advertise on.
 This way it could be possible to measure which platforms bring in the most clicks.
@@ -77,16 +77,18 @@ Examples of such sites are (but not limited to):
 - Twitter
 - Discord
 
-# Conpetition
+https://www.noel.gq/stats
 
-Our research indicates the following websites to be our main concurrencies:
+# Competition
+
+Our research indicates the following websites to be our main competitors:
 
 Concurrent ALGOSUP groups:
 - [Group 5's website](http://xmas.algosup.com/)
 - [Group 6's website](http://santaclock.algosup.com/)
 - [Group 8's website](http://santa.algosup.com/)
 
-External concurrences:
+External competitors:
 
 ## [North American Aerospace Defense Command](https://www.noradsanta.org/en/)
 
