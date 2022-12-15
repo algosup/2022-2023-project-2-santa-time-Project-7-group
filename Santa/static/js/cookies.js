@@ -1,0 +1,1 @@
+function cookieHandler(){document.getElementById("cookie").style.display="none",localStorage.setItem("cookie_accepted","true")}"true"==localStorage.getItem("cookie_accepted")&&(document.getElementById("cookie").style.display="none");

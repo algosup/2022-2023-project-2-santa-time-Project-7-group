@@ -1,0 +1,69 @@
+# yaml kubernetes config file for the deployment of the app registry.hub.docker.com/polonit/santa
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: santa
+spec:
+  replicas: 16
+  selector:
+    matchLabels:
+      app: santa
+  template:
+    metadata:
+      labels:
+        app: santa
+    spec:
+      containers:
+        - name: santa
+          image: registry.hub.docker.com/polonit/santa
+          ports:
+            - name: http-server
+              containerPort: 80
+            - name: https-server
+              containerPort: 443
+          resources:
+            requests:
+              memory: 700Mi
+              cpu: "500m"
+            limits:
+              memory: 2Gi
+              cpu: "5000m"
+
+          env:
+          - name: "PORT"
+            value: "80"
+          - name: "PORT_SSL"
+            value: "443"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  type: LoadBalancer
+  selector:
+    app: santa
+  ports:
+    - name: http-server
+      protocol: TCP
+      port: 80
+      targetPort: 80
+    - name: https-server
+      protocol: TCP
+      port: 443
+      targetPort: 443
+  loadBalancerIP: "34.140.249.101"
+---
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: frontend-certificate
+spec:
+  domains:
+    - "santa.polonit.com"
+  managed:
+    domains:
+      - "santa.polonit.com"
+  secretName: frontend-certificate
+  
