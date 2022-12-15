@@ -4,6 +4,6 @@ function setShowResults(setTo){
     }else{
         setTimeout(() => {
             document.getElementById("autocomplete_list").className = "suggestions-out";
-        }, 80);
+        }, 300);
     }
 }

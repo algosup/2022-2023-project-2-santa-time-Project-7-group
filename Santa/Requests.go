@@ -57,39 +57,39 @@ func filesHandler(w http.ResponseWriter, r *http.Request, ty string) {
 }
 
 // func that calls noel.gq/xxxxx and returns nothing
-func callNoelCounters(w http.ResponseWriter, r *http.Request, marketing bool) {
-	tr := &http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-	}
-	//create client
-	client := &http.Client{
-		Transport: tr,
-		Timeout:   time.Second * 5,
-	}
-	var reque *http.Request
-	if marketing {
-		//create request with what is after catchyoursanta.ml/
-		reque, _ = http.NewRequest("GET", "https://noel.gq/"+r.URL.Path[1:], nil)
-	} else {
-		//create request with randvisitorsiuezbci
-		reque, _ = http.NewRequest("GET", "https://noel.gq/randvisitorsiuezbci", nil)
-	}
-	//send request
-	resp, err := client.Do(reque)
-	if err != nil {
-		log.Println(err)
-	}
-	//if response has a body close it
-	if resp.Body != nil {
-		resp.Body.Close()
-	}
-	if marketing {
-		//redirect to home
-		http.Redirect(w, r, "/", http.StatusMovedPermanently)
-		//add in redirect header "redirected = true"
-		w.Header().Set("redirected", "true")
-	}
-}
+// func callNoelCounters(w http.ResponseWriter, r *http.Request, marketing bool) {
+// 	tr := &http.Transport{
+// 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+// 	}
+// 	//create client
+// 	client := &http.Client{
+// 		Transport: tr,
+// 		Timeout:   time.Second * 5,
+// 	}
+// 	var reque *http.Request
+// 	if marketing {
+// 		//create request with what is after catchyoursanta.ml/
+// 		reque, _ = http.NewRequest("GET", "https://noel.gq/"+r.URL.Path[1:], nil)
+// 	} else {
+// 		//create request with randvisitorsiuezbci
+// 		reque, _ = http.NewRequest("GET", "https://noel.gq/randvisitorsiuezbci", nil)
+// 	}
+// 	//send request
+// 	resp, err := client.Do(reque)
+// 	if err != nil {
+// 		log.Println(err)
+// 	}
+// 	//if response has a body close it
+// 	if resp.Body != nil {
+// 		resp.Body.Close()
+// 	}
+// 	if marketing {
+// 		//redirect to home
+// 		http.Redirect(w, r, "/", http.StatusMovedPermanently)
+// 		//add in redirect header "redirected = true"
+// 		w.Header().Set("redirected", "true")
+// 	}
+// }
 
 func main() {
 	mux := http.NewServeMux()

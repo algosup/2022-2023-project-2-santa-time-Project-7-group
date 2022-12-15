@@ -15,7 +15,7 @@
     padding: 5px;
 }
 
-.header .center{
+.header .center, .header .center font {
     color: snow;
     font-size: xx-large;
     font-weight: bold;
@@ -32,11 +32,20 @@
     .header {
         justify-content: space-around;
     }
+    body .search_title, body .search_title font {
+        font-size: 20px;
+    }
+
 } 
 
 /* End header */
 
 /* main body */
+
+.search_title, .search_title font {
+    text-align: center;
+    font-size: 36px;
+}
 
 .under-searchbar{
     width: 100%;
@@ -84,7 +93,7 @@
     }
 } 
 
-.footer-button {
+.footer-button, .footer-button font {
     background-color:#0047AB ;
     color: snow;
     border-radius: 40px;

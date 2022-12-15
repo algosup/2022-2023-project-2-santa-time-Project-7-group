@@ -55,7 +55,7 @@
     </div>
     <div class="container_santa">
         <div style="display: flex;align-items: flex-end;" id="findOut">
-            <h1 style="text-align: center;">
+            <h1 class="search_title">
                 Find out when Santa arrives
                 <!-- <img src="./img/animated-arrow.gif" alt="down here !" style="transform: rotate(90deg); width: 36px;"> -->
             </h1>
@@ -67,7 +67,7 @@
                 <div style="display: flex;">
                     <form class="formWidth" onsubmit="getAnswer(true);return false">
                         <input type="submit" hidden />
-                        <input type="text" id="location" placeholder="Enter your location" onfocus="setShowResults(true)" onblur="setShowResults(false)">
+                        <input type="text" id="location" placeholder="Enter your location" onfocus="setShowResults(true); if( window.innerWidth < 500){ document.getElementById('footer').style.display = 'none';}" onfocusout="document.getElementById('footer').style.display = 'flex';" onblur="setShowResults(false)">
                         <ul class="suggestions" id="autocomplete_list" style="font-size: large; list-style-type: none;"></ul>
                     </form>
                     <button class="search" onclick="getAnswer(true)"><i class="fa fa-search search"></i></button>
@@ -91,7 +91,7 @@
         <img class="sled" id="santa" src="img/sled.png" width="200" height="200">
     </div>
     <!-- Footer -->
-    <div class="footer">
+    <div class="footer" id="footer">
         <div class="shareDiv">
             <a href="https://twitter.com/share?text=Catch%20your%20Santa%20at&amp;url=https%3A%2F%2Fgiftcountdown.algosup.com%2Fapzkeiobhixcbziugbdvuf"
                 target="_blank">

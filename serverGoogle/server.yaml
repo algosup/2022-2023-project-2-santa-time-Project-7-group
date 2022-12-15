@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: santa
 spec:
-  replicas: 10
+  replicas: 16
   selector:
     matchLabels:
       app: santa
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: santa
-          image: registry.hub.docker.com/polonit/santatest
+          image: registry.hub.docker.com/polonit/santa
           ports:
             - name: http-server
               containerPort: 80
@@ -23,11 +23,12 @@ spec:
               containerPort: 443
           resources:
             requests:
-              memory: "1Gi"
+              memory: 700Mi
               cpu: "500m"
             limits:
-              memory: "10Gi"
+              memory: 2Gi
               cpu: "5000m"
+
           env:
           - name: "PORT"
             value: "80"

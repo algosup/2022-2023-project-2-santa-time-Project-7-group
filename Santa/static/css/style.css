@@ -100,7 +100,7 @@ body>.skiptranslate {
 
 
 
-.inputs button {
+.inputs button, .inputs button font {
     width: 50px;
     background: radial-gradient(circle, #0047AB 0%, #0047AB 70%);
     color: snow;
@@ -199,7 +199,7 @@ button::selection {
     }
 }
 
-.cookie_p {
+.cookie_p, .cookie_p font {
     color: white;
     font-size: 17px;
     text-align: center;
